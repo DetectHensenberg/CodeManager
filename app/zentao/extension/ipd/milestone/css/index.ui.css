@@ -1,0 +1,4 @@
+.helpDropdown h2{font-size:14px; padding:0px; margin:0px; margin-top:10px;}
+table.table>thead{background-color: #fff}
+table .btn.addItem, table .btn.delItem{padding: 3px 8px; font-size: 12px; line-height: 18px; border-radius: 4px; color: #3c495c}
+div.table-empty-tip {padding: 80px 10px; text-align: center; background: #fff;}

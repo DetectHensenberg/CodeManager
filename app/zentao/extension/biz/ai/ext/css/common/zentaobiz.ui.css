@@ -1,0 +1,25 @@
+/* Prompt Design 页面共享头部 */
+.prompt-header {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: .75rem;
+  position: relative;
+  min-height: 32px;
+}
+.prompt-header .btn-back {
+  height: 32px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+}
+.prompt-header .nav-steps {
+  padding: 0;
+}
+
+.triangle-label {width: 0; height: 0; border-style: solid;border-width: 0 64px 64px 0;}
+.triangle-label.high {color: var(--color-danger-500); border-color: transparent var(--color-danger-200) transparent transparent;}
+.triangle-label.medium {color: var(--color-warning-500); border-color: transparent var(--color-warning-200) transparent transparent;}
+.triangle-label.low {color: #3479E9; border-color: transparent #BEDBFE transparent transparent;}
+.btns-type .btn.active {color: var(--color-fore); background-color: var(--color-primary-100);}

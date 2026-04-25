@@ -1,0 +1,250 @@
+/* 确认操作页面 */
+.prompt-set-purpose {
+  height: calc(100vh - 148px);
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+}
+
+.prompt-set-purpose .panels {
+  flex: 1;
+  padding: 24px 20px;
+  max-height: 100%;
+  display: flex;
+  gap: 24px;
+}
+.prompt-set-purpose .panels > div {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.prompt-set-purpose .section-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.prompt-set-purpose .form-panel .section-content {
+  padding: 1px; /* 修复 outline 被裁切的问题 */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prompt-set-purpose .section-content .panel-area {
+  flex: 1;
+  max-height: calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prompt-set-purpose .panel-area h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 4px;
+  position: relative;
+}
+.prompt-set-purpose .panel-area h3 > span {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.prompt-set-purpose .panel-area h3 > .icon {
+  margin-left: 8px;
+  color: #FF9F46;
+}
+.prompt-set-purpose .panel-area h3 small {
+  font-weight: normal;
+  color: #838A9D;
+}
+.prompt-set-purpose .field-required::before {
+  content: '*';
+  display: inline;
+  color: #FC5959;
+  font-size: 16px;
+}
+
+.prompt-set-purpose .field-list {
+  flex: 1;
+  overflow-y: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.prompt-set-purpose .field-empty {
+  border: dashed 1px #D8DBDE;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+  gap: 4px;
+  cursor: pointer;
+}
+.prompt-set-purpose .field-empty .action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #2E7FFF;
+}
+.prompt-set-purpose .field-empty .tips {
+  font-size: 12px;
+  color: #9EA3B0;
+}
+.prompt-set-purpose .field-item {
+  display: flex;
+  padding: 7px 0;
+  align-items: center;
+  gap: 4px;
+  justify-content: end;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+.prompt-set-purpose .sortable .field-item {
+  cursor: move;
+  padding: 7px 4px;
+}
+.prompt-set-purpose .sortable .field-item:hover {
+  background-color: #EEF5FF;
+}
+.prompt-set-purpose .sortable .field-item:hover .icon-move {
+  opacity: 1;
+}
+.prompt-set-purpose .sortable .field-item .icon-move {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.prompt-set-purpose .field-item .form-control::placeholder {
+  color: #838A9D;
+}
+.prompt-set-purpose .field-item > .form-control,
+.prompt-set-purpose .field-item .input-group-control {
+  flex: 1;
+}
+.prompt-set-purpose .field-item div.rect {
+  border: solid 1px #DCDCDC;
+  border-radius: 2px;
+  padding: 5px 7px;
+  height: 32px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+.prompt-set-purpose .field-item div.rect .text-ellipsis {
+  flex: 1;
+}
+.prompt-set-purpose .field-item div.rect .badge {
+  flex-shrink: 0;
+  border-radius: 2px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FF383C;
+  background-color: #FFC9C9;
+}
+.prompt-set-purpose .field-item span.name {
+  width: 100px;
+  text-align: right;
+}
+.prompt-set-purpose .field-item span.asterisk {
+  width: 8px;
+  font-size: 16px;
+  color: #FC5959;
+}
+.prompt-set-purpose .field-item .btn {
+  box-shadow: none;
+}
+
+.prompt-set-purpose .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  padding-bottom: 12px;
+}
+.prompt-set-purpose .actions .btn {
+  min-width: 120px;
+}
+
+#field-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#field-options .input-group {
+  width: 100%;
+}
+
+#prompt-editor {
+  padding: 2px;
+  flex: 1;
+  max-height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+}
+#prompt-editor div[contenteditable="true"] {
+  padding: 2px 6px;
+  flex: 1;
+  min-height: 100%;
+  overflow-y: auto; /* 注意，滚动条只能设置在内部，否则会导致无法编辑 */
+}
+
+#prompt-preview {
+  white-space: pre-wrap;
+}
+#prompt-preview span {
+  color: #2E7FFF;
+  font-weight: bold;
+}
+
+.prompt-set-purpose .preview-panel .section-content {
+  border: solid 1px #E6EAF1;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: #F8F8F8;
+}
+.prompt-set-purpose .preview-panel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.prompt-set-purpose .preview-panel li {
+  position: relative;
+}
+.prompt-set-purpose .preview-panel li:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #E6EAF1;
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+}
+.prompt-set-purpose .preview-panel h5 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #838A9D;
+  font-weight: normal;
+}
+.prompt-set-purpose .preview-panel p {
+  min-height: 20px;
+}
+.prompt-set-purpose .preview-panel p.focus {
+  background-color: #D6E5FE;
+}
+.prompt-set-purpose .preview-panel p.pre {
+  white-space: pre-wrap;
+}
+.prompt-set-purpose .preview-panel p + p {
+  margin: 0;
+  margin-top: 4px;
+}

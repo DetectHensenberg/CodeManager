@@ -1,0 +1,79 @@
+#####################################################################
+# 默认配置文件
+#####################################################################
+
+common:
+  title: 禅道集成运⾏环境
+  lang: zh-cn
+  theme: blue
+
+service:
+  - apache:
+    port: 80
+    path: apache\
+    title: Apache
+    enabled: false
+    version: 2.4.25
+    vcRumtime: VC 9.0 SP1
+    log: apache/
+    beforeCommand:
+      - "%APACHE_PATH%bin/htpasswd.exe -bc %APACHE_PATH%/auth/.htaccess %APACHE_ACCOUNT% %APACHE_PASSWORD%"
+    serviceCommand: "%APACHE_EXE% -k install -n %APACHE_SER_NAME%"
+    autoPorts: [80, 8999]
+    account: zentao
+    password: 123456
+    exePath: bin\httpd.exe
+
+  - mysql:
+    port: 3306
+    path: mysql\
+    title: MySQL
+    enabled: false
+    version: 10.1.25
+    vcRumtime: VC 9.0 SP1
+    log: mysql\
+    config: "mysql/my.ini|my.ini"
+    serviceCommand: '%MYSQL_PATH%bin\mysqld.exe --install %MYSQL_SER_NAME% --defaults-file="%MYSQL_PATH%/my.ini"'
+    afterCommand:
+      - '%MYSQL_EXE% --user=%MYSQL_ACCOUNT% --password=%MYSQL_PASSWORD_OLD% --port=%MYSQL_PORT% -e "SET password for %MYSQL_ACCOUNT%@localhost=password(''%MYSQL_PASSWORD%'')"; '
+      - '%MYSQL_EXE% --user=%MYSQL_ACCOUNT% --password=%MYSQL_PASSWORD% --port=%MYSQL_PORT% -e "flush privileges;"; '
+    autoPorts: [3306, 3999]
+    account: root
+    password: 123456
+    exePath: bin\mysql.exe
+    adminer: ztadmin\ztadmin.php
+
+  - php:
+    path: php\
+    title: PHP
+    enabled: false
+    version: 7.4.30
+    vcRumtime: VC 9.0 SP1
+    serviceName: false
+    config: php\php.ini|php.ini
+    exePath: php.exe
+
+  - xxd:
+    port: 11444
+    fixPort: true
+    path: xxd\
+    title: XXD
+    enabled: false
+    version: 9.6
+    beforeCommand: 'powershell -ExecutionPolicy RemoteSigned -File %ROOT_PATH%\zbox\xxd.ps1 -MYSQL_EXE "%MYSQL_EXE%"  -MYSQL_ACCOUNT "%MYSQL_ACCOUNT%"  -MYSQL_PASSWORD "%MYSQL_PASSWORD%"  -MYSQL_PORT "%MYSQL_PORT%"  -APACHE_PORT "%APACHE_PORT%"  -XXD_PATH "%XXD_PATH%"'
+    serviceCommand: '%XXD_EXE% -service install'
+    afterCommand:
+      - '%XXD_EXE% -service start'
+    exePath: xxd.exe
+
+  - rr:
+    path: rr\
+    title: RR
+    version: 2.0.0
+    enabled: false
+    exePath: rr.exe
+
+  - redis:
+    version: 6.2.16
+    title: Redis
+    enabled: false

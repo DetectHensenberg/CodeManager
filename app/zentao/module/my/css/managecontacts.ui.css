@@ -1,0 +1,7 @@
+#contactTab .listitem {color: inherit}
+#contactTab .listitem.selected {color: var(--color-primary-500); font-weight: bold;}
+
+#contactPanel .form-actions {margin-top: 0;}
+
+.no-shadow-in-modal {box-shadow: none}
+.modal-body > div > #manageContacts {margin: -12px -20px}

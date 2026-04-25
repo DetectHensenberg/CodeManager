@@ -1,0 +1,5 @@
+.sidebar {background: #fff;}
+.sidebar > .section {padding: 8px;}
+.radio-inline {margin-left: 4px;}
+.issue-opinion {margin-top: 8px;}
+.sidebar .affine-page-viewport {background: var(--color-gray-50); border-radius: 4px;}

@@ -1,0 +1,2 @@
+#whiteListBox .input-group-addon:first-child { width: 56px; }
+#whiteListBox.not-cn .input-group-addon:first-child { width: 84px; }

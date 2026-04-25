@@ -1,0 +1,10 @@
+<?php
+$config->installed     = true;
+$config->debug         = false;
+$config->requestType   = 'PATH_INFO';
+$config->db->host      = '127.0.0.1';
+$config->db->prefix    = 'zt_';
+$config->webRoot       = getWebRoot();
+$config->db->name      = 'zentao';
+$config->default->lang = 'zh-cn';
+include 'mysql.php';

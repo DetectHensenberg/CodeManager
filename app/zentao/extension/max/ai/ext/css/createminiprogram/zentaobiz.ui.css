@@ -1,0 +1,52 @@
+.create-miniprogram .panel {
+  width: 100%;
+  max-width: none;
+  min-width: auto;
+}
+
+#ai-edit-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  padding: 0;
+  position: relative;
+}
+#edit-icon {
+  display: none;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(230, 240, 255, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+#ai-edit-icon:hover #edit-icon {
+  display: flex;
+}
+
+#theme-buttons button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+}
+#theme-buttons button svg {
+  display: none;
+  width: 14px;
+  height: 10px;
+}
+#theme-buttons button.checked svg {
+  display: block;
+}
+
+#icon-buttons {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 16px;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+#icon-buttons svg {
+  cursor: pointer;
+}

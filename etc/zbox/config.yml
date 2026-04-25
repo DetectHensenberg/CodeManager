@@ -1,0 +1,99 @@
+#####################################################################
+# 项目配置文件
+#####################################################################
+
+common:
+  title: window.title
+  version: 3.0
+  envPath:
+    - "%ROOT_PATH%bin/git/cmd"
+    - "%ROOT_PATH%bin/php"
+    - "%ROOT_PATH%bin/sliksvn"
+    - "%ROOT_PATH%zbox/nssm/win64"
+
+app:
+  path: zentao\
+  title: ~window.product
+  code: zentao
+  version: 22.1
+  launch: index.php
+  config: zentao\mysql.php|config\mysql.php
+  log: tmp\log\
+  help:
+    url: https://www.zenpanel.cn/book/usage/8.html
+  update:
+    url: https://www.zenpanel.cn/index.html
+  backup:
+    enabled: true
+    script: "%PHP_EXE% %ZENTAO_PATH%bin/ztcli http://127.0.0.1:%APACHE_PORT%/backup-backup.html"
+    path: "%ZENTAO_PATH%tmp/backup/"
+
+  entriesxx:
+    - #xxb
+      path: xxb\
+      title: XXB
+      code: xxb
+      version: 1.0.0
+      enabled: false,
+      serviceName: false
+      config: xxb\my.php|config\my.php
+
+service:
+  - apache:
+    enabled: true
+    serviceName: apachezt
+    beforeCommand:
+      - "setx ZENTAO_ENV          \"zbox-windows\" /m"
+      - "setx ZT_CACHE_ENABLE     \"true\" /m"
+      - "setx ZT_CACHE_DRIVER     \"redis\" /m"
+      - "setx ZT_CACHE_SCOPE      \"private\" /m"
+      - "setx ZT_CACHE_NAMESPACE  \"zentao\" /m"
+      - "setx ZT_CACHE_LIFETIME   \"300\" /m"
+      - "setx ZT_REDIS_HOST       \"127.0.0.1\" /m"
+      - "setx ZT_REDIS_PORT       \"6379\" /m"
+      - "setx ZT_REDIS_USERNAME   \"root\" /m"
+      - "setx ZT_REDIS_PASSWORD   \"pass4Redis\" /m"
+      - "setx ZT_REDIS_SERIALIZER \"igbinary\" /m"
+      - "%APACHE_PATH%bin/htpasswd.exe -bc %APACHE_PATH%/auth/.htaccess %APACHE_ACCOUNT% %APACHE_PASSWORD%"
+    config:
+      - "apache/httpd.conf|conf/httpd.conf"
+      - "ztaccess/adminer.ztaccess|%APP_PATH%ztadmin/.ztaccess"
+      - "ztaccess/htdocs.ztaccess|%APP_PATH%htdocs/.ztaccess"
+      - "ztaccess/default.ztaccess|%APP_PATH%zentao/www/.ztaccess"
+#      - "ztaccess/biz.ztaccess|%APP_PATH%zentaoep/www/.ztaccess"
+#      - "ztaccess/max.ztaccess|%APP_PATH%zentaomax/www/.ztaccess"
+#      - "ztaccess/ipd.ztaccess|%APP_PATH%zentaoipd/www/.ztaccess"
+#      - "ztaccess/htdocs.ztaccess|%SERVICE_PATH%srs/objs/nginx/html/.ztaccess"
+
+  - mysql:
+    enabled: true
+    serviceName: mysqlzt
+
+  - php:
+    enabled: true
+
+  - xxd:
+    enabled: true
+    ignore: true
+    serviceName: xxd
+
+  - rr:
+    enabled: true
+    ignore: true
+    serviceName: roadrunner
+    serviceCommand:
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe install %RR_SER_NAME% %RR_PATH%rr.exe serve -c .rr.yaml -w %ZENTAO_PATH%roadrunner/"
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe set %RR_SER_NAME% AppStdout %ROOT_PATH%logs/rr.log"
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe set %RR_SER_NAME% AppStderr %ROOT_PATH%logs/rr_err.log"
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe set %RR_SER_NAME% AppEnvironmentExtra Path=%ROOT_PATH%bin/php"
+
+  - redis:
+    enabled: true
+    ignore: true
+    serviceName: rediszt3
+    serviceCommand:
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe install %REDIS_SER_NAME% %REDIS_PATH%redis-server.exe redis/redis.conf"
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe set %REDIS_SER_NAME% AppStdout %ROOT_PATH%logs/redis.log"
+      - "%ROOT_PATH%zbox/nssm/win64/nssm.exe set %REDIS_SER_NAME% AppStderr %ROOT_PATH%logs/redis_err.log"
+
+

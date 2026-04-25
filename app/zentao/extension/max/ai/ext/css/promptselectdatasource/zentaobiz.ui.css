@@ -1,0 +1,169 @@
+/* 选择对象页面 */
+.prompt-select-source {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.prompt-select-source .panel {
+  margin-bottom: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  min-width: auto;
+}
+.prompt-select-source .panel-body {
+  height: calc(100vh - 116px);
+}
+.prompt-select-source .panel-body form {
+  height: 100%;
+}
+
+.prompt-select-source .data-selector-container {
+  display: flex;
+  gap: 16px;
+  height: calc(100vh - 116px - 96px);
+}
+.prompt-select-source .data-sources-panel {
+  flex: 1;
+  display: flex;
+}
+
+.prompt-select-source .data-categories-section {
+  display: flex;
+  flex-direction: column;
+  width: 185px;
+  gap: 10px;
+}
+.prompt-select-source .data-categories-section .section-content {
+  border: 1px solid #EEE;
+  border-right: none;
+  flex: 1;
+  background-color: #F8F8F8;
+  overflow-y: auto;
+  padding: 16px;
+}
+.data-categories-section .category-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.data-categories-section .category-list li {
+  font-size: 13px;
+  line-height: 32px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+.data-categories-section .category-list li:hover {
+  background-color: rgba(0,0,0,.075);
+}
+.data-categories-section .category-list li.active {
+  color: #2E7FFF;
+  background-color: #E6F0FF;
+}
+
+.prompt-select-source .data-properties-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+.prompt-select-source .data-properties-section .section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.prompt-select-source .data-properties-section .section-content {
+  border: 1px solid #EEE;
+  border-left: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+.data-properties-section .category-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  user-select: none;
+}
+.data-properties-section .category-group {
+  position: relative;
+}
+.data-properties-section .category-group:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #EEE;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+.data-properties-section .category-group-body {
+  margin-top: 12px;
+  display: grid;
+  padding: 0 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.prompt-select-source .data-selected-panel {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 10px;
+}
+.prompt-select-source .data-selected-panel .section-content {
+  border: 1px solid #EEE;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.prompt-select-source .selected-data-sorter ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.prompt-select-source .selected-data-sorter li {
+  position: relative;
+  padding: 8px 16px;
+  padding-left: 64px;
+  cursor: move;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+.prompt-select-source .selected-data-sorter li:hover {
+  background-color: #EEF5FF;
+}
+.prompt-select-source .selected-data-sorter li::before {
+  content: counter(list-item);
+  display: inline-block;
+  width: 2ch;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.prompt-select-source .selected-data-sorter .drag-icon {
+  opacity: 0;
+  position: absolute;
+  left: 46px;
+  top: 50%;
+  translate: 0 -50%;
+  transition: opacity 0.2s;
+}
+.prompt-select-source .selected-data-sorter li:hover .drag-icon {
+  opacity: 1;
+}
+.prompt-select-source .selected-data-sorter .remove-icon {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  translate: 0 -50%;
+  cursor: pointer;
+}

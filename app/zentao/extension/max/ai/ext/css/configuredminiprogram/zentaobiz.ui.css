@@ -1,0 +1,264 @@
+/* 通用智能体 - 配置和调试 */
+.configured-miniprogram {
+  height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+}
+
+.configured-miniprogram .panels {
+  flex: 1;
+  max-height: 100%;
+  display: flex;
+}
+.configured-miniprogram .panels > div {
+  flex: 1;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+}
+.configured-miniprogram .panels h2 {
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 40px;
+  background-color: #F6F6FA;
+}
+.configured-miniprogram .panels .panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.configured-miniprogram .panel-field {
+  max-width: 408px;
+}
+.configured-miniprogram .panel-field .panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  background-color: var(--zt-page-bg);
+}
+.configured-miniprogram .panel-field .panel-area {
+  flex: 1;
+  max-height: calc((100% - 16px) / 2);
+  padding: 24px;
+  background-color: #FFF;
+}
+
+.configured-miniprogram .panel-debug {
+  margin-left: 16px;
+  max-width: 36%;
+  border-right: solid 1px #EFF1F7;
+}
+.configured-miniprogram .panel-debug .panel-content,
+.configured-miniprogram .panel-preview .panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#form-fields {
+  padding: 1px;
+  overflow-y: auto;
+}
+
+.configured-miniprogram .panel-area {
+  flex: 1;
+  flex-shrink: 0;
+  max-height: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.configured-miniprogram .panel-area h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 4px;
+  position: relative;
+}
+.configured-miniprogram .panel-area h3 > span {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.configured-miniprogram .panel-area h3 > .icon {
+  color: #FF9F46;
+}
+.configured-miniprogram .panel-area h3 small {
+  font-weight: normal;
+  color: #838A9D;
+}
+.configured-miniprogram #generate-result {
+  position: absolute;
+  padding: 0 6px;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  text-decoration: none;
+  color: #2E7FFF;
+  font-weight: normal;
+}
+
+.configured-miniprogram .field-list {
+  flex: 1;
+  overflow-y: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.configured-miniprogram .field-empty {
+  border: dashed 1px #D8DBDE;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+  gap: 4px;
+  cursor: pointer;
+}
+.configured-miniprogram .field-empty .action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #2E7FFF;
+}
+.configured-miniprogram .field-empty .tips {
+  font-size: 12px;
+  color: #9EA3B0;
+}
+.configured-miniprogram .field-item {
+  display: flex;
+  padding: 7px 12px;
+  align-items: center;
+  gap: 4px;
+  justify-content: end;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+.configured-miniprogram .sortable .field-item {
+  cursor: move;
+}
+.configured-miniprogram .sortable .field-item:hover {
+  background-color: #EEF5FF;
+}
+.configured-miniprogram .sortable .field-item:hover .icon-move {
+  opacity: 1;
+}
+.configured-miniprogram .sortable .field-item .icon-move {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.configured-miniprogram .field-item div.text-ellipsis {
+  border: solid 1px #DCDCDC;
+  padding: 5px 7px;
+  width: 160px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #838A9D;
+  background-color: #F5F5F5;
+}
+.configured-miniprogram .field-item div.rect {
+  border: solid 1px #DCDCDC;
+  border-radius: 2px;
+  padding: 5px 7px;
+  height: 32px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+.configured-miniprogram .field-item div.rect .text-ellipsis {
+  flex: 1;
+}
+.configured-miniprogram .field-item div.rect .badge {
+  flex-shrink: 0;
+  border-radius: 2px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FF383C;
+  background-color: #FFC9C9;
+}
+.configured-miniprogram .field-item span.name {
+  flex: 1;
+  text-align: right;
+}
+.configured-miniprogram .field-item span.asterisk {
+  width: 8px;
+  font-size: 16px;
+  color: #FC5959;
+}
+.configured-miniprogram .field-item .btn {
+  box-shadow: none;
+}
+
+.configured-miniprogram .preview-box {
+  flex: 1;
+  padding: 8px;
+  background-color: #F8F8F8;
+  border: 1px solid #D8DBDE;
+  overflow-y: auto;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.configured-miniprogram .actions {
+  display: flex;
+  border-top: solid 1px #EFF1F7;
+  padding: 12px 0;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+}
+.configured-miniprogram .actions .btn {
+  min-width: 120px;
+}
+
+#field-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#field-options .input-group {
+  width: 100%;
+}
+
+#prompt-editor {
+  padding: 2px;
+  flex: 1;
+  max-height: calc(100% - 42px);
+  display: flex;
+  flex-direction: column;
+}
+#prompt-editor div[contenteditable="true"] {
+  padding: 2px 6px;
+  flex: 1;
+  min-height: 100%;
+  overflow-y: auto; /* 注意，滚动条只能设置在内部，否则会导致无法编辑 */
+}
+
+#prompt-preview span {
+  color: #2E7FFF;
+  font-weight: bold;
+}
+
+#back-modal .back-modal-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#back-modal .back-modal-message .icon {
+  font-size: 24px;
+  color: #FFA340;
+}
+#back-modal .modal-footer .btn {
+  width: 120px;
+}
+
+.modal-icon-warning {
+  color: #FF9F46;
+}

@@ -1,0 +1,27 @@
+.deliverable-item-doc-picker{
+    flex: 1;
+}
+
+.deliverable-item-empty-actions{
+    flex: 1;
+}
+
+.form-group[id^="required"] {
+    position: relative;
+}
+
+.form-group[id^="required"] .btn-group{
+    position: absolute;
+    width: 100px;
+    right: -100px;
+    bottom: 5px;
+}
+
+.deliverable-item-row {
+    min-height: 2rem !important;
+    padding: 0 0.5rem;
+}
+
+.deliverable-item-doc-picker{
+    width: 32rem !important;
+}

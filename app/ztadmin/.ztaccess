@@ -1,0 +1,5 @@
+# apache auth config
+AuthName "zentao runner authentication required"
+AuthType Basic
+AuthUserFile "D:/Workspace/workspace/xuansnap/GitHub/zentao_test/bin/apache/auth/.htaccess"
+Require valid-user

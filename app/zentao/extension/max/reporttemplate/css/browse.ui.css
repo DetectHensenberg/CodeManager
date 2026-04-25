@@ -1,0 +1,9 @@
+.doc-view-sidebar.is-quick-edit-menu {--doc-view-side-width: 280px;}
+[lang^=en] .doc-view-sidebar.is-quick-edit-menu, [lang^=de] .doc-view-sidebar.is-quick-edit-menu, [lang^=fr] .doc-view-sidebar.is-quick-edit-menu {--doc-view-side-width: 310px;}
+@media screen and (max-width: 1366px) { [lang^=en] .doc-view-sidebar.is-quick-edit-menu, [lang^=de] .doc-view-sidebar.is-quick-edit-menu, [lang^=fr] .doc-view-sidebar.is-quick-edit-menu {--doc-view-side-width: 320px;}}
+.quick-edit-menu .nav-tabs .nav-item > a {padding: 0 8px;}
+.quick-edit-menu .nav-tabs .nav-item > a.active {border-bottom: 2px solid var(--nav-active-color);}
+.quick-edit-menu .nav-tabs .nav-item > a:after {border-width: 0;}
+
+[zui-command="toggleViewSideTab/false"] {display: none;}
+.affine-zui-holder-container {min-width: 8px; min-height: 8px;}

@@ -1,0 +1,112 @@
+/* 通用智能体 - 调试 Modal */
+.test-miniprogram {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.test-miniprogram .modal-name {
+  margin: 0;
+  font-size: 16px;
+}
+.test-miniprogram .panels {
+  flex: 1;
+  max-height: calc(100% - 88px);
+  display: flex;
+  background-color: #FAFAFA;
+}
+.test-miniprogram .panels > div {
+  flex: 1;
+  padding: 16px;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.test-miniprogram .panel-debug {
+  border-right: solid 1px #EFF1F7;
+  flex-basis: 55%;
+}
+.test-miniprogram .panel-preview {
+  flex-basis: 45%;
+}
+
+.test-miniprogram .panels .panel-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#form-fields {
+  padding: 1px;
+  overflow-y: auto;
+}
+
+.test-miniprogram .panel-area {
+  flex: 1;
+  flex-shrink: 0;
+  max-height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.test-miniprogram .panel-area h3 {
+  margin: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+.test-miniprogram #generate-result {
+  position: absolute;
+  padding: 0 6px;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  text-decoration: none;
+  color: #2E7FFF;
+  font-weight: normal;
+}
+
+#form-fields,
+.prompt-editor {
+  padding: 1px; /* 修复 outline 被裁切的问题 */
+}
+
+.test-miniprogram .preview-box {
+  flex: 1;
+  padding: 8px;
+  background-color: #F8F8F8;
+  border: 1px solid #D8DBDE;
+  overflow-y: auto;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.prompt-editor,
+#prompt-editor,
+#prompt-editor div[contenteditable="true"] {
+  height: 100%;
+}
+
+#prompt-preview span {
+  color: #2E7FFF;
+  font-weight: bold;
+}
+
+.test-miniprogram .actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.test-miniprogram .actions .btn {
+  width: 80px;
+}
+
+.modal-icon-warning {
+  color: #FF9F46;
+}

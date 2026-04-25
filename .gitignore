@@ -1,0 +1,45 @@
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Local assistant/workspace state
+.claude/
+
+# ZenPanel runtime binaries and installers
+bin/
+ZenTao.exe
+._bin
+
+# Runtime data, logs, backups, and temporary files
+backup/
+logs/
+tmp/
+app/zentao/tmp/
+app/zentao/www/data/upload/
+
+# Database runtime files
+bin/mysql/data/
+*.ibd
+*.frm
+*.MYD
+*.MYI
+ibdata*
+ib_logfile*
+ibtmp*
+
+# Generated/cache artifacts
+*.log
+*.tmp
+*.cache
+cache/
+node_modules/
+vendor/bin/.phpunit/
+
+# Local environment/config secrets
+.env
+.env.*
+app/zentao/config/mysql.php

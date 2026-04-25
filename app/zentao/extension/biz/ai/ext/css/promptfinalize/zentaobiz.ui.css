@@ -1,0 +1,14 @@
+/* 准备发布页面 */
+.prompt-finalize {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.prompt-finalize .panel {
+  margin-bottom: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  min-width: auto;
+}

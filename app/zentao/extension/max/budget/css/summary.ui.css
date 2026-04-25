@@ -1,0 +1,3 @@
+.summary td { font-weight: 700; }
+.table-title { background: var(--color-canvas); }
+.text-center th { vertical-align: middle; }

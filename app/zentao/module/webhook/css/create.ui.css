@@ -1,0 +1,4 @@
+.form-horz .form-row {align-items: center;}
+.form-horz .form-row .form-group {padding-left:110px;}
+.form-horz .form-row .form-group.no-label {padding-left:10px;}
+.form-group .form-label{width:110px;}

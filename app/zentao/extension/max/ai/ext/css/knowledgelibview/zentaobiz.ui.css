@@ -1,0 +1,61 @@
+:root { --menu-icon-opacity: 1; }
+.page-kbview { display: flex; align-items: flex-start; height: calc(100vh - 158px); gap: 18px; }
+.page-kbview .sidebar-left { height: 100%;flex-shrink: 0; }
+.page-kbview .sidebar-left .panel { box-shadow: none; border: solid 1px #EBEDF3; height: 100%; display: flex; flex-direction: column; }
+.page-kbview .sidebar-left .panel-heading { padding: 10px 13px; font-size: 14px; line-height: 24px; font-weight: 600; }
+.page-kbview .sidebar-left .panel-body { padding: 0; flex: 1; overflow-y: auto; }
+.page-kbview .sidebar-left .tabs-header { padding: 8px; padding-bottom: 0; }
+.page-kbview .sidebar-left .nav { justify-content: center; border-bottom: solid 1px #C6CAD3; }
+.page-kbview .sidebar-left .nav-item span { font-weight: normal !important; color: #30394A; }
+.page-kbview .sidebar-left .nav-item a.active span { font-weight: bold !important; }
+.page-kbview .sidebar-left .tab-content { padding-top: 0; }
+#knowledgeTree { padding: 12px; padding-top: 15px; }
+#knowledgeTree li { cursor: pointer; user-select: none; transition: background-color 0.2s; }
+#knowledgeTree .item-title { color: #313C52; }
+#knowledgeTree .listitem:has(a.item-title):hover { background-color: #F5F5F5; }
+#knowledgeTree .listitem.selected { background-color: #E8F3FC; }
+#knowledgeTree .listitem.selected .item-title { font-weight: normal; }
+#knowledgeTree .listitem { padding: 0 4px; }
+#knowledgeTree .listitem .item-icon { opacity: 1; }
+#knowledgeTree > li:not(:first-child) { margin-top: 6px; }
+#knowledgeTree menu li { margin-top: 6px; }
+#knowledgeTree .item-content a { flex: 1; line-height: 24px; }
+.kb-item-text .icon { color: #3883FA; }
+.kb-item-file .icon { color: #12A772; }
+.kb-item-story .icon { color: #FACC14; }
+.kb-item-task .icon { color: #8C96FC; }
+.kb-item-case .icon { color: #666; }
+.kb-item-bug .icon { color: #FF7B64; }
+.kb-item-plan .icon { color: #666; }
+.kb-item-release .icon { color: #3883FA; }
+.kb-item-feedback .icon { color: #FF4F4F; }
+.kb-item-ticket .icon { color: #E33E3E; }
+.kb-item-doc .icon { color: #BF83FC; }
+.kb-item-issue .icon { color: #3883FA; }
+.kb-item-risk .icon { color: #FF7B64; }
+.kb-item-opportunity .icon { color: #FACC14; }
+.kb-item-practice .icon { color: #8C96FC; }
+.kb-item-component .icon { color: #12A772; }
+.page-kbview .main-content { border: solid 1px #EBEDF3; flex: 1; background: #FFF; display: flex; flex-direction: column; }
+.page-kbview .main-content:not(:has(.dtable)) { height: 100%; }
+.page-kbview .main-content .section-header { display: flex; align-items: center; justify-content: space-between; border-bottom: solid 1px #EBEDF3; min-height: 40px; }
+.page-kbview .main-content .section-header h2 { padding: 0 24px; display: flex; align-items: center; gap: 8px; font-weight: normal; width: 66%; }
+.page-kbview .main-content .section-header h2 span { display: block; font-size: 14px; line-height: 24px; color: #313C52; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.page-kbview .section-header h2 input { max-width: 240px; }
+.page-kbview .section-header h2.edit-mode span,
+.page-kbview .section-header h2.edit-mode .edit-btn,
+.page-kbview .section-header h2 input { display: none; }
+.page-kbview .section-header h2.edit-mode input { display: block; }
+.page-kbview .main-content .section-header .actions { display: flex; align-items: center; gap: 10px; padding-right: 10px; }
+.page-kbview .main-content .section-header .actions .show-source { display: flex; align-items: center; gap: 10px; }
+.page-kbview .main-content .section-content { flex: 1; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 22px; }
+.page-kbview .main-content .section-content img { max-width: 100%; }
+.page-kbview .dtable.shadow { box-shadow: none; }
+
+.void-view { display: flex;height: 100%;align-items: center;justify-content: center;font-size: 16px; }
+
+.empty-view { display: flex; flex-direction: column; height: calc(100vh - 158px); gap: 36px; align-items: center; justify-content: center; background-color: #FFF; overflow-y: auto; }
+.empty-view h2 { font-size: 24px; color: #007AFF; }
+.empty-view .add-actions { max-width: 860px; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 20px; }
+.empty-view .add-actions .btn { position: relative; padding-top: 60px; padding-bottom: 12px; height: auto; }
+.empty-view .add-actions .btn .icon { position: absolute; top: 20px; left: 50%; translate: -50% 0; font-size: 24px; }
