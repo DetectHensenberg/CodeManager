@@ -1,35 +1,49 @@
-body {background: var(--color-primary-500) linear-gradient(-90deg, var(--color-primary-600) 0%, var(--color-primary-500) 100%); background-color: var(--color-primary-500);}
-#main {min-height:0px;}
+body {background: #eef3f7; background-color: #eef3f7;}
+body::before {content: ""; position: fixed; inset: 0; background: linear-gradient(120deg, rgba(15,118,110,.12), transparent 34%), linear-gradient(300deg, rgba(29,79,145,.10), transparent 42%), repeating-linear-gradient(90deg, rgba(19,32,47,.035) 0 1px, transparent 1px 76px); pointer-events: none;}
+#main {min-height:0px; position: relative;}
 #main.loading::before {display: none!important;}
-#login {max-width: 720px !important; margin: 0 auto; margin-top: 5%; padding: 0 40px;}
-#loginPanel {background: #fff; overflow: hidden; box-shadow: 0 0 20px 0 rgba(0,0,0,.1); border-radius: 3px; position: relative;}
+#login {max-width: 1040px !important; margin: 0 auto; margin-top: 4.8%; padding: 0 32px;}
+#loginPanel {background: rgba(255,255,255,.96); overflow: hidden; box-shadow: 0 28px 80px rgba(19,32,47,.18); border: 1px solid rgba(217,226,236,.9); border-radius: 14px; position: relative;}
 #main.loading #loginPanel::before {content: ' '; display: block; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(var(--color-canvas-rgb),.7); border-radius: inherit; z-index: 1;}
-#loginPanel .header {position: relative;}
-#loginPanel .header > h2 {font-size: 16px; margin: 0; line-height: 32px; max-width: calc(100% - 90px); display: inline-block;}
+#loginPanel .header {position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px;}
+#loginPanel .header > h2, .cm-login-titleblock > h2 {font-size: 22px; margin: 0; line-height: 1.25; max-width: calc(100% - 90px); display: block; color: #13202f; letter-spacing: 0; font-weight: 800;}
+.cm-login-titleblock > p {margin: 7px 0 0; color: #66758a; font-size: 13px;}
 
-#logo-box {background-size: cover; background-position: center; position: relative;}
-#login-logo, #login-ai {position: absolute; left: 50%; transform: translateX(-50%);}
+#logo-box {background-size: cover; background-position: center; position: relative; min-height: 520px; background-color: #102033;}
+#logo-box::before {content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, rgba(16,32,51,.94), rgba(21,54,74,.82) 50%, rgba(15,118,110,.86));}
+#logo-box::after {content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; pointer-events: none;}
+#login-logo, #login-ai {position: absolute; left: 50%; transform: translateX(-50%); display: none;}
+.cm-login-brand {position: absolute; left: 42px; right: 42px; bottom: 42px; color: #fff; z-index: 1;}
+.cm-login-kicker {display: inline-flex; height: 28px; align-items: center; padding: 0 10px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(255,255,255,.10); color: #d9f2ee; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;}
+.cm-login-brand h3 {margin: 18px 0 10px; font-size: 42px; line-height: 1; font-weight: 900; letter-spacing: -.01em;}
+.cm-login-brand p {max-width: 360px; margin: 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.65;}
+.cm-login-proof {display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px;}
+.cm-login-proof span {padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.12); color: #fff; font-size: 12px; font-weight: 700;}
 
-#loginBox {padding: 24px 40px 0 40px;}
+#loginBox {padding: 56px 54px 34px 54px;}
 
-#loginPanel > .footer {background: #eee; padding: 20px; color: #838a9d;}
+#loginPanel > .footer {background: #f4f7fa; padding: 18px 28px; color: #66758a; border-top: 1px solid #d9e2ec;}
 #loginPanel > .footer a {display: inline-block; margin-left: 5px; color: var(--color-gray-900);}
-#loginPanel > .footer a:hover {color: var(--color-primary-500);}
+#loginPanel > .footer a:hover {color: #0f766e;}
 #loginPanel > .loginBody {align-items: stretch;}
 #loginPanel > .loginBody .loginExpired {margin-bottom: 8px;}
-#login #info {margin-top: 10px; color: #fff; text-align:center;}
+#login #info {margin-top: 14px; color: #66758a; text-align:center;}
 #login #info a {display: inline-block; margin-left: 5px;}
-.actions.btn {min-width: 0; width: 85px;}
+.actions.btn {min-width: 0; width: 96px; border-color: #d9e2ec; background: #fff; color: #13202f;}
 .langsDropMenu.dropdown-menu {min-width: 85px;}
-#langs-toggle {float: right; position: absolute; right: 0;}
+#langs-toggle {float: right; position: static;}
 
-#loginForm {margin: 10px 0 30px 0;}
+#loginForm {margin: 22px 0 24px 0;}
 #loginOptions {position: relative;}
 #keepLogin {display: inline-block; vertical-align: middle;}
-.resetPassword {position: absolute; top: 50%; right: var(--form-grid-gap-x-half); transform: translateY(-50%); color: var(--color-fore);}
+.resetPassword {position: absolute; top: 50%; right: var(--form-grid-gap-x-half); transform: translateY(-50%); color: #0b5f59; font-weight: 700;}
+
+#loginForm .form-label, #loginForm label {font-size: 12px; color: #405066; font-weight: 800;}
+#loginForm input {height: 42px; border-radius: 8px !important; border-color: #c4d1df !important; background: #fff;}
+#loginForm input:focus {border-color: #0f766e !important; box-shadow: 0 0 0 3px rgba(15,118,110,.18) !important;}
 
 .form-actions {padding-bottom: 0 !important;}
-.form-actions > button {width: 100%;}
+.form-actions > button {width: 100%; height: 44px; border-radius: 8px !important; background: #0f766e !important; border-color: #0f766e !important; font-weight: 800; box-shadow: 0 12px 24px rgba(15,118,110,.18);}
 
 .form-actions .btn {min-width: unset;}
 .form-actions .resetPassword {box-shadow: unset; background-color: unset; color: unset;}
@@ -44,3 +58,16 @@ input[name="captcha"] {border-bottom-right-radius: var(--radius-none) !important
 .table-row-extension .alert {margin-bottom: 0px !important;}
 .table-row-extension .content {color: #3c4353;}
 .table-row-extension .expired-tips {cursor: pointer;}
+
+@media (max-width: 860px) {
+  #login {max-width: 520px !important; margin-top: 20px; padding: 0 16px;}
+  #loginPanel > .loginBody {display: block !important;}
+  #logo-box {min-height: 260px; width: 100% !important;}
+  #loginBox {width: 100% !important; padding: 28px 24px 24px;}
+  .cm-login-brand {left: 24px; right: 24px; bottom: 24px;}
+  .cm-login-brand h3 {font-size: 30px;}
+  .cm-login-brand p {font-size: 13px;}
+  #loginPanel .header {display: block;}
+  #loginPanel .header > h2, .cm-login-titleblock > h2 {max-width: none; font-size: 19px;}
+  #langs-toggle {position: absolute; right: 0; top: 0;}
+}

@@ -88,7 +88,21 @@ div
                     setID('logo-box'),
                     set::style(array('background-image' => 'url(' . $imgBasePath . $config->user->loginImg['bg'] . ')')),
                     h::img(setID('login-logo'), set::style(array('top' => $logoVerticalMargin)),  set::src($imgBasePath . $config->user->loginImg['logo'])),
-                    h::img(setID('login-ai'),   set::style(array('bottom' => $aiVerticalMargin)), set::src($imgBasePath . $config->user->loginImg['ai']))
+                    h::img(setID('login-ai'),   set::style(array('bottom' => $aiVerticalMargin)), set::src($imgBasePath . $config->user->loginImg['ai'])),
+                    div
+                    (
+                        setClass('cm-login-brand'),
+                        div(setClass('cm-login-kicker'), 'Solution Delivery Command Center'),
+                        h3('CodeManager'),
+                        p('客户、项目、需求、Bug 与文档集中在一个私有化交付工作台。'),
+                        div
+                        (
+                            setClass('cm-login-proof'),
+                            span('客户项目集'),
+                            span('交付看板'),
+                            span('方案文档库')
+                        )
+                    )
                 ),
                 cell
                 (
@@ -97,7 +111,12 @@ div
                     div
                     (
                         setClass('header'),
-                        h2(setClass('font-bold'), sprintf($lang->welcome, $app->company->name)),
+                        div
+                        (
+                            setClass('cm-login-titleblock'),
+                            h2(setClass('font-bold'), sprintf($lang->welcome, $app->company->name)),
+                            p('登录后进入你的解决方案交付指挥台。')
+                        ),
                         dropdown
                         (
                             setID('langs'),

@@ -1,5 +1,13 @@
 #loginForm {width: 70%; max-width: 20rem; min-width: 10rem;}
 
+body {background: #eef3f7;}
+#loginPanel {border-radius: 12px; overflow: hidden; box-shadow: 0 18px 48px rgba(19,32,47,.16);}
+#logo-box, #loginLogo {background: linear-gradient(150deg, #102033, #0f766e) !important;}
+#login-logo, #login-ai {display: none;}
+#loginBox {padding: 24px;}
+#loginForm input {height: 42px; border-radius: 8px;}
+.form-actions > button {height: 44px; border-radius: 8px; background: #0f766e; border-color: #0f766e; font-weight: 800;}
+
 .affix.nav {z-index: 1051}
 #loginLogo .article{padding: 0 3rem 0 2rem;}
 
