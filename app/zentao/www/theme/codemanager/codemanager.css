@@ -540,6 +540,322 @@ form:has([name="customer"])::before {
   font-weight: 700;
 }
 
+.cm-form-delivery-group::before {
+  content: "解决方案交付字段";
+  display: block;
+  margin: 4px 0 12px;
+  padding: 9px 12px;
+  border: 1px solid var(--cm-line);
+  border-left: 4px solid var(--cm-primary);
+  border-radius: var(--cm-radius-xs);
+  background: var(--cm-primary-soft);
+  color: var(--cm-primary-strong);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cm-form-delivery-group:has([name="customer"])::before {
+  content: "解决方案交付字段：客户、合同、交付日期、SOW";
+}
+
+.cm-action-cluster {
+  gap: 8px;
+}
+
+.cm-empty-state,
+.dtable-empty-tip {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--cm-line-strong);
+  border-radius: var(--cm-radius-md);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(247,249,251,.92)),
+    repeating-linear-gradient(135deg, rgba(15,118,110,.06) 0 1px, transparent 1px 18px);
+  color: var(--cm-muted);
+}
+
+.cm-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--cm-radius-sm);
+}
+
+.cm-data-table {
+  min-width: 780px;
+}
+
+.cm-module-my #main > .container,
+.cm-module-project #main > .container,
+.cm-module-product #main > .container,
+.cm-module-story #main > .container,
+.cm-module-task #main > .container,
+.cm-module-bug #main > .container,
+.cm-module-doc #main > .container,
+.cm-module-group #main > .container,
+.cm-module-company #main > .container,
+.cm-module-admin #main > .container {
+  display: block;
+}
+
+.cm-module-my .block,
+.cm-module-my .panel,
+.cm-module-project #cards,
+.cm-module-project .project-card,
+.cm-module-product .panel,
+.cm-module-story .detail,
+.cm-module-task .detail,
+.cm-module-bug .detail {
+  overflow: hidden;
+}
+
+.cm-module-my .block .panel-heading,
+.cm-module-my .block-title,
+.cm-module-project .panel-heading,
+.cm-module-product .panel-heading,
+.cm-module-story .panel-heading,
+.cm-module-task .panel-heading,
+.cm-module-bug .panel-heading {
+  min-height: 44px;
+  align-items: center;
+}
+
+.cm-module-my .block .panel-heading::before,
+.cm-module-project .panel-heading::before,
+.cm-module-product .panel-heading::before,
+.cm-module-story .panel-heading::before,
+.cm-module-task .panel-heading::before,
+.cm-module-bug .panel-heading::before,
+.cm-module-doc .panel-heading::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--cm-primary);
+  vertical-align: middle;
+}
+
+.cm-module-project #cards {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cm-module-project #cards .border,
+.cm-module-project .project-card,
+.cm-module-project .open-url > div,
+.cm-module-project [class*="kanban"] .card {
+  border: 1px solid var(--cm-line) !important;
+  border-radius: var(--cm-radius-md) !important;
+  background: linear-gradient(180deg, #fff 0%, #fbfcfe 100%) !important;
+  box-shadow: var(--cm-shadow-sm);
+}
+
+.cm-module-project .open-url > div:hover,
+.cm-module-project .project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(19,32,47,.12);
+}
+
+.cm-module-project .project-name strong,
+.cm-module-product .product-name strong,
+.cm-module-story .detail-title,
+.cm-module-task .detail-title,
+.cm-module-bug .detail-title {
+  color: var(--cm-ink);
+  font-weight: 800;
+}
+
+.cm-module-project .kanban-desc {
+  color: var(--cm-muted) !important;
+  line-height: 1.55;
+}
+
+.cm-module-project .project-status,
+.cm-module-product .label,
+.cm-module-story .pri,
+.cm-module-task .pri,
+.cm-module-bug .severity {
+  height: 22px;
+  padding: 0 9px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cm-module-story .form-grid-panel,
+.cm-module-task .form-grid-panel,
+.cm-module-bug .form-grid-panel,
+.cm-module-project .form-grid-panel,
+.cm-module-product .form-grid-panel,
+.form-panel,
+.form-grid-panel {
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-radius-md);
+  background: rgba(255,255,255,.98);
+  box-shadow: var(--cm-shadow-sm);
+}
+
+.cm-module-story .form-grid,
+.cm-module-task .form-grid,
+.cm-module-bug .form-grid,
+.cm-module-project .form-grid,
+.cm-module-product .form-grid {
+  gap: 12px 16px;
+}
+
+.cm-module-story textarea,
+.cm-module-task textarea,
+.cm-module-bug textarea,
+.cm-module-doc textarea {
+  min-height: 132px;
+}
+
+.cm-module-story [name="title"],
+.cm-module-task [name="name"],
+.cm-module-bug [name="title"],
+.cm-module-doc [name="title"],
+.cm-module-project [name="name"],
+.cm-module-product [name="name"] {
+  font-weight: 700;
+}
+
+.cm-module-story .detail,
+.cm-module-task .detail,
+.cm-module-bug .detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 18px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cm-module-story .detail-main,
+.cm-module-task .detail-main,
+.cm-module-bug .detail-main,
+.cm-module-story .detail-side,
+.cm-module-task .detail-side,
+.cm-module-bug .detail-side {
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-radius-md);
+  background: #fff;
+  box-shadow: var(--cm-shadow-sm);
+}
+
+.cm-module-story .detail-section,
+.cm-module-task .detail-section,
+.cm-module-bug .detail-section,
+.detail-section {
+  border-bottom: 1px solid var(--cm-line);
+}
+
+.cm-module-story .table-data,
+.cm-module-task .table-data,
+.cm-module-bug .table-data {
+  font-size: 13px;
+}
+
+.cm-module-story .table-data th,
+.cm-module-task .table-data th,
+.cm-module-bug .table-data th {
+  color: var(--cm-muted);
+  font-weight: 800;
+  background: #f8fafc;
+}
+
+.cm-module-doc .doc-app {
+  min-height: calc(100vh - 126px);
+  border-radius: var(--cm-radius-md);
+  overflow: hidden;
+}
+
+.cm-module-doc .doc-menu,
+.cm-module-doc .doc-tree,
+.cm-module-doc .doc-sidebar,
+.cm-module-doc .side-col {
+  border-right: 1px solid var(--cm-line);
+  background: #f7f9fb !important;
+}
+
+.cm-module-doc .doc-content,
+.cm-module-doc .doc-main,
+.cm-module-doc .article-content {
+  max-width: none;
+  background: #fff;
+}
+
+.cm-module-doc .doc-title,
+.cm-module-doc .article-title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.cm-module-doc .doc-list .item,
+.cm-module-doc .doc-item,
+.cm-module-doc .file-list .item {
+  border: 1px solid transparent;
+  border-radius: var(--cm-radius-sm);
+}
+
+.cm-module-doc .doc-list .item:hover,
+.cm-module-doc .doc-item:hover,
+.cm-module-doc .file-list .item:hover {
+  border-color: var(--cm-line);
+  background: #fff;
+  box-shadow: var(--cm-shadow-sm);
+}
+
+.cm-module-group .main-table,
+.cm-module-company .main-table,
+.cm-module-admin .main-table,
+.cm-module-group .panel,
+.cm-module-company .panel,
+.cm-module-admin .panel {
+  border-radius: var(--cm-radius-md);
+}
+
+.cm-module-group .group-item,
+.cm-module-group .priv-panel,
+.cm-module-group .privs,
+.cm-module-admin .priv-panel {
+  border: 1px solid var(--cm-line);
+  border-radius: var(--cm-radius-sm);
+  background: #fff;
+}
+
+.cm-module-group .checkbox-primary,
+.cm-module-company .checkbox-primary,
+.cm-module-admin .checkbox-primary {
+  accent-color: var(--cm-primary);
+}
+
+.cm-module-bug .severity-1,
+.cm-module-bug .pri-1,
+.cm-module-story .pri-1,
+.cm-module-task .pri-1 {
+  background: var(--cm-danger-soft) !important;
+  color: var(--cm-danger) !important;
+}
+
+.cm-module-bug .severity-2,
+.cm-module-bug .pri-2,
+.cm-module-story .pri-2,
+.cm-module-task .pri-2 {
+  background: var(--cm-amber-soft) !important;
+  color: var(--cm-amber) !important;
+}
+
+.cm-module-bug .severity-3,
+.cm-module-bug .pri-3,
+.cm-module-story .pri-3,
+.cm-module-task .pri-3 {
+  background: var(--cm-blue-soft) !important;
+  color: var(--cm-blue) !important;
+}
+
 @media (max-width: 900px) {
   #mainHeader,
   #mainHeader .container {
@@ -570,6 +886,27 @@ form:has([name="customer"])::before {
   .table-responsive,
   .main-table {
     overflow-x: auto;
+  }
+
+  .cm-module-story .detail,
+  .cm-module-task .detail,
+  .cm-module-bug .detail {
+    display: block;
+  }
+
+  .cm-module-story .detail-side,
+  .cm-module-task .detail-side,
+  .cm-module-bug .detail-side {
+    margin-top: 14px;
+  }
+
+  .cm-module-project .open-url,
+  .cm-module-project .col.w-1\/4 {
+    width: 100% !important;
+  }
+
+  .cm-data-table {
+    min-width: 680px;
   }
 }
 
