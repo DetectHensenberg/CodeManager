@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeManager Frontend Concept</title>
+  <style>
+    :root {--ink:#13202f;--muted:#66758a;--bg:#eef3f7;--panel:#fff;--line:#d9e2ec;--green:#0f766e;--blue:#1d4f91;--amber:#b7791f;}
+    * {box-sizing:border-box}
+    body {margin:0;background:var(--bg);font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink)}
+    .shell {min-height:100vh;background:linear-gradient(120deg,rgba(15,118,110,.08),transparent 34%),repeating-linear-gradient(90deg,rgba(19,32,47,.035) 0 1px,transparent 1px 72px)}
+    .top {height:64px;background:linear-gradient(90deg,#102033,#15364a 48%,#0f766e);color:#fff;display:flex;align-items:center;padding:0 28px;gap:22px;box-shadow:0 16px 40px rgba(16,32,51,.18)}
+    .brand {font-weight:800;letter-spacing:.02em;border:1px solid rgba(255,255,255,.18);padding:7px 12px;border-radius:6px;background:rgba(255,255,255,.08)}
+    .nav {display:flex;gap:6px;flex:1}.nav span {padding:9px 12px;border-radius:6px;color:rgba(255,255,255,.82);font-size:13px}.nav .active {background:rgba(255,255,255,.13);color:#fff}
+    .avatar {width:32px;height:32px;border-radius:50%;background:#d9f2ee;color:#0f766e;display:grid;place-items:center;font-weight:800}
+    main {padding:24px;display:grid;grid-template-columns:260px 1fr 330px;gap:18px}
+    .panel {background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 12px rgba(19,32,47,.06)}
+    .side {padding:14px}.side h3,.panel h3 {margin:0 0 12px;font-size:14px}.side div {padding:10px;border-radius:6px;color:var(--muted)}.side .on {background:#d9f2ee;color:#0f766e;font-weight:700}
+    .hero {padding:20px}.hero h1 {margin:0;font-size:24px}.hero p {color:var(--muted);margin:8px 0 18px}.stats {display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat {padding:14px;border:1px solid var(--line);border-radius:8px;background:#fbfaf6}.stat b {display:block;font-size:24px}
+    .board {margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.lane {background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px}.card {background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px}.tag {font-size:11px;color:var(--green);background:#d9f2ee;padding:3px 7px;border-radius:999px}
+    .form {padding:18px}.field {margin-bottom:12px}.field label {display:block;font-size:12px;font-weight:800;margin-bottom:6px}.field div {height:36px;border:1px solid var(--line);border-radius:6px;background:#fff}.btn {height:38px;border-radius:6px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800}
+    @media(max-width:1000px){main{grid-template-columns:1fr}.stats,.board{grid-template-columns:1fr}.top{flex-wrap:wrap;height:auto;padding:10px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="top"><div class="brand">CodeManager</div><div class="nav"><span class="active">项目</span><span>产品</span><span>需求</span><span>Bug</span><span>文档</span><span>后台</span></div><div class="avatar">CM</div></div>
+  <main>
+    <aside class="panel side"><h3>交付导航</h3><div class="on">示例银行 POC</div><div>客户资料库</div><div>行业方案库</div><div>本周风险</div><div>成员权限</div></aside>
+    <section>
+      <div class="panel hero"><h1>解决方案交付指挥台</h1><p>围绕客户、项目、需求、Bug 和文档组织每天的交付推进。</p><div class="stats"><div class="stat"><b>12</b>活跃需求</div><div class="stat"><b>4</b>待处理 Bug</div><div class="stat"><b>7</b>交付文档</div><div class="stat"><b>2</b>本周风险</div></div></div>
+      <div class="board"><div class="lane"><b>待处理</b><div class="card"><span class="tag">Customer</span><p>补充 SOW 链接字段</p></div></div><div class="lane"><b>进行中</b><div class="card"><span class="tag">Delivery</span><p>BankX-POC 看板验收</p></div></div><div class="lane"><b>已完成</b><div class="card"><span class="tag">Docs</span><p>通用方案库目录整理</p></div></div></div>
+    </section>
+    <aside class="panel form"><h3>需求表单</h3><div class="field"><label>客户</label><div></div></div><div class="field"><label>合同编号</label><div></div></div><div class="field"><label>交付截止日</label><div></div></div><div class="field"><label>SOW 链接</label><div></div></div><div class="btn">提交需求</div></aside>
+  </main>
+</div>
+</body>
+</html>

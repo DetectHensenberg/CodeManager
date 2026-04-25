@@ -59,6 +59,12 @@ $commonLang   = array('zh-cn', 'zh-tw', 'en', 'fr', 'de');
 
   if(isset($pageCSS)) css::internal($pageCSS);
 
+  $codeManagerTheme = $webRoot . 'theme/codemanager/codemanager.css';
+  if(file_exists($this->app->getBasePath() . 'www/theme/codemanager/codemanager.css'))
+  {
+      css::import($codeManagerTheme . '?t=' . filemtime($this->app->getBasePath() . 'www/theme/codemanager/codemanager.css'));
+  }
+
   echo html::favicon($webRoot . 'favicon.ico');
   ?>
 <!--[if lt IE 10]>

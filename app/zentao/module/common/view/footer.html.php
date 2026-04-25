@@ -61,6 +61,7 @@ $(function(){ redirect('<?php echo $ranzhiURL?>', '<?php echo $config->sso->code
 <?php
 if($this->loadModel('cron')->runnable()) js::execute('startCron()');
 if(isset($pageJS)) js::execute($pageJS);  // load the js for current page.
+if(file_exists($this->app->getBasePath() . 'www/js/codemanager.js')) js::import($this->app->getWebRoot() . 'js/codemanager.js?t=' . filemtime($this->app->getBasePath() . 'www/js/codemanager.js'));
 
 /* Load hook files for current page. */
 $extensionRoot = $this->app->getExtensionRoot();
