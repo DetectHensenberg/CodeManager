@@ -1746,6 +1746,29 @@ body:not(.m-user-login) [style*="background-color: white"] {
   --cm-shadow-sm: var(--cm-lu-shadow);
   --cm-shadow-md: 0 24px 70px rgba(0,0,0,.35);
   --cm-focus: 0 0 0 3px rgba(98,87,255,.28);
+  --color-primary-50: #f0efff;
+  --color-primary-100: #dedbff;
+  --color-primary-200: #bdb8ff;
+  --color-primary-300: #9a92ff;
+  --color-primary-400: #766bff;
+  --color-primary-500: #6257ff;
+  --color-primary-600: #5046df;
+  --color-primary-700: #4139b6;
+  --color-primary-800: #332d8f;
+  --color-primary-900: #27236f;
+  --color-primary-50-rgb: 240,239,255;
+  --color-primary-100-rgb: 222,219,255;
+  --color-primary-200-rgb: 189,184,255;
+  --color-primary-300-rgb: 154,146,255;
+  --color-primary-400-rgb: 118,107,255;
+  --color-primary-500-rgb: 98,87,255;
+  --color-primary-600-rgb: 80,70,223;
+  --color-primary-700-rgb: 65,57,182;
+  --color-primary-800-rgb: 51,45,143;
+  --color-primary-900-rgb: 39,35,111;
+  --color-link: #6257ff;
+  --color-link-hover: #766bff;
+  --color-focus: rgba(98,87,255,.28);
 }
 
 html,
