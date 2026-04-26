@@ -1698,3 +1698,560 @@ body:not(.m-user-login) [style*="background-color: white"] {
     scroll-behavior: auto !important;
   }
 }
+
+/* CodeManager LucenAI Visual System. Final override layer from design/lucenai-dashboard. */
+:root {
+  --cm-lu-bg: #03040a;
+  --cm-lu-workspace: #111322;
+  --cm-lu-sidebar: #20243f;
+  --cm-lu-surface: #20233f;
+  --cm-lu-surface-2: #25294b;
+  --cm-lu-surface-3: #2b3056;
+  --cm-lu-header: #30345c;
+  --cm-lu-border: rgba(123,132,186,.24);
+  --cm-lu-border-strong: rgba(139,150,210,.34);
+  --cm-lu-text: #f8f8ff;
+  --cm-lu-body: #d9dbea;
+  --cm-lu-muted: #8c93ad;
+  --cm-lu-faint: #636b86;
+  --cm-lu-primary: #6257ff;
+  --cm-lu-primary-hover: #766bff;
+  --cm-lu-success: #00c99a;
+  --cm-lu-danger: #ff3472;
+  --cm-lu-warning: #ffad24;
+  --cm-lu-radius: 11px;
+  --cm-lu-radius-lg: 14px;
+  --cm-lu-shadow: inset 0 1px 0 rgba(255,255,255,.025), 0 18px 50px rgba(0,0,0,.25);
+
+  --cm-ink: var(--cm-lu-text);
+  --cm-muted: var(--cm-lu-muted);
+  --cm-subtle: var(--cm-lu-faint);
+  --cm-line: var(--cm-lu-border);
+  --cm-line-strong: var(--cm-lu-border-strong);
+  --cm-bg: var(--cm-lu-bg);
+  --cm-bg-2: var(--cm-lu-workspace);
+  --cm-panel: var(--cm-lu-surface);
+  --cm-panel-warm: var(--cm-lu-surface-2);
+  --cm-primary: var(--cm-lu-primary);
+  --cm-primary-strong: var(--cm-lu-primary-hover);
+  --cm-primary-soft: rgba(98,87,255,.18);
+  --cm-blue: #8d86ff;
+  --cm-blue-soft: rgba(98,87,255,.16);
+  --cm-amber: var(--cm-lu-warning);
+  --cm-amber-soft: rgba(255,173,36,.15);
+  --cm-danger: var(--cm-lu-danger);
+  --cm-danger-soft: rgba(255,52,114,.15);
+  --cm-success: var(--cm-lu-success);
+  --cm-success-soft: rgba(0,201,154,.14);
+  --cm-shadow-sm: var(--cm-lu-shadow);
+  --cm-shadow-md: 0 24px 70px rgba(0,0,0,.35);
+  --cm-focus: 0 0 0 3px rgba(98,87,255,.28);
+}
+
+html,
+body,
+body:not(.m-user-login),
+body:not(.m-user-login) #app,
+body:not(.m-user-login) .app,
+body:not(.m-user-login) .page,
+body:not(.m-user-login) .page-content,
+body:not(.m-user-login) .main-content,
+body:not(.m-user-login) #main,
+body:not(.m-user-login) #main > .container {
+  background: var(--cm-lu-bg) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+body::before {
+  background:
+    radial-gradient(680px 280px at 21% -2%, rgba(160,54,46,.58), transparent 72%),
+    radial-gradient(850px 310px at 56% -2%, rgba(130,103,255,.52), transparent 74%),
+    radial-gradient(760px 280px at 91% 8%, rgba(38,52,183,.48), transparent 72%),
+    linear-gradient(180deg, #050509 0%, #03040a 36%, #03040a 100%) !important;
+  opacity: .9;
+}
+
+body:not(.m-user-login) #main > .container,
+body:not(.m-user-login) .main-row,
+body:not(.m-user-login) .main-col,
+body:not(.m-user-login) .content,
+body:not(.m-user-login) .content-body,
+body:not(.m-user-login) .dashboard,
+body:not(.m-user-login) .body-wrapper {
+  background: transparent !important;
+}
+
+#mainHeader {
+  background: rgba(17,19,34,.94) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  box-shadow: none !important;
+}
+
+#mainHeader .container,
+#subHeader .container {
+  background: transparent !important;
+}
+
+#heading::after {
+  border-color: var(--cm-lu-border) !important;
+  background: var(--cm-lu-surface-2) !important;
+  color: var(--cm-lu-text) !important;
+}
+
+#navbar .nav > li > a,
+#userNav > li > a,
+#userNav > li > .dropdown-toggle {
+  color: var(--cm-lu-body) !important;
+}
+
+#navbar .nav > li > a:hover,
+#navbar .nav > li.active > a {
+  background: #455f92 !important;
+  color: #fff !important;
+}
+
+#subHeader {
+  background: rgba(17,19,34,.92) !important;
+  border-bottom-color: var(--cm-lu-border) !important;
+  box-shadow: none !important;
+}
+
+#subNavbar .nav > li > a,
+#subNavbar a,
+#pageNav .btn,
+#pageActions .btn {
+  color: var(--cm-lu-muted) !important;
+}
+
+#subNavbar .nav > li.active > a,
+#subNavbar .nav > li > a:hover,
+#pageNav .btn:hover {
+  background: rgba(98,87,255,.18) !important;
+  color: var(--cm-lu-text) !important;
+}
+
+body:not(.m-user-login) .side,
+body:not(.m-user-login) .sidebar,
+body:not(.m-user-login) .side-col,
+body:not(.m-user-login) .leftmenu,
+body:not(.m-user-login) .side .leftmenu,
+body:not(.m-user-login) .app-sidebar,
+body:not(.m-user-login) [class*="sidebar"] {
+  background: var(--cm-lu-sidebar) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+body:not(.m-user-login) .side a,
+body:not(.m-user-login) .sidebar a,
+body:not(.m-user-login) .leftmenu a,
+body:not(.m-user-login) .side .nav > li > a,
+body:not(.m-user-login) .sidebar .nav > li > a,
+body:not(.m-user-login) .app-sidebar a {
+  color: #c1c5d4 !important;
+}
+
+body:not(.m-user-login) .side .nav > li.active > a,
+body:not(.m-user-login) .sidebar .nav > li.active > a,
+body:not(.m-user-login) .leftmenu .nav > li.active > a,
+body:not(.m-user-login) .app-sidebar .active,
+body:not(.m-user-login) [class*="sidebar"] .active {
+  background: #455f92 !important;
+  color: #fff !important;
+  border-radius: var(--cm-lu-radius) !important;
+}
+
+.main-table,
+.panel,
+.modal-content,
+.cell,
+.main-col,
+.doc-app,
+.doc-content,
+.doc-menu,
+.detail,
+.kanban-lane,
+.block,
+.module-block,
+.form-panel,
+.form-grid-panel,
+.table-wrapper,
+.dtable,
+.list,
+.card,
+.box,
+.cm-module-story .detail-main,
+.cm-module-task .detail-main,
+.cm-module-bug .detail-main,
+.cm-module-story .detail-side,
+.cm-module-task .detail-side,
+.cm-module-bug .detail-side,
+.cm-module-group .priv-list,
+.cm-module-group .privs,
+.cm-module-group .priv-panel,
+.cm-module-group .group-priv,
+.cm-module-group .module-priv,
+.cm-module-group #privList,
+.cm-module-company .user-list,
+.cm-module-company .dept-list,
+.cm-module-admin .admin-list,
+.cm-module-admin .priv-list,
+.cm-module-admin .privs,
+.cm-module-admin .priv-panel {
+  background: var(--cm-lu-surface) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius) !important;
+  color: var(--cm-lu-body) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
+}
+
+body:not(.m-user-login) .panel > .panel-body,
+body:not(.m-user-login) .block > .panel-body,
+body:not(.m-user-login) .block > .block-content,
+body:not(.m-user-login) .card > .card-body,
+body:not(.m-user-login) .cell > .cell-body,
+body:not(.m-user-login) .main-table > .table,
+body:not(.m-user-login) .main-table > .table-responsive,
+body:not(.m-user-login) .main-table > .table-footer,
+body:not(.m-user-login) .table-footer,
+body:not(.m-user-login) .panel-footer,
+body:not(.m-user-login) .modal-body,
+body:not(.m-user-login) .modal-footer,
+body:not(.m-user-login) .panel-content,
+body:not(.m-user-login) .block-content,
+body:not(.m-user-login) .card-body,
+body:not(.m-user-login) .cell-body,
+body:not(.m-user-login) .dashboard-panel,
+body:not(.m-user-login) .dashboard-widget {
+  background: var(--cm-lu-surface) !important;
+  color: var(--cm-lu-body) !important;
+  border-color: var(--cm-lu-border) !important;
+}
+
+.main-table > .table-header,
+.panel-heading,
+.modal-header,
+.detail-title,
+.main-header,
+.table-header,
+.doc-title {
+  background: var(--cm-lu-surface) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  color: var(--cm-lu-text) !important;
+  font-weight: 800 !important;
+}
+
+h1, h2, h3, h4,
+.title,
+.heading,
+.panel-title,
+.block-title,
+.detail-title,
+.cm-module-project .project-name strong,
+.cm-module-product .product-name strong,
+.cm-module-story .detail-title,
+.cm-module-task .detail-title,
+.cm-module-bug .detail-title {
+  color: var(--cm-lu-text) !important;
+  letter-spacing: -.02em;
+}
+
+a,
+.btn-link,
+.btn.text-primary,
+.table a,
+.dtable a {
+  color: var(--cm-lu-primary) !important;
+}
+
+a:hover,
+a:focus {
+  color: var(--cm-lu-primary-hover) !important;
+}
+
+.text-muted,
+.muted,
+.help-block,
+.secondary,
+small,
+body:not(.m-user-login) .text-muted,
+body:not(.m-user-login) .muted,
+body:not(.m-user-login) .secondary,
+body:not(.m-user-login) small,
+.cm-module-project .kanban-desc,
+.cm-module-doc .files-grid .file-info {
+  color: var(--cm-lu-muted) !important;
+}
+
+.table,
+.table-data,
+.dtable,
+.dtable-cell,
+.table > tbody > tr > td {
+  background: transparent !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+.table > thead > tr > th,
+.dtable-header,
+body:not(.m-user-login) .table th,
+body:not(.m-user-login) .dtable-header,
+.cm-module-story .table-data th,
+.cm-module-task .table-data th,
+.cm-module-bug .table-data th {
+  background: var(--cm-lu-header) !important;
+  color: var(--cm-lu-text) !important;
+  border-color: var(--cm-lu-border) !important;
+  font-weight: 800 !important;
+}
+
+.table > tbody > tr:hover > td,
+.dtable-row:hover,
+.list-row:hover,
+body:not(.m-user-login) .table tr:hover td {
+  background: rgba(98,87,255,.10) !important;
+}
+
+input,
+select,
+textarea,
+.form-control,
+.picker,
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices,
+.dropdown-menu,
+.popover,
+.tooltip-inner {
+  background: var(--cm-lu-surface-3) !important;
+  border-color: var(--cm-lu-border-strong) !important;
+  color: var(--cm-lu-text) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cm-lu-muted) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.chosen-container-active .chosen-single,
+.chosen-container-active .chosen-choices {
+  border-color: var(--cm-lu-primary) !important;
+  box-shadow: 0 0 0 3px rgba(98,87,255,.28) !important;
+}
+
+label,
+.form-label,
+.control-label,
+.dropdown-menu > li > a,
+.cm-module-group .checkbox,
+.cm-module-group label.checkbox,
+.cm-module-admin .checkbox,
+.cm-module-admin label.checkbox {
+  color: var(--cm-lu-body) !important;
+}
+
+.btn-primary,
+.btn.primary,
+.form-actions .primary,
+.btn.btn-primary,
+.table-actions .btn,
+.table-footer .checked + div .btn,
+body:not(.m-user-login) .btn.primary,
+body:not(.m-user-login) .btn-primary,
+body:not(.m-user-login) button.primary {
+  min-height: 38px;
+  background: var(--cm-lu-primary) !important;
+  border-color: var(--cm-lu-primary) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 14px 32px rgba(98,87,255,.22) !important;
+}
+
+.btn-primary:hover,
+.btn.primary:hover,
+.form-actions .primary:hover,
+.table-actions .btn:hover,
+body:not(.m-user-login) .btn.primary:hover,
+body:not(.m-user-login) .btn-primary:hover,
+body:not(.m-user-login) button.primary:hover {
+  background: var(--cm-lu-primary-hover) !important;
+  border-color: var(--cm-lu-primary-hover) !important;
+  color: #fff !important;
+}
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"] {
+  border-radius: 8px !important;
+}
+
+.btn:not(.btn-primary):not(.primary),
+button:not(.primary) {
+  background-color: var(--cm-lu-surface-3);
+  border-color: var(--cm-lu-border);
+  color: var(--cm-lu-body);
+}
+
+.label,
+.status,
+.label-status,
+.pri,
+.severity,
+.tag,
+.badge {
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+}
+
+.label-success,
+.status-done,
+.status-closed,
+.status-resolved {
+  background: rgba(0,201,154,.14) !important;
+  color: var(--cm-lu-success) !important;
+}
+
+.label-warning,
+.status-wait,
+.status-doing,
+.status-active {
+  background: rgba(255,173,36,.15) !important;
+  color: var(--cm-lu-warning) !important;
+}
+
+.label-danger,
+.status-blocked,
+.status-suspended,
+.status-canceled {
+  background: rgba(255,52,114,.15) !important;
+  color: var(--cm-lu-danger) !important;
+}
+
+.kanban-lane,
+.kanban-col,
+.kanban-column,
+.kanban-item,
+.kanban-card,
+.cm-module-project #cards .border,
+.cm-module-project .project-card,
+.cm-module-project .open-url > div,
+.cm-module-project [class*="kanban"] .card {
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+.doc-menu,
+.side-col,
+.cm-module-doc .doc-menu,
+.cm-module-doc .doc-tree,
+.cm-module-doc .doc-sidebar,
+.cm-module-doc .side-col {
+  background: var(--cm-lu-sidebar) !important;
+  border-color: var(--cm-lu-border) !important;
+}
+
+.doc-app,
+.doc-content,
+.cm-module-doc .doc-content,
+.cm-module-doc .doc-main,
+.cm-module-doc .article-content,
+.cm-module-doc .doc-form .panel-body {
+  background: var(--cm-lu-surface) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+.cm-module-doc .article-content,
+.cm-module-doc .doc-content,
+.cm-module-doc .article-content p,
+.cm-module-doc .doc-content p,
+.cm-module-doc .files-grid .file-name {
+  color: var(--cm-lu-body) !important;
+}
+
+.cm-module-doc .article-content code,
+.cm-module-doc .doc-content code {
+  background: #171a31 !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-primary-hover) !important;
+}
+
+body:not(.m-user-login) #footer,
+body:not(.m-user-login) .footer,
+body:not(.m-user-login) .app-footer,
+body:not(.m-user-login) .app-bottom,
+body:not(.m-user-login) .bottom,
+body:not(.m-user-login) .bottom-bar,
+body:not(.m-user-login) .fixed-bottom,
+body:not(.m-user-login) .toolbar-bottom {
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-muted) !important;
+  box-shadow: 0 -10px 28px rgba(0,0,0,.32) !important;
+}
+
+body:not(.m-user-login) .guide,
+body:not(.m-user-login) .guide-panel,
+body:not(.m-user-login) .help,
+body:not(.m-user-login) .help-block-wrap,
+body:not(.m-user-login) .workflow,
+body:not(.m-user-login) .flow,
+body:not(.m-user-login) .flowchart,
+body:not(.m-user-login) .steps,
+body:not(.m-user-login) .step,
+body:not(.m-user-login) .step-item {
+  background: transparent !important;
+  color: var(--cm-lu-body) !important;
+}
+
+body:not(.m-user-login) .guide .item,
+body:not(.m-user-login) .help .item,
+body:not(.m-user-login) .flow .item,
+body:not(.m-user-login) .flowchart .item,
+body:not(.m-user-login) .steps .step,
+body:not(.m-user-login) .step-item,
+body:not(.m-user-login) .arrow,
+body:not(.m-user-login) .flow-arrow,
+body:not(.m-user-login) [class*="arrow"] {
+  background: var(--cm-lu-surface-3) !important;
+  border-color: var(--cm-lu-border-strong) !important;
+  color: var(--cm-lu-body) !important;
+}
+
+body:not(.m-user-login) .guide .active,
+body:not(.m-user-login) .help .active,
+body:not(.m-user-login) .flow .active,
+body:not(.m-user-login) .flowchart .active,
+body:not(.m-user-login) .steps .active,
+body:not(.m-user-login) .step.active {
+  background: #455f92 !important;
+  border-color: #5e72aa !important;
+  color: #fff !important;
+}
+
+body.m-user-login,
+body.m-user-login #main,
+body.m-user-login .container {
+  background:
+    radial-gradient(680px 280px at 21% -2%, rgba(160,54,46,.58), transparent 72%),
+    radial-gradient(850px 310px at 56% -2%, rgba(130,103,255,.52), transparent 74%),
+    radial-gradient(760px 280px at 91% 8%, rgba(38,52,183,.48), transparent 72%),
+    #03040a !important;
+}
+
+body:not(.m-user-login) [style*="background: #fff"],
+body:not(.m-user-login) [style*="background:#fff"],
+body:not(.m-user-login) [style*="background-color: #fff"],
+body:not(.m-user-login) [style*="background-color:#fff"],
+body:not(.m-user-login) [style*="background: white"],
+body:not(.m-user-login) [style*="background-color: white"] {
+  background: var(--cm-lu-surface) !important;
+  color: var(--cm-lu-body) !important;
+}
