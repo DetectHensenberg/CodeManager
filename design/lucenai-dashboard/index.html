@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LucenAI Dashboard Reference</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="reference-stage">
+    <section class="dashboard-shell" aria-label="LucenAI dashboard recreation">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"><span></span></span>
+          <strong>LucenAI</strong>
+        </div>
+
+        <nav class="nav-section" aria-label="Pages">
+          <div class="section-title"><span>PAGES</span><button type="button">+</button></div>
+          <a class="nav-item active" href="#"><span class="icon pie"></span>Dashboard</a>
+          <a class="nav-item" href="#"><span class="icon bars"></span>Analytics <span class="pill new">new</span></a>
+          <a class="nav-item" href="#"><span class="icon cube"></span>E-commerce <span class="chev">⌄</span></a>
+        </nav>
+
+        <nav class="nav-section" aria-label="Apps">
+          <div class="section-title"><span>APPS</span><button type="button">+</button></div>
+          <a class="nav-item" href="#"><span class="icon wallet"></span>Finance <span class="chev">⌄</span></a>
+          <a class="nav-item" href="#"><span class="icon chat"></span>Messages <span class="pill count">+16</span></a>
+          <a class="nav-item" href="#"><span class="icon cal"></span>Calendar</a>
+          <a class="nav-item" href="#"><span class="icon task"></span>Tasks</a>
+        </nav>
+
+        <nav class="nav-section settings" aria-label="Settings">
+          <div class="section-title"><span>SETTINGS</span></div>
+          <a class="nav-item" href="#"><span class="icon gear"></span>My Profile</a>
+        </nav>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <label class="search">
+            <span></span>
+            <input value="" placeholder="Search..." aria-label="Search">
+          </label>
+          <div class="account-tools">
+            <button class="round notify" type="button" aria-label="Notifications"></button>
+            <button class="round info" type="button" aria-label="Info">!</button>
+            <span class="divider"></span>
+            <span class="avatar"></span>
+            <strong>Erik Brown</strong>
+            <span class="chev">⌄</span>
+          </div>
+        </header>
+
+        <div class="breadcrumbs">Home <span>›</span> Dashboard</div>
+
+        <section class="page-heading">
+          <h1>Dashboard</h1>
+          <div class="actions">
+            <button class="primary" type="button"><span>+</span> Add Product</button>
+            <button class="square" type="button" aria-label="Analytics">⌁</button>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="Metrics">
+          <article class="metric-card">
+            <div class="metric-top"><span>TOTAL EARNINGS</span><b class="up">+16.45%</b></div>
+            <div class="metric-value">$589.98k</div>
+            <a href="#">View net earnings</a>
+            <span class="metric-icon money">$</span>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>ORDERS</span><b class="down">-3,75%</b></div>
+            <div class="metric-value">+36</div>
+            <a href="#">View all orders</a>
+            <span class="metric-icon bag"></span>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>CUSTOMERS</span><b class="up">+340</b></div>
+            <div class="metric-value">123,400</div>
+            <a href="#">See details</a>
+            <span class="metric-icon user"></span>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span>BALANCE</span><b class="muted">+0.00%</b></div>
+            <div class="metric-value">$245,789</div>
+            <a href="#">Withdraw money</a>
+            <span class="metric-icon wallet-small"></span>
+          </article>
+        </section>
+
+        <section class="analytics-grid">
+          <article class="panel sales">
+            <header class="panel-head">
+              <h2>Sales Analytics</h2>
+              <div class="sort">Sort By <button type="button">Weekly <span>⌄</span></button></div>
+            </header>
+            <div class="sales-stats">
+              <strong>$1,760</strong><span>Income</span>
+              <strong>345</strong><span>Sales</span>
+              <strong>3,5%</strong><span>Conversation Ratio</span>
+            </div>
+            <div class="chart">
+              <svg viewBox="0 0 760 360" role="img" aria-label="Sales chart">
+                <g class="axis">
+                  <path d="M72 44 L72 315 L720 315"/>
+                  <text x="36" y="55">1000</text><text x="45" y="126">750</text><text x="45" y="197">500</text><text x="45" y="268">250</text><text x="55" y="317">0</text>
+                </g>
+                <g class="bars">
+                  <rect x="150" y="238" width="38" height="77"/><rect x="260" y="190" width="38" height="125"/>
+                  <rect x="370" y="202" width="38" height="113"/><rect x="480" y="255" width="38" height="60"/>
+                  <rect x="590" y="202" width="38" height="113"/><rect x="700" y="140" width="38" height="175"/>
+                </g>
+                <path class="line gray" d="M72 230 C120 230 128 200 154 202 C184 205 184 140 210 164 C240 190 238 150 270 155 C304 164 310 112 342 120 C378 132 370 82 410 96 C456 110 450 48 494 66 C538 82 526 102 558 92 C590 84 588 115 620 100 C650 82 660 128 686 104 C704 88 718 128 728 94"/>
+                <path class="line gold" d="M120 315 C140 210 168 182 198 244 C224 300 264 188 318 165 C366 147 382 260 432 270 C488 280 510 138 578 134 C638 134 650 272 700 250 C728 238 716 160 738 56"/>
+                <g class="labels"><text x="154" y="338">Mo</text><text x="266" y="338">Tu</text><text x="376" y="338">We</text><text x="488" y="338">Th</text><text x="598" y="338">Fr</text><text x="708" y="338">Sa</text></g>
+              </svg>
+            </div>
+            <div class="legend"><span class="dot purple"></span>Sales <span class="dot gold"></span>Customers <span class="dot pale"></span>Orders</div>
+          </article>
+
+          <article class="panel map-panel">
+            <header class="panel-head">
+              <h2>Implementation of the monthly plan</h2>
+              <button class="download" type="button" aria-label="Download">↓</button>
+            </header>
+            <div class="map-art">
+              <svg viewBox="0 0 520 330" role="img" aria-label="Map placeholder">
+                <path d="M118 86 L178 58 L252 68 L300 42 L354 68 L414 72 L464 128 L430 208 L368 246 L302 232 L250 282 L182 246 L126 250 L74 190 Z"/>
+                <path d="M178 58 L192 132 L126 250 M252 68 L244 154 L182 246 M300 42 L312 142 L368 246 M354 68 L348 156 L430 208 M74 190 L244 154 L464 128 M126 250 L312 142"/>
+                <circle cx="164" cy="220" r="6"/><circle cx="226" cy="104" r="6"/><circle cx="332" cy="140" r="6"/><circle cx="292" cy="248" r="6"/><circle cx="112" cy="178" r="5"/>
+                <text x="176" y="224">Lviv</text><text x="238" y="108">Rivne</text><text x="344" y="144">Kyiv</text><text x="304" y="252">Odesa</text><text x="124" y="182">Uzhhorod</text>
+              </svg>
+            </div>
+            <div class="legend map-legend"><span class="dot purple"></span>89% <span class="dot green"></span>60% <span class="dot gray"></span>48% <span class="dot pink"></span>30%</div>
+          </article>
+        </section>
+
+        <section class="table-panel">
+          <header class="panel-head">
+            <h2>Information by stores (30)</h2>
+            <div class="sort">Sort By <button type="button">Prosress <span>⌄</span></button></div>
+          </header>
+          <table>
+            <thead><tr><th><span class="check"></span></th><th>LOCATION</th><th>DIRECTOR</th><th>PROGRESS</th><th>DEADLINE</th><th>CONVERSION</th><th>VISITING</th><th>STATUS</th></tr></thead>
+            <tbody>
+              <tr><td><span class="check"></span></td><td><a>Lviv Forum</a></td><td><span class="person p1"></span>Nataly Chaplack</td><td>84% <span class="bar"><i style="width:84%"></i></span></td><td>31/04/2022</td><td>78,9%</td><td>1289 people</td><td><span class="status ok">Inprogress</span></td></tr>
+              <tr><td><span class="check"></span></td><td><a>Blockbuster Mall</a></td><td><span class="person p2"></span>Yulian Yalovenko</td><td>83,6% <span class="bar"><i style="width:84%"></i></span></td><td>31/04/2022</td><td>65,9%</td><td>1400 people</td><td><span class="status ok">Inprogress</span></td></tr>
+              <tr><td><span class="check"></span></td><td><a>Lavina Mall Kyiv</a></td><td><span class="person p3"></span>Apanovych Lubomudr</td><td>83,4% <span class="bar"><i style="width:83%"></i></span></td><td>31/04/2022</td><td>78,9%</td><td>1490 people</td><td><span class="status ok">Inprogress</span></td></tr>
+              <tr><td><span class="check"></span></td><td><a>River Mall Kyiv</a></td><td><span class="person p4"></span>Mary Croostina</td><td>83% <span class="bar"><i style="width:83%"></i></span></td><td>31/04/2022</td><td>90,9%</td><td>12 500 people</td><td><span class="status warn">Not enough</span></td></tr>
+              <tr><td><span class="check"></span></td><td><a>King Cross Leopolis</a></td><td><span class="person p2"></span>Shchastislav Yurchuk</td><td>82,5% <span class="bar"><i style="width:82%"></i></span></td><td>31/04/2022</td><td>78,6%</td><td>678 people</td><td><span class="status ok">Inprogress</span></td></tr>
+              <tr><td><span class="check"></span></td><td><a>Hollywood Mall</a></td><td><span class="person p1"></span>Nataly Chaplack</td><td>82% <span class="bar"><i style="width:82%"></i></span></td><td>31/04/2022</td><td>78,9%</td><td>1289 people</td><td><span class="status warn">Not enough</span></td></tr>
+            </tbody>
+          </table>
+          <footer class="pagination"><span>Rows per page: 10</span><span>1-10 of 30</span><button disabled>← Previous</button><button>Next →</button></footer>
+        </section>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
