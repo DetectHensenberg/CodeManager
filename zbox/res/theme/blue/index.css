@@ -5,7 +5,7 @@ QPushButton::menu-indicator{
 
 /* 程序主功能按钮样式定义 ---------------------------------------------- */
 QPushButton[forUse='installBtn'] {
-    color:#4461c2;
+    color:#0f766e;
     font-size:18px;
     font-weight:500;
     padding: 2px 10px;
@@ -16,13 +16,13 @@ QPushButton[forUse='installBtn'] {
 }
 
 QPushButton[forUse='installBtn']:hover{
-    border: 1px solid #bfceff;
-    background-color:#bfceff;
+    border: 1px solid #d9f2ee;
+    background-color:#d9f2ee;
 }
 
 QPushButton[forUse='installBtn']:pressed{
-    border: 1px solid #bfceff;
-    background-color:#bfceff;
+    border: 1px solid #d9f2ee;
+    background-color:#d9f2ee;
 }
 
 QPushButton[forUse='uninstallBtn'] {
@@ -30,25 +30,25 @@ QPushButton[forUse='uninstallBtn'] {
     font-size:18px;
     font-weight:500;
     padding: 2px 10px;
-    background-color:#4461c2;
-    border: 1px solid #4461c2;
+    background-color:#0f766e;
+    border: 1px solid #0f766e;
     border-radius: 15px;
     min-width: 96px;
 }
 
 QPushButton[forUse='uninstallBtn']:hover{
-    border: 1px solid #4461c2;
-    background-color:#4461c2;
+    border: 1px solid #0f766e;
+    background-color:#0f766e;
 }
 
 QPushButton[forUse='uninstallBtn']:pressed{
-    border: 1px solid #4461c2;
-    background-color:#4461c2;
+    border: 1px solid #0f766e;
+    background-color:#0f766e;
 }
 
 /* 程序次要功能按钮样式定义 ------------------------------------------- */
 QWidget[forUse='wrapper']{
-    background-color:#6085ff;
+    background-color:#15364a;
     border:1px solid rgba(255,255,255,50%);
     border-radius: 10px;
 }
@@ -96,11 +96,11 @@ QWidget[forUse='service'] QLabel[forUse='title']{
 }
 
 QLabel[forColor='success']{
-    color:#52ffa4;
+    color:#d9f2ee;
 }
 
 QLabel[forColor='warning']{
-    color: #ffe44b ;
+    color: #f6c453 ;
 }
 
 QLabel[iconSize='normal']{
@@ -161,12 +161,12 @@ QPushButton[forUse='serviceMore']{
 
 /* 日志tab相关样式定义 ------------------------------------------------- */
 QWidget[forUse='tabContainer'] {
-    border-bottom:1px solid #4461c2;
+    border-bottom:1px solid #0f766e;
     background-color:transparent;
 }
 
 QPushButton[forUse='tabBtn'] {
-    color:#4461c2;
+    color:#0f766e;
     font-size:12px;
     font-weight:500;
     margin:0px;
@@ -175,20 +175,20 @@ QPushButton[forUse='tabBtn'] {
 }
 
 QPushButton[forUse='tabBtn']:hover{
-    color:#2975fe;
+    color:#0b5f59;
 }
 
 QPushButton[forUse='tabBtn']:pressed{
-    color:#2975fe;
+    color:#0b5f59;
 }
 
 QPushButton[forUse='tabBtn']:checked{
-    color:#2975fe;
+    color:#0b5f59;
 }
 
 /* 日志内容相关样式定义 ------------------------------------------------- */
 QTextEdit{
-    color: #56689b;
+    color: #405066;
     font-size: 12px;
     border:0px solid #ffffff;
     background-color:transparent;
@@ -200,12 +200,12 @@ QScrollBar:vertical{
     margin:0px,0px,0px,0px;
     padding-top:0px;
     padding-bottom:0px;
-    background-color: #c7d4ff;
+    background-color: #d9e2ec;
     border-radius: 5px;
 }
 QScrollBar::handle:vertical{
     min-height:10;
-    background-color: #8fa9ff;
+    background-color: #8abdb8;
     border-radius: 5px;
 }
 

@@ -18,16 +18,16 @@ common:
   errorPassword: 密码强度弱(6-12位，大写字母 + 小写字母 + 数字)。
 # 窗体
 window:
-  product: 禅道
-  title: 基于Qt构建的禅道集成运行环境
+  product: CodeManager
+  title: CodeManager 本地交付工作台
   closeLog: 收起日志
   openLog: 打开日志
-  notInstalled: 启动禅道
+  notInstalled: 启动 CodeManager
   installing: 正在启动...
   installed:
-      visit: 访问禅道
-      stop: 停止禅道
-  startLog: 面板日志
+      visit: 访问 CodeManager
+      stop: 停止 CodeManager
+  startLog: 运行日志
   askPasswordTitle: 密码修改建议
   askPasswordDesc: 您数据库当前密码强度偏弱，存在风险，建议修改。单击取消继续安装。
   errorWinTitle: 确认
@@ -53,9 +53,9 @@ tray:
   quit: 退出
 # 基础信息
 basics:
-  title: 禅道集成运⾏环境 ${0}
+  title: CodeManager 本地运行环境 ${0}
   serviceVersion: "${0} 版本：${1}"
-  productVersion: 禅道版本 ${0}
+  productVersion: CodeManager 版本 ${0}
   currentDir: "当前目录：${0}"
 # 安装消息
 message:
@@ -141,9 +141,9 @@ serviceStatus:
   unknown: 未安装
 
 theme:
-  blue: 蓝色
-  green: 绿色
-  pink: 粉色
+  blue: 指挥台蓝
+  green: 交付青
+  pink: 重点琥珀
 
 menu:
   viewService: 查看服务

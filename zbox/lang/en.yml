@@ -18,16 +18,16 @@ common:
   errorPassword: Weak password(6-12 bits，Capital letter + Lowercase letters + Number).
 # 窗体
 window:
-  product: ZenTao
-  title: Qt-based ZenTao Integrated Environment
+  product: CodeManager
+  title: CodeManager Local Delivery Workbench
   closeLog: Hide Log
   openLog: Show Log
-  notInstalled: One touch start
+  notInstalled: Start CodeManager
   installing: Starting...
   installed:
-      visit: Visit ZenTao
-      stop: Stop ZenTao
-  startLog: Panel Log
+      visit: Visit CodeManager
+      stop: Stop CodeManager
+  startLog: Runtime Log
   askPasswordTitle: Password Changed Suggestions
   askPasswordDesc: The current password strength of your database is weak and risky. It is recommended to modify it. Click Cancel to continue the installation.
   errorWinTitle: Confirm
@@ -53,9 +53,9 @@ tray:
   quit: Quit
 # 基础信息
 basics:
-  title: ZenTao Integrated Environment ${0}
+  title: CodeManager Local Runtime ${0}
   serviceVersion: "${0} Version：${1}"
-  productVersion: ZenTao Version ${0}
+  productVersion: CodeManager Version ${0}
   currentDir: "Current Dir：${0}"
 # 安装消息
 message:
@@ -141,9 +141,9 @@ serviceStatus:
   unknown: Uninstall
 
 theme:
-  blue: Blue
-  green: Green
-  pink: Pink
+  blue: Command Blue
+  green: Delivery Teal
+  pink: Amber Focus
 
 menu:
   viewService: View Service
