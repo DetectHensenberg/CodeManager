@@ -1073,6 +1073,167 @@ form:has([name="customer"])::before {
   background: #fff;
 }
 
+body:not(.m-user-login),
+.codemanager-ui body {
+  --color-primary-50: #eef7f5;
+  --color-primary-100: #d9f2ee;
+  --color-primary-200: #b7e4dd;
+  --color-primary-300: #8ad1c7;
+  --color-primary-400: #44a79e;
+  --color-primary-500: #0f766e;
+  --color-primary-600: #0b5f59;
+  --color-primary-700: #084c47;
+  --color-primary-800: #063d39;
+  --color-primary-900: #102033;
+  --color-primary-50-rgb: 238,247,245;
+  --color-primary-100-rgb: 217,242,238;
+  --color-primary-200-rgb: 183,228,221;
+  --color-primary-300-rgb: 138,209,199;
+  --color-primary-400-rgb: 68,167,158;
+  --color-primary-500-rgb: 15,118,110;
+  --color-primary-600-rgb: 11,95,89;
+  --color-primary-700-rgb: 8,76,71;
+  --color-primary-800-rgb: 6,61,57;
+  --color-primary-900-rgb: 16,32,51;
+  --color-link: #0b5f59;
+  --color-link-hover: #0f766e;
+  --color-focus: #b7e4dd;
+  --radius: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+#app,
+.app,
+.app-content,
+.page,
+.page-content,
+.main,
+.main-content,
+.body-wrapper,
+.container-fluid {
+  background-color: var(--cm-bg) !important;
+}
+
+.app-header,
+.main-menu,
+.topbar,
+.navbar,
+.nav-primary,
+.main-nav,
+[class*="main-header"],
+[class*="app-header"] {
+  border-color: rgba(196,209,223,.88) !important;
+}
+
+.app-header,
+.main-menu,
+.topbar,
+[class*="main-header"] {
+  background: linear-gradient(90deg, #102033 0%, #15364a 52%, #0f766e 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 28px rgba(16,32,51,.16) !important;
+}
+
+.app-header a,
+.main-menu a,
+.topbar a,
+[class*="main-header"] a {
+  color: rgba(255,255,255,.86) !important;
+}
+
+.app-header a:hover,
+.main-menu a:hover,
+.topbar a:hover,
+[class*="main-header"] a:hover {
+  color: #fff !important;
+  background-color: rgba(255,255,255,.10) !important;
+}
+
+.sidebar,
+.side,
+.side-col,
+.leftmenu,
+.app-sidebar,
+[class*="sidebar"],
+[class*="side-nav"] {
+  background: #f8fafc !important;
+  border-color: var(--cm-line) !important;
+}
+
+.sidebar .active,
+.side .active,
+.side-col .active,
+.leftmenu .active,
+.app-sidebar .active,
+[class*="sidebar"] .active {
+  background: var(--cm-primary-soft) !important;
+  color: var(--cm-primary-strong) !important;
+}
+
+.panel,
+.card,
+.cell,
+.box,
+.table-wrapper,
+.form-panel,
+.dtable,
+.list,
+.detail,
+.modal-content,
+[class*="panel"],
+[class*="card"],
+[class*="table"] {
+  border-color: rgba(196,209,223,.88) !important;
+}
+
+.panel,
+.card,
+.cell,
+.box,
+.table-wrapper,
+.form-panel,
+.dtable,
+.list,
+.detail,
+.modal-content {
+  border-radius: var(--cm-radius-sm) !important;
+  background: rgba(255,255,255,.97) !important;
+  box-shadow: var(--cm-shadow-sm) !important;
+}
+
+.btn.primary,
+.btn-primary,
+button.primary,
+[class*="btn-primary"],
+.toolbar .primary {
+  background: var(--cm-primary) !important;
+  border-color: var(--cm-primary) !important;
+  color: #fff !important;
+}
+
+.btn.primary:hover,
+.btn-primary:hover,
+button.primary:hover,
+[class*="btn-primary"]:hover {
+  background: var(--cm-primary-strong) !important;
+  border-color: var(--cm-primary-strong) !important;
+}
+
+.table th,
+.dtable-header,
+[class*="table"] th {
+  background: #f4f7fa !important;
+  color: #516176 !important;
+  font-weight: 800 !important;
+}
+
+.table tr:hover td,
+.dtable-row:hover,
+[class*="table"] tr:hover td {
+  background-color: #f8fbfd !important;
+}
+
 @media (max-width: 900px) {
   #mainHeader,
   #mainHeader .container {

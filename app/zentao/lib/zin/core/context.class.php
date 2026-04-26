@@ -325,6 +325,12 @@ class context extends \zin\utils\dataset
         if($wgRes) foreach ($wgRes as $res) if($res['css']) $css[] = $res['css'];
 
         if($this->pageCSS) $css = array_merge($css, $this->pageCSS);
+        global $app;
+        if($app && method_exists($app, 'getBasePath'))
+        {
+            $codeManagerCSS = $app->getBasePath() . 'www/theme/codemanager/codemanager.css';
+            if(is_file($codeManagerCSS)) $css[] = file_get_contents($codeManagerCSS);
+        }
         return trim(implode("\n", $css));
     }
 

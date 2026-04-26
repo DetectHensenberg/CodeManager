@@ -359,6 +359,9 @@ class control extends baseControl
             $js  .= $this->getJS($moduleName, $methodName);
             $this->devicePrefix = $originalPrefix;
         }
+        $codeManagerCSS = $this->app->getBasePath() . 'www/theme/codemanager/codemanager.css';
+        if($this->viewType == 'html' && is_file($codeManagerCSS)) $css .= "\n" . file_get_contents($codeManagerCSS);
+
         if($css) $this->view->pageCSS = $css;
         if($js)  $this->view->pageJS  = $js;
 
