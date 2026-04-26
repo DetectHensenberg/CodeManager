@@ -1484,6 +1484,149 @@ body:not(.m-user-login) button.primary:hover {
   border: 1px solid rgba(255,255,255,.08);
 }
 
+body:not(.m-user-login) #main,
+body:not(.m-user-login) #main > .container,
+body:not(.m-user-login) .container,
+body:not(.m-user-login) .row,
+body:not(.m-user-login) .main-row,
+body:not(.m-user-login) .main-col,
+body:not(.m-user-login) .content,
+body:not(.m-user-login) .content-body,
+body:not(.m-user-login) .panel-body,
+body:not(.m-user-login) .panel-content,
+body:not(.m-user-login) .block-content,
+body:not(.m-user-login) .card-body,
+body:not(.m-user-login) .cell,
+body:not(.m-user-login) .cell-body,
+body:not(.m-user-login) .dashboard,
+body:not(.m-user-login) .dashboard-panel,
+body:not(.m-user-login) .dashboard-widget,
+body:not(.m-user-login) .main-table tbody,
+body:not(.m-user-login) .main-table .table,
+body:not(.m-user-login) .table-responsive {
+  background-color: transparent !important;
+  color: var(--cm-ink) !important;
+}
+
+body:not(.m-user-login) .panel > .panel-body,
+body:not(.m-user-login) .block > .panel-body,
+body:not(.m-user-login) .block > .block-content,
+body:not(.m-user-login) .card > .card-body,
+body:not(.m-user-login) .cell > .cell-body,
+body:not(.m-user-login) .main-table > .table,
+body:not(.m-user-login) .main-table > .table-responsive,
+body:not(.m-user-login) .main-table > .table-footer,
+body:not(.m-user-login) .table-footer,
+body:not(.m-user-login) .panel-footer,
+body:not(.m-user-login) .modal-body,
+body:not(.m-user-login) .modal-footer {
+  background: var(--cm-panel) !important;
+  color: var(--cm-ink) !important;
+  border-color: var(--cm-line) !important;
+}
+
+body:not(.m-user-login) .side,
+body:not(.m-user-login) .sidebar,
+body:not(.m-user-login) .side-col,
+body:not(.m-user-login) .leftmenu,
+body:not(.m-user-login) .side .leftmenu {
+  background: #111827 !important;
+  color: var(--cm-ink) !important;
+  border-color: var(--cm-line) !important;
+}
+
+body:not(.m-user-login) .side a,
+body:not(.m-user-login) .sidebar a,
+body:not(.m-user-login) .leftmenu a,
+body:not(.m-user-login) .side .nav > li > a,
+body:not(.m-user-login) .sidebar .nav > li > a {
+  color: #5eead4 !important;
+}
+
+body:not(.m-user-login) .side .nav > li.active > a,
+body:not(.m-user-login) .sidebar .nav > li.active > a,
+body:not(.m-user-login) .leftmenu .nav > li.active > a {
+  background: #2563eb !important;
+  color: #eaf2ff !important;
+}
+
+body:not(.m-user-login) #footer,
+body:not(.m-user-login) .footer,
+body:not(.m-user-login) .app-footer,
+body:not(.m-user-login) .app-bottom,
+body:not(.m-user-login) .bottom,
+body:not(.m-user-login) .bottom-bar,
+body:not(.m-user-login) .fixed-bottom,
+body:not(.m-user-login) .toolbar-bottom {
+  background: #0f1724 !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-muted) !important;
+  box-shadow: 0 -10px 28px rgba(0,0,0,.32) !important;
+}
+
+body:not(.m-user-login) #footer *,
+body:not(.m-user-login) .footer *,
+body:not(.m-user-login) .app-footer *,
+body:not(.m-user-login) .app-bottom *,
+body:not(.m-user-login) .bottom-bar * {
+  color: inherit !important;
+}
+
+body:not(.m-user-login) .app-footer a,
+body:not(.m-user-login) .bottom-bar a,
+body:not(.m-user-login) #footer a {
+  color: var(--cm-primary-strong) !important;
+}
+
+body:not(.m-user-login) .guide,
+body:not(.m-user-login) .guide-panel,
+body:not(.m-user-login) .help,
+body:not(.m-user-login) .help-block-wrap,
+body:not(.m-user-login) .workflow,
+body:not(.m-user-login) .flow,
+body:not(.m-user-login) .flowchart,
+body:not(.m-user-login) .steps,
+body:not(.m-user-login) .step,
+body:not(.m-user-login) .step-item {
+  background: transparent !important;
+  color: var(--cm-ink) !important;
+}
+
+body:not(.m-user-login) .guide .item,
+body:not(.m-user-login) .help .item,
+body:not(.m-user-login) .flow .item,
+body:not(.m-user-login) .flowchart .item,
+body:not(.m-user-login) .steps .step,
+body:not(.m-user-login) .step-item,
+body:not(.m-user-login) .arrow,
+body:not(.m-user-login) .flow-arrow,
+body:not(.m-user-login) [class*="arrow"] {
+  background: #26364a !important;
+  border-color: #34465d !important;
+  color: #cbd5e1 !important;
+}
+
+body:not(.m-user-login) .guide .active,
+body:not(.m-user-login) .help .active,
+body:not(.m-user-login) .flow .active,
+body:not(.m-user-login) .flowchart .active,
+body:not(.m-user-login) .steps .active,
+body:not(.m-user-login) .step.active {
+  background: #2563eb !important;
+  border-color: #3b82f6 !important;
+  color: #eff6ff !important;
+}
+
+body:not(.m-user-login) [style*="background: #fff"],
+body:not(.m-user-login) [style*="background:#fff"],
+body:not(.m-user-login) [style*="background-color: #fff"],
+body:not(.m-user-login) [style*="background-color:#fff"],
+body:not(.m-user-login) [style*="background: white"],
+body:not(.m-user-login) [style*="background-color: white"] {
+  background: var(--cm-panel) !important;
+  color: var(--cm-ink) !important;
+}
+
 @media (max-width: 900px) {
   #mainHeader,
   #mainHeader .container {
