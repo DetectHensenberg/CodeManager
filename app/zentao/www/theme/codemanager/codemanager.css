@@ -1158,6 +1158,332 @@ body:not(.m-user-login) button.primary:hover {
   color: #fff;
 }
 
+/* CodeManager dark command style. Keep selectors explicit to preserve ZenTao behavior. */
+:root {
+  --cm-ink: #e8edf4;
+  --cm-muted: #a8b3c3;
+  --cm-subtle: #7f8da0;
+  --cm-line: #26364a;
+  --cm-line-strong: #34465d;
+  --cm-bg: #0b1119;
+  --cm-bg-2: #111a26;
+  --cm-panel: #141f2d;
+  --cm-panel-warm: #182231;
+  --cm-primary: #14b8a6;
+  --cm-primary-strong: #5eead4;
+  --cm-primary-soft: rgba(20, 184, 166, .15);
+  --cm-blue: #93c5fd;
+  --cm-blue-soft: rgba(59, 130, 246, .16);
+  --cm-amber: #fbbf24;
+  --cm-amber-soft: rgba(251, 191, 36, .16);
+  --cm-danger: #fb7185;
+  --cm-danger-soft: rgba(251, 113, 133, .16);
+  --cm-success: #86efac;
+  --cm-success-soft: rgba(34, 197, 94, .16);
+  --cm-shadow-sm: 0 1px 0 rgba(255,255,255,.03), 0 14px 34px rgba(0,0,0,.24);
+  --cm-shadow-md: 0 24px 70px rgba(0,0,0,.38);
+  --cm-focus: 0 0 0 3px rgba(20, 184, 166, .26);
+}
+
+html,
+body,
+body:not(.m-user-login),
+body:not(.m-user-login) .app,
+body:not(.m-user-login) .page,
+body:not(.m-user-login) .page-content,
+body:not(.m-user-login) .main-content {
+  background: var(--cm-bg) !important;
+  color: var(--cm-ink) !important;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(20,184,166,.13), transparent 32%),
+    radial-gradient(circle at 86% 10%, rgba(59,130,246,.12), transparent 30%),
+    linear-gradient(180deg, #0b1119 0%, #0f1724 48%, #0b1119 100%) !important;
+}
+
+a,
+.btn-link,
+.btn.text-primary {
+  color: var(--cm-primary-strong) !important;
+}
+
+a:hover,
+a:focus {
+  color: #99f6e4 !important;
+}
+
+#mainHeader {
+  background: linear-gradient(90deg, #07111d 0%, #0f2533 52%, #0f766e 100%) !important;
+  box-shadow: 0 12px 34px rgba(0,0,0,.38) !important;
+}
+
+#subHeader {
+  background: rgba(15, 23, 36, .94) !important;
+  border-bottom-color: var(--cm-line) !important;
+  box-shadow: var(--cm-shadow-sm) !important;
+}
+
+#subNavbar .nav > li > a,
+#subNavbar a,
+#pageNav .btn,
+#pageActions .btn {
+  color: var(--cm-muted);
+}
+
+#subNavbar .nav > li.active > a,
+#subNavbar .nav > li > a:hover,
+#pageNav .btn:hover {
+  background: var(--cm-primary-soft) !important;
+  color: var(--cm-primary-strong) !important;
+}
+
+.main-table,
+.panel,
+.modal-content,
+.side .leftmenu,
+.main-col,
+.doc-app,
+.doc-content,
+.doc-menu,
+.detail,
+.kanban-lane,
+.block,
+.module-block,
+.form-panel,
+.form-grid-panel,
+.cm-module-story .detail-main,
+.cm-module-task .detail-main,
+.cm-module-bug .detail-main,
+.cm-module-story .detail-side,
+.cm-module-task .detail-side,
+.cm-module-bug .detail-side,
+.cm-module-group .priv-list,
+.cm-module-group .privs,
+.cm-module-group .priv-panel,
+.cm-module-group .group-priv,
+.cm-module-group .module-priv,
+.cm-module-group #privList,
+.cm-module-company .user-list,
+.cm-module-company .dept-list,
+.cm-module-admin .admin-list,
+.cm-module-admin .priv-list,
+.cm-module-admin .privs,
+.cm-module-admin .priv-panel {
+  background: var(--cm-panel) !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-ink) !important;
+  box-shadow: var(--cm-shadow-sm) !important;
+}
+
+.main-table > .table-header,
+.panel-heading,
+.modal-header,
+.detail-title,
+.main-header,
+.table-header,
+.doc-title {
+  background: linear-gradient(180deg, #172435 0%, #111a26 100%) !important;
+  border-bottom-color: var(--cm-line) !important;
+  color: var(--cm-ink) !important;
+}
+
+.table,
+.table-data,
+.dtable,
+.dtable-cell,
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  background: transparent !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-ink) !important;
+}
+
+.table > thead > tr > th,
+.dtable-header,
+body:not(.m-user-login) .table th,
+body:not(.m-user-login) .dtable-header,
+.cm-module-story .table-data th,
+.cm-module-task .table-data th,
+.cm-module-bug .table-data th {
+  background: #111a26 !important;
+  color: #bac6d6 !important;
+  font-weight: 800;
+}
+
+.table > tbody > tr:hover > td,
+.dtable-row:hover,
+.list-row:hover,
+body:not(.m-user-login) .table tr:hover td {
+  background: rgba(20, 184, 166, .08) !important;
+}
+
+input,
+select,
+textarea,
+.form-control,
+.picker,
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices {
+  background: #0f1724 !important;
+  border-color: var(--cm-line-strong) !important;
+  color: var(--cm-ink) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--cm-subtle) !important;
+}
+
+label,
+.form-label,
+.control-label,
+.dropdown-menu > li > a,
+.cm-module-group .checkbox,
+.cm-module-group label.checkbox,
+.cm-module-admin .checkbox,
+.cm-module-admin label.checkbox {
+  color: #cbd5e1 !important;
+}
+
+.help-block,
+.text-muted,
+.muted,
+body:not(.m-user-login) .text-muted,
+body:not(.m-user-login) .muted,
+body:not(.m-user-login) .secondary,
+body:not(.m-user-login) small,
+.cm-module-project .kanban-desc,
+.cm-module-doc .files-grid .file-info {
+  color: var(--cm-muted) !important;
+}
+
+.dropdown-menu,
+.popover,
+.tooltip-inner {
+  background: #101927 !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-ink) !important;
+}
+
+.dropdown-menu > li > a:hover,
+.side .leftmenu .nav-primary > li.active > a,
+.side .leftmenu .nav-primary > li > a:hover,
+.tree .active > a,
+.cm-module-doc .tree a:hover,
+.cm-module-doc .doc-menu a:hover,
+.cm-module-doc .doc-tree a:hover,
+.cm-module-doc .lib-item:hover,
+.cm-module-doc .module-item:hover,
+.cm-module-group label.checkbox:hover,
+.cm-module-admin label.checkbox:hover {
+  background: var(--cm-primary-soft) !important;
+  color: var(--cm-primary-strong) !important;
+}
+
+.kanban-lane,
+.kanban-col,
+.kanban-column,
+.kanban-item,
+.kanban-card,
+.card,
+.cm-module-project #cards .border,
+.cm-module-project .project-card,
+.cm-module-project .open-url > div,
+.cm-module-project [class*="kanban"] .card {
+  background: linear-gradient(180deg, #172435 0%, #111a26 100%) !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-ink) !important;
+}
+
+.doc-menu,
+.side-col,
+.cm-module-doc .doc-menu,
+.cm-module-doc .doc-tree,
+.cm-module-doc .doc-sidebar,
+.cm-module-doc .side-col {
+  background: #101927 !important;
+  border-color: var(--cm-line) !important;
+}
+
+.doc-app,
+.doc-content,
+.cm-module-doc .doc-content,
+.cm-module-doc .doc-main,
+.cm-module-doc .article-content,
+.cm-module-doc .doc-form .panel-body {
+  background: var(--cm-panel) !important;
+  color: var(--cm-ink) !important;
+}
+
+.cm-module-doc .article-content,
+.cm-module-doc .doc-content,
+.cm-module-doc .article-content p,
+.cm-module-doc .doc-content p,
+.cm-module-project .project-name strong,
+.cm-module-product .product-name strong,
+.cm-module-story .detail-title,
+.cm-module-task .detail-title,
+.cm-module-bug .detail-title,
+.cm-module-doc .files-grid .file-name {
+  color: var(--cm-ink) !important;
+}
+
+.cm-module-doc .article-content code,
+.cm-module-doc .doc-content code {
+  background: #0f1724 !important;
+  border-color: var(--cm-line) !important;
+  color: var(--cm-primary-strong) !important;
+}
+
+.cm-empty-state,
+.dtable-empty-tip,
+.cm-module-doc .table-empty-tip {
+  background:
+    linear-gradient(180deg, rgba(20,31,45,.92), rgba(15,23,36,.96)),
+    repeating-linear-gradient(135deg, rgba(20,184,166,.08) 0 1px, transparent 1px 18px) !important;
+  border-color: var(--cm-line-strong) !important;
+  color: var(--cm-muted) !important;
+}
+
+.btn-primary,
+.btn.primary,
+.form-actions .primary,
+.btn.btn-primary,
+.table-actions .btn,
+.table-footer .checked + div .btn,
+body:not(.m-user-login) .btn.primary,
+body:not(.m-user-login) .btn-primary,
+body:not(.m-user-login) button.primary {
+  background: var(--cm-primary) !important;
+  border-color: var(--cm-primary) !important;
+  color: #031712 !important;
+  box-shadow: 0 10px 24px rgba(20,184,166,.22) !important;
+}
+
+.btn-primary:hover,
+.btn.primary:hover,
+.form-actions .primary:hover,
+.table-actions .btn:hover,
+body:not(.m-user-login) .btn.primary:hover,
+body:not(.m-user-login) .btn-primary:hover,
+body:not(.m-user-login) button.primary:hover {
+  background: var(--cm-primary-strong) !important;
+  border-color: var(--cm-primary-strong) !important;
+  color: #031712 !important;
+}
+
+.label,
+.status,
+.label-status,
+.pri,
+.severity,
+.tag,
+.badge {
+  border: 1px solid rgba(255,255,255,.08);
+}
+
 @media (max-width: 900px) {
   #mainHeader,
   #mainHeader .container {
