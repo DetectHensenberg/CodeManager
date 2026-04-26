@@ -1075,6 +1075,7 @@ form:has([name="customer"])::before {
 
 body:not(.m-user-login),
 .codemanager-ui body {
+  color: var(--cm-ink);
   --color-primary-50: #eef7f5;
   --color-primary-100: #d9f2ee;
   --color-primary-200: #b7e4dd;
@@ -1103,135 +1104,58 @@ body:not(.m-user-login),
   --radius-lg: 0.75rem;
 }
 
-#app,
-.app,
-.app-content,
-.page,
-.page-content,
-.main,
-.main-content,
-.body-wrapper,
-.container-fluid {
-  background-color: var(--cm-bg) !important;
+body:not(.m-user-login) .app,
+body:not(.m-user-login) .page,
+body:not(.m-user-login) .page-content,
+body:not(.m-user-login) .main-content {
+  color: var(--cm-ink);
 }
 
-.app-header,
-.main-menu,
-.topbar,
-.navbar,
-.nav-primary,
-.main-nav,
-[class*="main-header"],
-[class*="app-header"] {
-  border-color: rgba(196,209,223,.88) !important;
+body:not(.m-user-login) .text-muted,
+body:not(.m-user-login) .muted,
+body:not(.m-user-login) .secondary,
+body:not(.m-user-login) small {
+  color: var(--cm-muted) !important;
 }
 
-.app-header,
-.main-menu,
-.topbar,
-[class*="main-header"] {
-  background: linear-gradient(90deg, #102033 0%, #15364a 52%, #0f766e 100%) !important;
-  color: #fff !important;
-  box-shadow: 0 10px 28px rgba(16,32,51,.16) !important;
+body:not(.m-user-login) .panel,
+body:not(.m-user-login) .cell,
+body:not(.m-user-login) .modal-content {
+  color: var(--cm-ink);
+  border-color: var(--cm-line);
 }
 
-.app-header a,
-.main-menu a,
-.topbar a,
-[class*="main-header"] a {
-  color: rgba(255,255,255,.86) !important;
+body:not(.m-user-login) .table,
+body:not(.m-user-login) .dtable {
+  color: var(--cm-ink);
 }
 
-.app-header a:hover,
-.main-menu a:hover,
-.topbar a:hover,
-[class*="main-header"] a:hover {
-  color: #fff !important;
-  background-color: rgba(255,255,255,.10) !important;
+body:not(.m-user-login) .table th,
+body:not(.m-user-login) .dtable-header {
+  color: #405066;
+  background: #f7f9fb;
+  font-weight: 700;
 }
 
-.sidebar,
-.side,
-.side-col,
-.leftmenu,
-.app-sidebar,
-[class*="sidebar"],
-[class*="side-nav"] {
-  background: #f8fafc !important;
-  border-color: var(--cm-line) !important;
+body:not(.m-user-login) .table td,
+body:not(.m-user-login) .dtable-cell {
+  color: var(--cm-ink);
 }
 
-.sidebar .active,
-.side .active,
-.side-col .active,
-.leftmenu .active,
-.app-sidebar .active,
-[class*="sidebar"] .active {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-primary-strong) !important;
+body:not(.m-user-login) .btn.primary,
+body:not(.m-user-login) .btn-primary,
+body:not(.m-user-login) button.primary {
+  background: var(--cm-primary);
+  border-color: var(--cm-primary);
+  color: #fff;
 }
 
-.panel,
-.card,
-.cell,
-.box,
-.table-wrapper,
-.form-panel,
-.dtable,
-.list,
-.detail,
-.modal-content,
-[class*="panel"],
-[class*="card"],
-[class*="table"] {
-  border-color: rgba(196,209,223,.88) !important;
-}
-
-.panel,
-.card,
-.cell,
-.box,
-.table-wrapper,
-.form-panel,
-.dtable,
-.list,
-.detail,
-.modal-content {
-  border-radius: var(--cm-radius-sm) !important;
-  background: rgba(255,255,255,.97) !important;
-  box-shadow: var(--cm-shadow-sm) !important;
-}
-
-.btn.primary,
-.btn-primary,
-button.primary,
-[class*="btn-primary"],
-.toolbar .primary {
-  background: var(--cm-primary) !important;
-  border-color: var(--cm-primary) !important;
-  color: #fff !important;
-}
-
-.btn.primary:hover,
-.btn-primary:hover,
-button.primary:hover,
-[class*="btn-primary"]:hover {
-  background: var(--cm-primary-strong) !important;
-  border-color: var(--cm-primary-strong) !important;
-}
-
-.table th,
-.dtable-header,
-[class*="table"] th {
-  background: #f4f7fa !important;
-  color: #516176 !important;
-  font-weight: 800 !important;
-}
-
-.table tr:hover td,
-.dtable-row:hover,
-[class*="table"] tr:hover td {
-  background-color: #f8fbfd !important;
+body:not(.m-user-login) .btn.primary:hover,
+body:not(.m-user-login) .btn-primary:hover,
+body:not(.m-user-login) button.primary:hover {
+  background: var(--cm-primary-strong);
+  border-color: var(--cm-primary-strong);
+  color: #fff;
 }
 
 @media (max-width: 900px) {
