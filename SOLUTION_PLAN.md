@@ -147,3 +147,168 @@
 |---|---|
 | 2026-04-26 | 初始化方案文档，完成审阅与优先级划分 |
 | 2026-04-26 | 完成 P1+P2 代码层改造（my.php），输出后台手动操作清单。详见 `WORKFLOW.md` |
+| 2026-04-27 | 前端改造第一轮回退，新增第九节重新规划 |
+
+---
+
+## 九、前端视觉改造方案（LucenAI 主题）
+
+> **状态**：待审批  
+> **参考图**：`C:\Users\admin\Pictures\Dashboard.png`、`C:\Users\admin\Pictures\Hero section 7.png`  
+> **目标文件**：`app/zentao/www/theme/codemanager/codemanager.css`（主）+ 可能涉及 PHP 模板
+
+---
+
+### 9.1 上一轮为什么失败
+
+| 问题 | 根因 |
+|---|---|
+| 白块、灰块残留 | 在浅色主题上叠加深色层，原始变量和新变量同时生效，互相干扰 |
+| 底部白条消不掉 | 没有事先确认真实 DOM class 名，CSS 选择器打偏了 |
+| 侧栏形态改不了 | ZenTao 侧栏结构与参考图不同，纯 CSS 无法重排 HTML 结构 |
+| CSS 越写越乱 | `!important` 堆叠，后来的规则不断压前面的规则 |
+| 改完看不到效果 | 忘记同步到 `C:\ZenTao` 运行目录，浏览器验证滞后 |
+
+---
+
+### 9.2 视觉目标（来自参考图）
+
+| 区域 | 颜色 / 效果 |
+|---|---|
+| 页面底色 | `#03040a`（接近纯黑） |
+| 侧栏背景 | `#20243f`（深蓝紫） |
+| 顶部导航 | `#20243f` 或与侧栏同色，无分割线感 |
+| 卡片 / 面板 | `#20233f`，低对比细边框 `rgba(123,132,186,.24)` |
+| 主文字 | `#f8f8ff` 白 |
+| 辅助文字 | `#8c93ad` 灰紫 |
+| 主按钮 / 强调色 | `#6257ff` 蓝紫 |
+| 成功 / 在线 | `#00c99a` |
+| 危险 / 告警 | `#ff3472` |
+| 环境氛围光 | 红紫蓝柔性 radial-gradient，作为 body 背景层 |
+
+---
+
+### 9.3 执行方案（四阶段）
+
+#### 阶段 0 — 摸清 DOM 地图（不改代码）
+
+**目标**：拿到每个视觉区域对应的真实 HTML class / id，不靠猜测。
+
+- [ ] grep ZenTao 布局模板，确认以下 class 的真实名称：
+  - 顶部主导航容器
+  - 左侧栏容器
+  - 底部工具栏 / 状态栏（上次白条来源）
+  - 主内容区
+  - 卡片 / panel / block
+- [ ] 整理输出到本节 9.5「DOM 映射表」（摸完填进去）
+
+**产出**：DOM 映射表（9.5 节），零代码改动。
+
+---
+
+#### 阶段 1 — 重写 CSS（主体工作）
+
+**目标**：把 `codemanager.css` 的 `:root` 直接换成深色 token，而不是在后面追加覆盖层。
+
+**原则**：
+- `:root` 里只写一套 token，深色版本。不保留浅色变量。
+- 不用 `!important`，靠选择器优先级自然覆盖 ZenTao 默认样式。
+- 按区域逐块写、逐块验证，顺序：`body/html` → header → sidebar → main content → cards → forms → tables → buttons → bottom bar。
+- 每块完成后立即同步 `C:\ZenTao`，用户 Ctrl+F5 验收后再做下一块。
+
+**涉及文件**：
+- `app/zentao/www/theme/codemanager/codemanager.css`（完整重写，不是追加）
+
+**不涉及**：PHP 逻辑、数据库、服务配置。
+
+**同步命令**（每次改完执行）：
+```powershell
+$rel = 'app\zentao\www\theme\codemanager\codemanager.css'
+Copy-Item -LiteralPath (Join-Path (Get-Location) $rel) `
+          -Destination (Join-Path 'C:\ZenTao' $rel) -Force
+```
+
+---
+
+#### 阶段 2 — PHP 模板补充（视 CSS 效果决定是否执行）
+
+**触发条件**：阶段 1 完成后，侧栏形态或顶部导航形态仍与参考图差距明显，且确认是 HTML 结构问题而非 CSS 问题。
+
+**目标**：修改 ZenTao 布局 PHP 模板，调整 sidebar / header 的 HTML 结构。
+
+**涉及文件**（仅限布局壳，不动业务逻辑）：
+- `app/zentao/module/common/view/` 下的 layout 模板
+
+**风险**：低–中。改结构模板会影响所有页面，但只改外壳 class / wrapper，不动数据渲染。
+
+**决策**：阶段 1 审批通过并完成后，再由用户决定是否执行阶段 2。
+
+---
+
+#### 阶段 3 — 仪表盘布局结构（可选，高风险）
+
+**触发条件**：用户明确要让「我的地盘」的卡片 + 图表 + 表格布局接近 `Dashboard.png` 参考图。
+
+**目标**：改写 my 模块 dashboard 视图模板，实现统计卡 + 图表 + 表格的网格布局。
+
+**涉及文件**：
+- `app/zentao/module/my/view/` 下的仪表盘模板
+
+**风险**：中–高。改视图模板需要了解 ZenTao 数据绑定方式，改错会导致数据不显示。
+
+**决策**：独立立项，阶段 1+2 完成后用户单独审批。
+
+---
+
+### 9.4 各阶段审批节点
+
+```
+阶段 0 完成 → 提交 DOM 映射表 → 用户确认后开始阶段 1
+阶段 1 完成 → 用户 Ctrl+F5 验收 → 决定是否执行阶段 2
+阶段 2 完成 → 用户验收 → 决定是否执行阶段 3
+```
+
+**现在的审批请求**：请确认以下两点后，我开始执行阶段 0：
+
+1. **当前 3 个 `M` 文件**（`codemanager.css`、`login.ui.css`、`login.html.php`）是保留还是丢弃（`git checkout -- .` 清掉）？
+2. **阶段 3（仪表盘结构）** 是现在列入计划，还是 CSS 做好再说？
+
+---
+
+### 9.5 DOM 映射表 ✅
+
+ZenTao 有两套渲染上下文，CSS 需同时覆盖。
+
+**A — ZUI3 Shell（index 主页，`/zentao/`）**
+
+| 视觉区域 | ID | 控制 CSS 变量 |
+|---|---|---|
+| 左侧栏 | `#menu` | `--zt-menu-bg`（默认 `var(--color-primary-600)`） |
+| 主内容 iframe 区 | `#apps` | `--zt-page-bg` |
+| **底部白条** | `#appsBar` | `--zt-apps-bar-bg`（默认 `var(--color-canvas)` = 白） |
+| 底部 tab 列表 | `#appTabs` | 继承 `#appsBar` |
+| 底部右侧工具栏 | `#appsToolbar` | 继承 `#appsBar` |
+| 侧栏 nav item | `#menuMainNav > li > a` | `--zt-menu-hover-bg` / `--zt-menu-active-bg` |
+
+**B — 传统 ZenTao 子页面（iframe 内，PHP 渲染）**
+
+| 视觉区域 | selector | 覆盖方式 |
+|---|---|---|
+| 顶部主导航 | `#mainHeader` | 直接 CSS |
+| 顶部 nav 项 | `#navbar .nav > li > a` | 直接 CSS |
+| 子导航栏 | `#subHeader` | 直接 CSS |
+| 主内容区 | `#main` | 直接 CSS |
+| 左侧栏 | `.side`, `.leftmenu`, `.nav-primary` | 直接 CSS |
+| 卡片 / 面板 | `.panel`, `.block`, `.cell`, `.module-block` | 直接 CSS |
+| 表格 | `.table`, `.dtable`, `.main-table` | 直接 CSS |
+| 模态框 | `.modal-content`, `.modal-header` | 直接 CSS |
+
+**关键 CSS 变量（在 `:root` 统一覆盖）**
+
+| 变量 | 新值 | 说明 |
+|---|---|---|
+| `--zt-apps-bar-bg` | `#20243f` | 修底部白条 |
+| `--zt-menu-bg` | `#20243f` | 修左侧栏 |
+| `--zt-page-bg` | `#111322` | 修 iframe 背景 |
+| `--color-canvas` | `#111322` | ZUI3 全局画布色（影响范围广） |
+| `--color-primary-500` | `#6257ff` | 统一主色为蓝紫 |
