@@ -1,0 +1,553 @@
+{
+  "url": "http://127.0.0.1:81/zentao/my.html",
+  "bodyClass": "show-menu",
+  "links": [
+    "http://127.0.0.1:81/zentao/js/zui3/zui.zentao.css?v=22.1",
+    "http://127.0.0.1:81/zentao/js/zui3/themes/default.css?v=22.1",
+    "http://127.0.0.1:81/zentao/theme/codemanager/codemanager.css?t=1777221438&v=22.1"
+  ],
+  "ids": [
+    {
+      "tag": "SCRIPT",
+      "id": "configJS",
+      "cls": "",
+      "text": ";(function(){window.config = {\"webRoot\":\"\\/zentao\\/\",\"debug\":false,\"appName\":\"\",\"cookieLife\":30,\"requestType\":\"PATH_INFO",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "LINK",
+      "id": "zuiCSS",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "LINK",
+      "id": "zuiTheme",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "zuiJS",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "aiJS",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "appsItemsData",
+      "cls": "",
+      "text": ";(function(){window.appsItems = [{\"group\":\"my\",\"code\":\"my\",\"active\":false,\"title\":\"<i class='icon icon-menu-my'><\\/i> 地盘",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "searchItemsData",
+      "cls": "",
+      "text": ";(function(){window.searchItems = [{\"key\":\"search\",\"text\":\"搜索 {0}\"},{\"key\":\"bug\",\"text\":\"Bug #{0}\"},{\"key\":\"story\",\"text",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "userVisionData",
+      "cls": "",
+      "text": ";(function(){window.userVisions = [\"rnd\",\"lite\"];}());",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "menu",
+      "cls": "",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 1200
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "spaceHeading",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "menuNav",
+      "cls": "",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 28,
+        "y": 120,
+        "w": 232,
+        "h": 1191
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuMainNav",
+      "cls": "nav",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 28,
+        "y": 148,
+        "w": 232,
+        "h": 1016
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuMoreNav",
+      "cls": "nav",
+      "text": "更多",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "A",
+      "id": "menuMoreBtn",
+      "cls": "",
+      "text": "更多",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuMoreList",
+      "cls": "dropdown-menu menu scrollbar-light overflow-y-auto",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuToggleNav",
+      "cls": "nav",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 1164,
+        "w": 232,
+        "h": 75
+      }
+    },
+    {
+      "tag": "LI",
+      "id": "menuToggleMenu",
+      "cls": "hint-right",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 1181,
+        "w": 232,
+        "h": 54
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "apps",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 288,
+        "y": 0,
+        "w": 1152,
+        "h": 1200
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "app-my",
+      "cls": "app-container",
+      "text": "",
+      "rect": {
+        "x": 288,
+        "y": 0,
+        "w": 1152,
+        "h": 1200
+      }
+    },
+    {
+      "tag": "IFRAME",
+      "id": "appIframe-my",
+      "cls": "fade in",
+      "text": "",
+      "rect": {
+        "x": 288,
+        "y": 0,
+        "w": 1152,
+        "h": 1200
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "appsBar",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 288,
+        "y": 1200,
+        "w": 1152,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "visionSwitcher",
+      "cls": "",
+      "text": "研发综合界面切换工作界面研发综合界面运营管理界面切换工作空间产品空间项目空间执行空间",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "BUTTON",
+      "id": "versionSwitchBtn",
+      "cls": "ghost btn",
+      "text": "研发综合界面",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "visionSwitchMenu",
+      "cls": "",
+      "text": "切换工作界面研发综合界面运营管理界面切换工作空间产品空间项目空间执行空间",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "appTabs",
+      "cls": "nav",
+      "text": "地盘",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "LI",
+      "id": "appTab-my",
+      "cls": "nav-item active",
+      "text": "地盘",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "appsToolbar",
+      "cls": "toolbar space-x-1",
+      "text": "",
+      "rect": {
+        "x": 1078,
+        "y": 20,
+        "w": 334,
+        "h": 52
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "globalSearch",
+      "cls": "w-44",
+      "text": "",
+      "rect": {
+        "x": 1078,
+        "y": 22,
+        "w": 270,
+        "h": 48
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "pick-_pick33",
+      "cls": "pick global-search-pick",
+      "text": "",
+      "rect": {
+        "x": 1078,
+        "y": 22,
+        "w": 270,
+        "h": 48
+      }
+    },
+    {
+      "tag": "INPUT",
+      "id": "search-box-34",
+      "cls": "form-control rounded-full size-md",
+      "text": "",
+      "rect": {
+        "x": 1078,
+        "y": 22,
+        "w": 270,
+        "h": 48
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "chat-btn-container",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 1364,
+        "y": 22,
+        "w": 48,
+        "h": 48
+      }
+    },
+    {
+      "tag": "BUTTON",
+      "id": "chat-btn",
+      "cls": "ghost px-1 btn",
+      "text": "",
+      "rect": {
+        "x": 1364,
+        "y": 22,
+        "w": 48,
+        "h": 48
+      }
+    },
+    {
+      "tag": "A",
+      "id": "version",
+      "cls": "toolbar-item ghost btn-zentao px-1 btn btn-default",
+      "text": "开源版22.1",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "BUTTON",
+      "id": "bizLink",
+      "cls": "ghost btn",
+      "text": "升级",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "upgradeContent",
+      "cls": "panel rounded ring-0 bg-canvas shadow",
+      "text": "可升级版本",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "I",
+      "id": "versionTitle",
+      "cls": "version-upgrade",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "latestVersionList",
+      "cls": "p-4",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "chat-container",
+      "cls": "",
+      "text": "尚未配置 聊天 功能，点击前往 聊天 配置页面 进行功能配置。",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "xuan-chat-view",
+      "cls": "",
+      "text": "尚未配置 聊天 功能，点击前往 聊天 配置页面 进行功能配置。",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    }
+  ],
+  "headers": [
+    {
+      "tag": "UL",
+      "id": "menuMainNav",
+      "cls": "nav",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 28,
+        "y": 148,
+        "w": 232,
+        "h": 1016
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuMoreNav",
+      "cls": "nav",
+      "text": "更多",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "menuToggleNav",
+      "cls": "nav",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 1164,
+        "w": 232,
+        "h": 75
+      }
+    },
+    {
+      "tag": "UL",
+      "id": "appTabs",
+      "cls": "nav",
+      "text": "地盘",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "appsToolbar",
+      "cls": "toolbar space-x-1",
+      "text": "",
+      "rect": {
+        "x": 1078,
+        "y": 20,
+        "w": 334,
+        "h": 52
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "upgradeContent",
+      "cls": "panel rounded ring-0 bg-canvas shadow",
+      "text": "可升级版本",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      }
+    }
+  ]
+}

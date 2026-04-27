@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LucenAI Dashboard Effect</title>
+  <style>
+    :root {
+      --stage: #060915;
+      --sidebar: rgba(31, 35, 62, 0.72);
+      --sidebar-deep: #061934;
+      --surface: rgba(31, 35, 64, 0.54);
+      --surface-2: rgba(38, 43, 78, 0.62);
+      --surface-3: rgba(48, 54, 94, 0.64);
+      --line: rgba(178, 190, 255, 0.18);
+      --text: #f3f6ff;
+      --muted: #aab3d2;
+      --muted-2: #747eaa;
+      --primary: #6264f4;
+      --primary-2: #7991ff;
+      --green: #18c99b;
+      --yellow: #f3b73c;
+      --red: #ff4f7a;
+      --blue: #5f9bff;
+      --shadow: 0 26px 80px rgba(0, 0, 0, 0.42);
+      --glass: blur(22px) saturate(130%);
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 2048px;
+      min-height: 1600px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(31, 77, 123, 0.34), transparent 30%),
+        radial-gradient(circle at 52% -12%, rgba(99, 102, 241, 0.28), transparent 34%),
+        radial-gradient(circle at 94% 6%, rgba(42, 32, 96, 0.28), transparent 35%),
+        radial-gradient(circle at 72% 56%, rgba(55, 74, 148, 0.16), transparent 44%),
+        linear-gradient(135deg, #08151d 0%, #070a16 38%, #0d1024 68%, #050812 100%);
+      color: var(--text);
+    }
+
+    body:before,
+    body:after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      inset: 0;
+      z-index: 0;
+    }
+
+    body:before {
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 96px 96px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.55), transparent 62%);
+      opacity: .35;
+    }
+
+    body:after {
+      background:
+        radial-gradient(ellipse at 58% 18%, rgba(255, 255, 255, .08), transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,.035), transparent 26%, rgba(0,0,0,.2));
+      mix-blend-mode: screen;
+      opacity: .44;
+    }
+
+    .app {
+      position: relative;
+      z-index: 1;
+      min-height: 1600px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      padding-bottom: 54px;
+    }
+
+    .sidebar {
+      position: relative;
+      padding: 30px 18px;
+      background:
+        linear-gradient(180deg, rgba(40, 45, 78, .84), rgba(27, 32, 57, .68)),
+        radial-gradient(circle at 16% 5%, rgba(103, 107, 255, .18), transparent 32%);
+      border-right: 1px solid rgba(202, 211, 255, 0.10);
+      box-shadow: 22px 0 54px rgba(0, 0, 0, 0.22);
+      backdrop-filter: var(--glass);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 6px 10px 38px;
+      font-weight: 800;
+      font-size: 22px;
+    }
+
+    .brand-mark,
+    .nav-icon,
+    .toolbar-icon {
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #5f75ff, #704dff);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.18);
+    }
+
+    .nav-section {
+      margin: 0 0 34px;
+    }
+
+    .nav-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px 12px;
+      color: #7f88aa;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .nav-item {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 14px;
+      margin: 4px 0;
+      color: #b7bfdc;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .nav-item.active {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(101, 119, 255, .82), rgba(92, 127, 183, .66));
+      box-shadow: 0 10px 24px rgba(81, 98, 255, .22);
+    }
+
+    .nav-icon {
+      width: 24px;
+      height: 24px;
+      color: currentColor;
+      opacity: .9;
+    }
+
+    .badge {
+      margin-left: auto;
+      height: 24px;
+      min-width: 38px;
+      padding: 0 8px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: #6264f4;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .collapse {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      width: 36px;
+      height: 36px;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      color: #7782aa;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .main {
+      padding: 26px 36px 0;
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .search {
+      width: 380px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      color: #cbd3ee;
+      border-radius: 8px;
+      background: rgba(42, 48, 84, .58);
+      border: 1px solid rgba(198, 207, 255, .13);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 18px 42px rgba(0,0,0,.22);
+      backdrop-filter: var(--glass);
+      font-size: 18px;
+    }
+
+    .top-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-btn,
+    .primary-btn,
+    .ghost-btn {
+      height: 48px;
+      border: 0;
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      border-radius: 10px;
+      background: #2c335c;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 34px rgba(0,0,0,.24);
+      backdrop-filter: var(--glass);
+    }
+
+    .icon-btn { width: 48px; }
+
+    .primary-btn {
+      padding: 0 20px;
+      background: linear-gradient(135deg, #6366f1, #6d6cff);
+      box-shadow: 0 14px 28px rgba(98, 100, 244, .26);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #102135;
+      background: #b5d777;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 0 0 3px rgba(255,255,255,.08);
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: #e8ecff;
+    }
+
+    .crumbs {
+      display: flex;
+      gap: 10px;
+      margin: 44px 0 14px;
+      color: #ccd4ef;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .date-pill {
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px;
+      margin-top: 18px;
+      border-radius: 999px;
+      color: #e9eeff;
+      background: rgba(42, 48, 84, .9);
+      border: 1px solid rgba(142, 158, 223, .16);
+      font-weight: 800;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .card,
+    .panel {
+      background:
+        linear-gradient(180deg, rgba(42, 47, 83, .62), rgba(24, 29, 53, .46)),
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,.08), transparent 28%);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.06);
+      backdrop-filter: var(--glass);
+    }
+
+    .metric {
+      min-height: 142px;
+      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric:before,
+    .panel:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,255,255,.10), transparent 32%, rgba(100,103,244,.07));
+      opacity: .5;
+    }
+
+    .panel,
+    .metric {
+      position: relative;
+    }
+
+    .panel > *,
+    .metric > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .metric:after {
+      content: "";
+      position: absolute;
+      right: -38px;
+      bottom: -50px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, .12);
+    }
+
+    .metric-top {
+      display: flex;
+      justify-content: space-between;
+      color: #747eaa;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin: 24px 0 22px;
+      font-size: 30px;
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .metric-link {
+      color: var(--primary-2);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .metric-badge {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .metric-badge.red { color: var(--red); }
+
+    .metric-icon {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(76, 202, 157, .22);
+      color: var(--green);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .panel {
+      min-height: 418px;
+      padding: 30px;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .panel-title {
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .select {
+      height: 44px;
+      min-width: 136px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 8px;
+      color: #7f89b0;
+      border: 1px solid var(--line);
+      background: rgba(22, 27, 50, .44);
+      backdrop-filter: var(--glass);
+      font-weight: 700;
+    }
+
+    .chart-stats {
+      display: flex;
+      gap: 48px;
+      align-items: baseline;
+      margin-bottom: 28px;
+    }
+
+    .chart-stats b {
+      color: #6971ff;
+      font-size: 30px;
+      font-weight: 850;
+    }
+
+    .chart-stats span {
+      color: #d8def3;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    .chart {
+      height: 260px;
+      position: relative;
+      padding: 22px 8px 0 62px;
+    }
+
+    .axis {
+      position: absolute;
+      left: 50px;
+      top: 10px;
+      bottom: 28px;
+      width: 1px;
+      background: #8b94b7;
+      opacity: .55;
+    }
+
+    .axis-x {
+      position: absolute;
+      left: 50px;
+      right: 22px;
+      bottom: 28px;
+      height: 1px;
+      background: #8b94b7;
+      opacity: .55;
+    }
+
+    .bars {
+      position: absolute;
+      left: 72px;
+      right: 36px;
+      bottom: 29px;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .bar {
+      width: 34px;
+      background: linear-gradient(180deg, #6f72ff, #5356df);
+      border-radius: 4px 4px 0 0;
+      box-shadow: 0 -18px 36px rgba(99, 102, 241, .14);
+    }
+
+    .curve,
+    .curve2 {
+      position: absolute;
+      left: 70px;
+      right: 28px;
+      top: 46px;
+      height: 170px;
+      pointer-events: none;
+    }
+
+    .curve svg,
+    .curve2 svg,
+    .map svg { width: 100%; height: 100%; }
+
+    .legend {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      color: #c3cae4;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      display: inline-block;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      vertical-align: middle;
+    }
+
+    .map {
+      height: 288px;
+      margin-top: 10px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 48% 46%, rgba(89, 98, 255, .16), transparent 44%),
+        radial-gradient(circle at 86% 0%, rgba(91, 196, 255, .08), transparent 30%),
+        linear-gradient(180deg, rgba(20, 29, 55, .34), rgba(8, 12, 25, .22));
+      border: 1px solid rgba(178, 190, 255, .08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-label {
+      position: absolute;
+      color: #bfc8e8;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pin {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(24, 201, 155, .12);
+    }
+
+    .pin.red {
+      background: var(--red);
+      box-shadow: 0 0 0 5px rgba(255, 79, 122, .12);
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 26px;
+      margin-bottom: 28px;
+    }
+
+    .workflow .panel {
+      min-height: 210px;
+      padding: 24px;
+    }
+
+    .help-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .help-tabs span:first-child { color: #6670ff; }
+
+    .flow-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .step {
+      height: 38px;
+      min-width: 122px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 12px 50%);
+      color: #3c4562;
+      background: #9ca6b8;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .step.role {
+      min-width: 148px;
+      color: #fff;
+      background: #5b95e8;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+    }
+
+    .table-panel {
+      min-height: 448px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .table-head {
+      height: 78px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #d9def2;
+      font-size: 15px;
+    }
+
+    th {
+      height: 48px;
+      background: #30355b;
+      background: rgba(60, 66, 112, .62);
+      color: #e8edff;
+      text-align: left;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    td {
+      height: 54px;
+      border-bottom: 1px solid rgba(154, 170, 226, .12);
+      background: rgba(20, 25, 47, .18);
+    }
+
+    th:first-child,
+    td:first-child { padding-left: 28px; width: 54px; }
+
+    .checkbox {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      border: 2px solid #aeb7d9;
+    }
+
+    .progress {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .track {
+      width: 44px;
+      height: 4px;
+      border-radius: 999px;
+      background: #eef2ff;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 78%;
+      background: var(--green);
+    }
+
+    .status {
+      display: inline-flex;
+      height: 28px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(24, 201, 155, .14);
+      font-weight: 850;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 54px;
+      display: grid;
+      grid-template-columns: 250px 1fr 560px;
+      align-items: center;
+      background: #101724;
+      background: rgba(13, 20, 34, .82);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      backdrop-filter: blur(18px) saturate(130%);
+      color: #c7d0ea;
+      font-weight: 800;
+      z-index: 10;
+    }
+
+    .bottom-left,
+    .bottom-center,
+    .bottom-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      height: 100%;
+      padding: 0 24px;
+    }
+
+    .bottom-left {
+      background: #111c31;
+      background: rgba(17, 28, 49, .78);
+      color: #8190ff;
+      justify-content: center;
+    }
+
+    .bottom-right {
+      justify-content: flex-end;
+    }
+
+    .mini-search {
+      width: 220px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px;
+      color: #7884aa;
+      border-radius: 8px;
+      background: #edf2fb;
+      font-weight: 700;
+    }
+
+    svg {
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">◎</span>LucenAI</div>
+      <div class="nav-section">
+        <div class="nav-title"><span>Pages</span><span>+</span></div>
+        <div class="nav-item active"><span class="nav-icon">⌂</span>地盘</div>
+        <div class="nav-item"><span class="nav-icon">◌</span>产品</div>
+        <div class="nav-item"><span class="nav-icon">△</span>项目</div>
+        <div class="nav-item"><span class="nav-icon">⌁</span>执行</div>
+        <div class="nav-item"><span class="nav-icon">∞</span>DevOps</div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-title"><span>Apps</span><span>+</span></div>
+        <div class="nav-item"><span class="nav-icon">□</span>AI</div>
+        <div class="nav-item"><span class="nav-icon">▣</span>BI</div>
+        <div class="nav-item"><span class="nav-icon">☷</span>看板</div>
+        <div class="nav-item"><span class="nav-icon">▤</span>文档</div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-title"><span>Settings</span></div>
+        <div class="nav-item"><span class="nav-icon">⚙</span>后台</div>
+      </div>
+      <div class="collapse">≡</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search">⌕ <span>搜索任务、Bug、需求...</span></div>
+        <div class="top-actions">
+          <button class="icon-btn">●</button>
+          <button class="icon-btn">!</button>
+          <button class="primary-btn">＋ 添加</button>
+          <button class="ghost-btn" style="width:48px">↗</button>
+          <div class="user"><span class="avatar">A</span><span>admin</span><span style="color:#6e789f">⌄</span></div>
+        </div>
+      </header>
+
+      <div class="crumbs"><span>地盘</span><span>›</span><span>仪表盘</span></div>
+      <section class="hero-row">
+        <div>
+          <h1>仪表盘</h1>
+          <div class="subtitle">昨天您暂未处理任务和 Bug，今日期待优秀的您来处理。</div>
+          <div class="date-pill">2026年04月27日 星期一</div>
+        </div>
+        <button class="primary-btn">进入使用教程</button>
+      </section>
+
+      <section class="metric-grid">
+        <article class="card metric">
+          <div class="metric-top"><span>待我评审</span><span class="metric-badge">+0</span></div>
+          <div class="metric-value">0</div>
+          <div class="metric-link">查看评审数</div>
+          <div class="metric-icon">✓</div>
+        </article>
+        <article class="card metric">
+          <div class="metric-top"><span>任务数</span><span class="metric-badge red">-0%</span></div>
+          <div class="metric-value">0</div>
+          <div class="metric-link">查看全部任务</div>
+          <div class="metric-icon" style="color:#5bc4ff;background:rgba(91,196,255,.16)">▢</div>
+        </article>
+        <article class="card metric">
+          <div class="metric-top"><span>Bug数</span><span class="metric-badge">+0</span></div>
+          <div class="metric-value">0</div>
+          <div class="metric-link">查看详情</div>
+          <div class="metric-icon" style="color:#f3b73c;background:rgba(243,183,60,.16)">!</div>
+        </article>
+        <article class="card metric">
+          <div class="metric-top"><span>研发需求</span><span class="metric-badge">+0.00%</span></div>
+          <div class="metric-value">0</div>
+          <div class="metric-link">查看需求池</div>
+          <div class="metric-icon" style="color:#8da0ff;background:rgba(141,160,255,.16)">◇</div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div class="panel-title">工作趋势</div>
+            <div class="select">本周 <span>⌄</span></div>
+          </div>
+          <div class="chart-stats">
+            <div><b>36</b><span>任务</span></div>
+            <div><b style="color:#fff">12</b><span>需求</span></div>
+            <div><b style="color:#fff">3.5%</b><span>完成率</span></div>
+          </div>
+          <div class="chart">
+            <div class="axis"></div><div class="axis-x"></div>
+            <div class="bars">
+              <div class="bar" style="height:92px"></div>
+              <div class="bar" style="height:124px"></div>
+              <div class="bar" style="height:112px"></div>
+              <div class="bar" style="height:58px"></div>
+              <div class="bar" style="height:126px"></div>
+              <div class="bar" style="height:64px"></div>
+              <div class="bar" style="height:150px"></div>
+            </div>
+            <div class="curve">
+              <svg viewBox="0 0 600 170" preserveAspectRatio="none">
+                <path d="M0,145 C50,20 75,130 120,72 C170,0 205,156 258,92 C322,2 355,150 420,75 C480,20 520,142 600,36" stroke="#f3b73c" />
+              </svg>
+            </div>
+            <div class="curve2">
+              <svg viewBox="0 0 600 170" preserveAspectRatio="none">
+                <path d="M0,98 C80,78 78,66 120,98 C180,132 212,24 270,50 C336,78 358,20 410,54 C480,78 540,74 600,42" stroke="#667088" opacity=".68" />
+              </svg>
+            </div>
+          </div>
+          <div class="legend"><span><i class="dot"></i>任务</span><span><i class="dot" style="background:#f3b73c"></i>需求</span><span><i class="dot" style="background:#667088"></i>Bug</span></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div class="panel-title">项目实施地图</div>
+            <button class="icon-btn">↓</button>
+          </div>
+          <div class="map">
+            <svg viewBox="0 0 580 300" preserveAspectRatio="xMidYMid meet">
+              <path d="M96 116 L132 64 L197 84 L245 45 L321 73 L390 54 L481 94 L526 155 L489 225 L390 242 L325 212 L252 256 L178 221 L101 228 L61 168 Z" stroke="#35527d" stroke-width="3" />
+              <path d="M197 84 L182 142 L224 176 L252 256 M321 73 L300 139 L340 184 L325 212 M390 54 L404 132 L481 94 M101 228 L224 176 L340 184 L489 225" stroke="#314b73" stroke-width="2" />
+            </svg>
+            <span class="pin" style="left:244px;top:104px"></span>
+            <span class="pin red" style="left:346px;top:124px"></span>
+            <span class="pin" style="left:358px;top:222px"></span>
+            <span class="pin" style="left:172px;top:148px"></span>
+            <span class="map-label" style="left:260px;top:100px">产品线</span>
+            <span class="map-label" style="left:362px;top:120px">项目群</span>
+            <span class="map-label" style="left:373px;top:218px">测试</span>
+            <span class="map-label" style="left:186px;top:144px">研发</span>
+          </div>
+          <div class="legend" style="justify-content:flex-start;margin-top:20px"><span><i class="dot"></i>89%</span><span><i class="dot" style="background:#18c99b"></i>60%</span><span><i class="dot" style="background:#6f7899"></i>48%</span><span><i class="dot" style="background:#ff4f7a"></i>30%</span></div>
+        </article>
+      </section>
+
+      <section class="workflow">
+        <article class="panel">
+          <div class="panel-title" style="margin-bottom:18px">使用帮助</div>
+          <div class="help-tabs">
+            <span>流程图</span><span>运行模式</span><span>界面切换</span><span>主题切换</span>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="flow-grid">
+            <div class="flow-row"><span class="step role">管理员</span><span class="step">维护部门</span><span class="step">添加用户</span><span class="step">维护权限</span></div>
+            <div class="flow-row"><span class="step role">产品经理</span><span class="step">创建产品</span><span class="step">维护模块</span><span class="step">维护计划</span><span class="step">维护需求</span><span class="step">创建发布</span></div>
+            <div class="flow-row"><span class="step role">项目经理</span><span class="step">创建项目</span><span class="step">维护团队</span><span class="step">关联需求</span><span class="step">分解任务</span><span class="step">跟踪进度</span></div>
+            <div class="flow-row"><span class="step role">研发人员</span><span class="step">领取任务</span><span class="step">设计方案</span><span class="step">提交代码</span><span class="step">更新状态</span><span class="step">完成任务</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="table-head">
+          <div class="panel-title">我的待处理</div>
+          <div class="select">待办 <span>⌄</span></div>
+        </div>
+        <table>
+          <thead>
+            <tr><th><div class="checkbox"></div></th><th>事项</th><th>负责人</th><th>进度</th><th>截止时间</th><th>类型</th><th>状态</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><div class="checkbox"></div></td><td style="color:#7378ff;font-weight:800">产品需求池梳理</td><td>admin</td><td><span class="progress">84% <span class="track"><span class="fill"></span></span></span></td><td>2026/04/30</td><td>需求</td><td><span class="status">进行中</span></td></tr>
+            <tr><td><div class="checkbox"></div></td><td style="color:#7378ff;font-weight:800">仪表盘暗色适配</td><td>admin</td><td><span class="progress">76% <span class="track"><span class="fill" style="width:76%"></span></span></span></td><td>2026/05/02</td><td>任务</td><td><span class="status">进行中</span></td></tr>
+            <tr><td><div class="checkbox"></div></td><td style="color:#7378ff;font-weight:800">Bug 列表按钮统一</td><td>admin</td><td><span class="progress">62% <span class="track"><span class="fill" style="width:62%"></span></span></span></td><td>2026/05/04</td><td>Bug</td><td><span class="status" style="color:#f3b73c;background:rgba(243,183,60,.16)">待处理</span></td></tr>
+            <tr><td><div class="checkbox"></div></td><td style="color:#7378ff;font-weight:800">项目执行看板检查</td><td>admin</td><td><span class="progress">58% <span class="track"><span class="fill" style="width:58%"></span></span></span></td><td>2026/05/06</td><td>项目</td><td><span class="status">进行中</span></td></tr>
+            <tr><td><div class="checkbox"></div></td><td style="color:#7378ff;font-weight:800">文档中心样式回归</td><td>admin</td><td><span class="progress">42% <span class="track"><span class="fill" style="width:42%"></span></span></span></td><td>2026/05/08</td><td>文档</td><td><span class="status" style="color:#f3b73c;background:rgba(243,183,60,.16)">待处理</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <footer class="bottom-bar">
+    <div class="bottom-left">▣ 研发综合界面 ⌃</div>
+    <div class="bottom-center">地盘</div>
+    <div class="bottom-right"><div class="mini-search">⌕ 搜索</div><span>💬</span><span style="background:#202a4b;border-radius:8px;padding:8px 14px">开源版22.1</span><span>升级 ↑</span></div>
+  </footer>
+</body>
+</html>

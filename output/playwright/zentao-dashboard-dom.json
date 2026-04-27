@@ -1,0 +1,145 @@
+{
+  "url": "http://127.0.0.1:81/zentao/my.html",
+  "title": "地盘 - 禅道",
+  "links": [
+    "http://127.0.0.1:81/zentao/js/zui3/zui.zentao.css?v=22.1",
+    "http://127.0.0.1:81/zentao/js/zui3/themes/default.css?v=22.1"
+  ],
+  "scripts": [
+    "http://127.0.0.1:81/zentao/js/zui3/zui.zentao.js?v=22.1",
+    "http://127.0.0.1:81/zentao/js/zui3/zin.js?v=22.1",
+    "http://127.0.0.1:81/zentao/js/zui3/ai.js?v=22.1"
+  ],
+  "bodyClass": "show-menu",
+  "ids": [
+    {
+      "tag": "SCRIPT",
+      "id": "configJS",
+      "cls": "",
+      "text": ";(function(){window.config = {\"webRoot\":\"\\/zentao\\/\",\"debug\":false,\"appName\":\"\","
+    },
+    {
+      "tag": "LINK",
+      "id": "zuiCSS",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "LINK",
+      "id": "zuiTheme",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "zuiJS",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "aiJS",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "appsItemsData",
+      "cls": "",
+      "text": ";(function(){window.appsItems = [{\"group\":\"my\",\"code\":\"my\",\"active\":false,\"title"
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "searchItemsData",
+      "cls": "",
+      "text": ";(function(){window.searchItems = [{\"key\":\"search\",\"text\":\"搜索 {0}\"},{\"key\":\"bug\""
+    },
+    {
+      "tag": "SCRIPT",
+      "id": "userVisionData",
+      "cls": "",
+      "text": ";(function(){window.userVisions = [\"rnd\",\"lite\"];}());"
+    },
+    {
+      "tag": "DIV",
+      "id": "menu",
+      "cls": "",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台"
+    },
+    {
+      "tag": "DIV",
+      "id": "spaceHeading",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "menuNav",
+      "cls": "",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台"
+    },
+    {
+      "tag": "UL",
+      "id": "menuMainNav",
+      "cls": "nav",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台"
+    },
+    {
+      "tag": "UL",
+      "id": "menuMoreNav",
+      "cls": "nav",
+      "text": "更多"
+    },
+    {
+      "tag": "A",
+      "id": "menuMoreBtn",
+      "cls": "",
+      "text": "更多"
+    },
+    {
+      "tag": "UL",
+      "id": "menuMoreList",
+      "cls": "dropdown-menu menu scrollbar-light overflow-y-auto",
+      "text": ""
+    },
+    {
+      "tag": "UL",
+      "id": "menuToggleNav",
+      "cls": "nav",
+      "text": ""
+    },
+    {
+      "tag": "LI",
+      "id": "menuToggleMenu",
+      "cls": "hint-right",
+      "text": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "apps",
+      "cls": "",
+      "text": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "app-my",
+      "cls": "app-container",
+      "text": ""
+    },
+    {
+      "tag": "IFRAME",
+      "id": "appIframe-my",
+      "cls": "fade in",
+      "text": ""
+    }
+  ],
+  "navs": [
+    {
+      "tag": "DIV",
+      "id": "appsToolbar",
+      "cls": "toolbar space-x-1",
+      "text": "开源版22.1\n升级"
+    }
+  ],
+  "firstHtml": "<body class=\"show-menu\" data-app=\"my\"><style class=\"zin-page-css\" data-id=\"index-index\">:root\n{\n    --zt-apps-bar-height: 36px;\n    --zt-apps-bar-bg: var(--color-canvas);\n    --zt-menu-width: 120px!important;\n    --zt-menu-fold-width: 64px;\n    --zt-menu-space: 8px;\n    --zt-menu-active-bg: var(--color-primary-500);\n    --zt-menu-hover-bg: rgba(var(--color-primary-500-rgb), .4);\n    --zt-menu-text-color: rgba(var(--color-canvas-rgb), 1);\n    --zt-menu-text-active: var(--color-canvas);\n    --zt-menu-bg: var(--color-primary-600);\n}\n[lang^='en'] {--zt-menu-width: 132px!important;}\n\n#menu {position: fixed; left: 0; top: 0; bottom: 0; background: var(--zt-menu-bg); width: var(--zt-menu-width); color: var(--zt-menu-text-color); transition: width .1s; user-select: none; z-index: 1120;}\n#menu.waiting-workspace > * {visibility: hidden;}\n#menu .nav {flex-direction: column; align-items: stretch;}\n#menu .nav > li {display: block; height: var(--zt-menu-height, 38px); padding: 4px 8px; transition: padding .2s;}\n#menu .nav > .divider, #menuMoreList > .divider {background: var(--color-canvas); opacity: .12; height: 1px; padding: 6px 8px; align-self: stretch; background-clip: content-box; box-sizing: content-box; border: none; margin: 0 4px}\n#menu .nav > li > a {color: inherit; display: flex; align-items: center; gap: 4px; padding: 0 6px; height: calc(var(--zt-menu-height, 38px) - 8px); transition: color .2s, background-color .2s; border-radius: var(--radius-md); overflow: hidden;}\n#menu .nav > li > a.active,\n#menu .nav > li > a:hover {background: var(--zt-menu-hover-bg); color: var(--zt-menu-text-active)}\n#menu .nav > li > a.active {background: var(--zt-menu-active-bg); color: var(--zt-menu-text-active)}\n#menu .nav > li > a > .text {white-space: nowrap;}\n#menu .nav > li > a > .icon {font-size: 18px; display: inline-flex; align-items: center; justify-content: center; margin-right: 2px;}\n@supports not (gap: 1px) {#menu .nav > li > a > .icon {margin-right: 4px;}}\n\n#spaceHeading {display: none; height: 40px; align-items: center; flex-wrap: nowrap; gap: 4px; margin: var(--zt-menu-space) var(--zt-menu-space) calc(var(--zt-menu-space) / 4); background-color: rgba(var(--color-canvas-rgb), .1); border-radius: var(--radius-md); position: relative; padding: 0 8px;}\n.has-space #spaceHeading {display: flex;}\n#spaceHeading > .text {min-width: 0; overflow: hidden; white-space: nowrap; flex: auto}\n#spaceHeading > .icon, #spaceHeading > .label {flex: none}\n#spaceHeading.has-dropmenu > .icon, #spaceHeading > .label {display: none;}\n#spaceDropmenu {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}\n#spaceDropmenu .dropmenu-btn {height: 40px; width: 100%;}\n#spaceDropmenu .dropmenu-btn > .text {min-width: 0; overflow: hidden; white-space: nowrap; flex: auto;}\n#spaceDropmenu .dropmenu-btn > .icon {font-size: 16px;}\n.dropmenu.popup {background: var(--color-surface-light);}\n.hide-menu #spaceHeading > .text, .hide-menu #spaceHeading > .label {display: none;}\n.hide-menu #spaceHeading > .icon {display: flex;}\n.hide-menu #spaceHeading {justify-content: center;}\n\n#menuNav {padding: 4px 0;}\n#menuMainNav a {cursor: pointer;}\n.show-menu #menuToggleNav [data-hint]::after {content: attr(data-collapse-text)}\n.show-menu #menuNav [data-hint]::before, .show-menu #menuNav [data-hint]::after {display: none;}\n.show-menu #menuToggleNav [data-hint]::before, .show-menu #menuToggleNav [data-hint]::after {display: block;}\n#menuToggleNav::before {content: ''; display: block; background: var(--color-canvas); opacity: .12; height: 1px; padding: 6px 8px; align-self: stretch; background-clip: content-box; box-sizing: content-box; border: none; margin: 0 4px}\n\n#menuMainNav .is-space,\n.has-space #menuMainNav .is-original {display: none;}\n.has-space #menuMainNav .is-space {display: block;}\n\n#menuMainNav .is-space,\n.has-space #menuMainNav .is-original {display: none;}\n.has-space #menuMainNav .is-space {display: block;}\n\n#menuMoreNav {display: none;}\n.show-more-nav #menuMoreNav {display: block;}\n#menuMoreNav > li > a.with-popover-show {background-color: rgba(255,255,255,.1);}\n#menuMoreList {background: var(--zt-menu-bg); padding: 8px 0; min-width: 100px; list-style: none;}\n#menuMoreList > .menu-item {padding: 1px 12px!important; height: 32px!important;}\n#menuMoreList > .menu-item > a > .text {flex: auto;}\n#menuMoreList > .menu-item > a > .icon {font-size: 16px;}\n\nbody.hide-menu {--zt-menu-width: var(--zt-menu-fold-width)!important;}\n.hide-menu #menu .nav > li > a {justify-content: center;}\n.hide-menu #menu .nav > li > a > .text {display: none;}\n.hide-menu #menu #menuMoreNav .nav > li > a > .text {display: flex;}\n.hide-menu #menu .menu-toggle > .icon {transform: rotate(180deg);}\n\n#apps {position: fixed; left: var(--zt-menu-width); top: 0; bottom: var(--zt-apps-bar-height); right: 0; background-color: var(--zt-page-bg); transition: left .1s;}\n.hide-menu #apps {left: var(--zt-menu-fold-width)!important;}\n\n#appsBar {display: flex; flex-wrap: nowrap; align-items: center; position: fixed; left: var(--zt-menu-width); bottom: 0; right: 0; height: var(--zt-apps-bar-height); padding: 0 4px; background: var(--zt-apps-bar-bg); box-shadow: 0 -2px 12px rgba(0,0,0,.02); transition: left .1s; border-top-width: 1px;}\n.hide-menu #appsBar {left: var(--zt-menu-fold-width)!important;}\n#appTabs {flex: auto; user-select: none; --nav-active-color: currentColor}\n#appTabs > li > a {border-radius: var(--radius-md); opacity: .6;}\n#appTabs > li + li::before {display: block; content: ' '; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--color-inverse); opacity: .12;}\n#appTabs > li > a.active {opacity: 1;}\n.has-space #appTabs > li {display: none;}\n.has-space #appTabs > li.active {display: flex;}\n#appsToolbar {width: 360px; display: flex; justify-content: flex-end;}\n#appsToolbar > .btn {color: inherit}\n#appsToolbar > .btn-zentao > .icon {color: var(--color-primary-400)}\n\n#visionSwitcher {flex: none; position: relative; margin-right: 12px; margin-left: 4px;}\n#visionSwitcher::before, #visionSwitcher::after {content: ''; display: block; position: absolute; right: -9px; top: -2px; width: 0; height: 0; border-style: solid; border-width: 18px 0 18px 8px; border-color: transparent transparent transparent var(--color-canvas);}\n#visionSwitcher::before {right: -10px; border-left-color: var(--color-fore); opacity: .1;}\n#versionSwitchBtn {padding: 0 6px;}\n.has-space #visionSwitcher {display: none;}\n\n.app-container {position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; transition-duration: .3s; background: var(--zt-page-bg);}\n.app-container.loading {background: var(--zt-page-bg) linear-gradient(180deg, var(--zt-header-bg) 0, var(--zt-header-bg) 48px, rgba(255,0,0,0) 48px) no-repeat;}\n.app-container.loading:before {background-color: rgba(0,0,0,.1);}\n.app-container.loading:before, .ap p-container.loading::after {transition-delay: 3s;}\n.app-container.loading.open-from-hidden {transition-delay: 0s;}\n.app-container.loading.open-from-hidden > iframe {opacity: 0;}\n.app-container > iframe {width: 100%; height: 100%; background: inherit; transition-duration: .1s;}\n\n.messagers > .messager-holder {max-width: 35%;}\n.messager-notice, .score-notice {align-items: flex-start;}\n.messager-notice > .icon-envelope-o, .score-notice > .icon-diamond {margin-top: 2px;}\n.messager-notice > .alert-close {position: fixed; top: 10px; right: 15px; width: 20px; height: 20px;}\n.messager-notice .browser-message-content {color: rgba(30,168,254); max-height: calc(100vh - 14rem); overflow-y: auto;}\n.messager-notice .browser-message-content > span {width: 94%; display: inline-block;}\n.messager-notice .browser-message-content > a {color: rgba(49,60,82)}\n\n.hl-tutorial {position: relative!important; z-index: 1010!important; -webkit-box-shadow: 0 0 0 0 #000!important; box-shadow: 0 0 0 0 #000!important; -webkit-transition: -webkit-box-shadow 1s!important; -o-transition: box-shadow 1s!important; transition: -webkit-box-shadow 1s!important; transition: box-shadow 1s!important; transition: box-shadow 1s,-webkit-box-shadow 1s!important }\n.hl-tutorial.hl-in { -webkit-box-shadow: 0 0 20px 0 #ffff8d,0 0 0 2px #ffd180,0 0 0 3000px rgba(0,0,0,.2)!important; box-shadow: 0 0 20px 0 #ffff8d,0 0 0 2px #ffd180,0 0 0 3000px rgba(0,0,0,.2)!important }\n.btn.tooltip-tutorial,.hl-tutorial.hl-in:hover { position: relative!important; z-index: 1010!important; -webkit-box-shadow: 0 0 30px 0 #ffff8d,0 0 0 5px #ffd180,0 0 0 3000px rgba(0,0,0,.3)!important; box-shadow: 0 0 30px 0 #ffff8d,0 0 0 5px #ffd180,0 0 0 3000px rgba(0,0,0,.3)!important\n}\n\n#upgradeContent {display: none; position: absolute; bottom: var(--zt-apps-bar-height); right: 10px; width: 370px; height: 322px; background-color: #fff; padding: 5px 0; border: 1px solid rgba(0,0,0,.15); border-color: rgba(0,0,0,.1); opacity: 1; border-radius: 4px; box-shadow: 0 6px 12px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.1);}\n.version-upgrade {width: 14px; height: 16px; float: left; background-repeat: no-repeat; background-position: center ; background-size: cover; display: block;}\n#latestVersionList {height: 270px; overflow: auto;}\n\n#menuMainNav[z-use-sortable] a[data-app]:hover {cursor: move;}\n#menuMainNav[z-use-sortable] li.divider:hover {cursor: move;}\n.tutorial-hl {position: relative; z-index: 1000; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);}\n.tutorial-hl {position: relative; z-index: 1000;}\n.tutorial-hl {position: relative; z-index: 1000!important;}\n.tutorial-popover .arrow::before {border: 3px solid var(--color-primary-500); width: 10px; height: 10px; border-radius: 50%}\n.tutorial-popover .arrow-top::before {top: calc(-34px - var(--arrow-size))}\n.tutorial-popover .arrow-left::before {left: calc(-34px - var(--arrow-size))}\n.tutorial-popover .arrow-right::before {right: calc(-34px - var(--arrow-size))}\n.tutorial-popover .arrow-bottom::before {bottom: calc(-34px - var(--arrow-size))}\n.tutorial-popover .arrow::after {content: ' '; position: absolute; background: var(--color-primary-500); display: block; width: 32px; height: 32px; visibility: visible;}\n.tutorial-popover .arrow-top::after {width: 2px; top: calc(var(--arrow-size) - 34px); left: 4px}\n.tutorial-popover .arrow-left::after {height: 2px; left: calc(var(--arrow-size) - 34px); top: 4px}\n.tutorial-popover .arrow-right::after {height: 2px; right: calc(var(--arrow-size) - 34px); top: 4px}\n.tutorial-popover .arrow-bottom::after {width: 2px; bottom: calc(var(--arrow-size) - 34px); left: 4px}\n#versionSwitchBtn > .icon, .vision-icon {display: flex; width: 18px; height: 18px; border-radius: var(--radius-md); align-items: center; justify-content: center; background: rgba(var(--color-inverse-rgb), .1); opacity: .7;}\n#versionSwitchBtn > .icon, .selected .vision-icon {background: var(--color-primary-500); color: #fff; opacity: 1;}\n#versionSwitchBtn > .icon::before, .vision-icon::before {transform: scale(.8);}\n\n#visionSwitchMenu {display: none; min-width: 240px; border-radius: var(--radius-md); --menu-bg: transparent}\n.vision-vision-menu-main {width: 240px}\n#visionSwitchMenu.show {display: flex; flex-direction: column;}\n#visionSwitchMenu .vision-icon {width: 20px; height: 20px; opacity: 1}\n#visionSwitchMenu .menu-heading {font-weight: normal}\n#visionSwitchMenu .vision-workspace-menu {width: 280px; display: flex; align-items: stretch;}\n#visionSwitchMenu .vision-workspace-menu.is-expanded {width: 560px;}\n#visionSwitchMenu .vision-workspace-menu > * {min-width: 0;}\n#chat-container {position: fixed; left: 100px; right: 0; height: calc(100% - 36px); display: none;}\n.hide-menu #chat-container {left: 64px;}\n\n#xuan-chat-view {position: absolute; width: 100%; height: 100%; z-index: 10; display: none;}\n#xuan-chat-view #xx-embed-container {position: absolute; bottom: 0; left: 0; right: 0; top: 0;}\n\n.unconfigured {position: absolute; width: 330px; padding: 20px; right: 0; top: 0; bottom: 0; background: #fff; outline: 1px solid #eee;}\n.unconfigured > div {margin-bottom: 10px;}\n#xuan-chat-view .unconfigured"
+}

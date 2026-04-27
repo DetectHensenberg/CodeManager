@@ -1,0 +1,182 @@
+{
+  "url": "http://127.0.0.1:81/zentao/my.html",
+  "body": "show-menu",
+  "nodes": [
+    {
+      "i": 0,
+      "tag": "DIV",
+      "id": "menu",
+      "cls": "",
+      "text": "地盘\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 120,
+        "h": 768
+      },
+      "display": "block",
+      "pos": "fixed",
+      "z": "1120"
+    },
+    {
+      "i": 1,
+      "tag": "DIV",
+      "id": "apps",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 120,
+        "y": 0,
+        "w": 1928,
+        "h": 732
+      },
+      "display": "block",
+      "pos": "fixed",
+      "z": "auto"
+    },
+    {
+      "i": 2,
+      "tag": "DIV",
+      "id": "appsBar",
+      "cls": "",
+      "text": "研发综合界面\n地盘\n开源版22.1\n升级",
+      "rect": {
+        "x": 120,
+        "y": 732,
+        "w": 1928,
+        "h": 36
+      },
+      "display": "flex",
+      "pos": "fixed",
+      "z": "auto"
+    },
+    {
+      "i": 3,
+      "tag": "DIV",
+      "id": "visionSwitcher",
+      "cls": "",
+      "text": "研发综合界面",
+      "rect": {
+        "x": 128,
+        "y": 734.5,
+        "w": 132,
+        "h": 32
+      },
+      "display": "block",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 4,
+      "tag": "BUTTON",
+      "id": "versionSwitchBtn",
+      "cls": "ghost btn",
+      "text": "研发综合界面",
+      "rect": {
+        "x": 128,
+        "y": 734.5,
+        "w": 132,
+        "h": 32
+      },
+      "display": "inline-flex",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 5,
+      "tag": "UL",
+      "id": "appTabs",
+      "cls": "nav",
+      "text": "地盘",
+      "rect": {
+        "x": 272,
+        "y": 734.5,
+        "w": 1412,
+        "h": 32
+      },
+      "display": "flex",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 6,
+      "tag": "DIV",
+      "id": "appsToolbar",
+      "cls": "toolbar space-x-1",
+      "text": "开源版22.1\n升级",
+      "rect": {
+        "x": 1684,
+        "y": 734.5,
+        "w": 360,
+        "h": 32
+      },
+      "display": "flex",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 7,
+      "tag": "DIV",
+      "id": "chat-btn-container",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 1836.109375,
+        "y": 734.5,
+        "w": 26.921875,
+        "h": 32
+      },
+      "display": "block",
+      "pos": "static",
+      "z": "auto"
+    },
+    {
+      "i": 8,
+      "tag": "BUTTON",
+      "id": "chat-btn",
+      "cls": "ghost px-1 btn",
+      "text": "",
+      "rect": {
+        "x": 1836.109375,
+        "y": 734.5,
+        "w": 26.921875,
+        "h": 32
+      },
+      "display": "inline-flex",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 9,
+      "tag": "A",
+      "id": "version",
+      "cls": "toolbar-item ghost btn-zentao px-1 btn btn-default",
+      "text": "开源版22.1",
+      "rect": {
+        "x": 1867.03125,
+        "y": 734.5,
+        "w": 102.96875,
+        "h": 32
+      },
+      "display": "flex",
+      "pos": "relative",
+      "z": "auto"
+    },
+    {
+      "i": 10,
+      "tag": "BUTTON",
+      "id": "bizLink",
+      "cls": "ghost btn",
+      "text": "升级",
+      "rect": {
+        "x": 1974,
+        "y": 734.5,
+        "w": 70,
+        "h": 32
+      },
+      "display": "flex",
+      "pos": "relative",
+      "z": "auto"
+    }
+  ]
+}

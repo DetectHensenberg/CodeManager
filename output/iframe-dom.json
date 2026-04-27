@@ -1,0 +1,700 @@
+{
+  "url": "http://127.0.0.1:81/zentao/my.html",
+  "bodyClass": "m-block-dashboard",
+  "welcomeTree": {
+    "tag": "DIV",
+    "class": "panel rounded bg-canvas panel-block shadow block-welcome is-long",
+    "text": "2026年04月27日 星期一禅道已陪伴您1天： 昨日您暂未",
+    "rect": {
+      "x": 147,
+      "y": 75.5,
+      "width": 999.328125,
+      "height": 178,
+      "top": 75.5,
+      "right": 1146.328125,
+      "bottom": 253.5,
+      "left": 147
+    },
+    "children": [
+      {
+        "tag": "DIV",
+        "class": "panel-heading px-0 py-1 border-b-0",
+        "text": "2026年04月27日 星期一禅道已陪伴您1天： 昨日您暂未",
+        "rect": {
+          "x": 148,
+          "y": 76.5,
+          "width": 997.328125,
+          "height": 53.203125,
+          "top": 76.5,
+          "right": 1145.328125,
+          "bottom": 129.703125,
+          "left": 148
+        },
+        "children": [
+          {
+            "tag": "DIV",
+            "class": "row flex-auto items-center p-2 gap-2",
+            "text": "2026年04月27日 星期一禅道已陪伴您1天： 昨日您暂未",
+            "rect": {
+              "x": 162,
+              "y": 86.5,
+              "width": 969.328125,
+              "height": 32.203125,
+              "top": 86.5,
+              "right": 1131.328125,
+              "bottom": 118.703125,
+              "left": 162
+            },
+            "children": [
+              {
+                "tag": "DIV",
+                "class": "cell text-center font-bold text-md",
+                "text": "2026年04月27日 星期一",
+                "rect": {
+                  "x": 169,
+                  "y": 93.5,
+                  "width": 210.171875,
+                  "height": 18.203125,
+                  "top": 93.5,
+                  "right": 379.171875,
+                  "bottom": 111.703125,
+                  "left": 169
+                },
+                "children": []
+              },
+              {
+                "tag": "DIV",
+                "class": "cell text-sm",
+                "text": "禅道已陪伴您1天： 昨日您暂未处理任务和Bug，今日期待优秀",
+                "rect": {
+                  "x": 386.171875,
+                  "y": 95.59375,
+                  "width": 360.796875,
+                  "height": 14,
+                  "top": 95.59375,
+                  "right": 746.96875,
+                  "bottom": 109.59375,
+                  "left": 386.171875
+                },
+                "children": [
+                  {
+                    "tag": "STRONG",
+                    "class": "",
+                    "text": "昨日",
+                    "rect": {
+                      "x": 479.890625,
+                      "y": 95.59375,
+                      "width": 21.53125,
+                      "height": 14,
+                      "top": 95.59375,
+                      "right": 501.421875,
+                      "bottom": 109.59375,
+                      "left": 479.890625
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "DIV",
+        "class": "panel-body p-0",
+        "text": "admin，晚上好A待我评审0待我评审数指派给我0任务数0B",
+        "rect": {
+          "x": 148,
+          "y": 129.703125,
+          "width": 997.328125,
+          "height": 122.796875,
+          "top": 129.703125,
+          "right": 1145.328125,
+          "bottom": 252.5,
+          "left": 148
+        },
+        "children": [
+          {
+            "tag": "DIV",
+            "class": "row h-full",
+            "text": "admin，晚上好A待我评审0待我评审数指派给我0任务数0B",
+            "rect": {
+              "x": 162,
+              "y": 143.703125,
+              "width": 969.328125,
+              "height": 94.796875,
+              "top": 143.703125,
+              "right": 1131.328125,
+              "bottom": 238.5,
+              "left": 162
+            },
+            "children": [
+              {
+                "tag": "DIV",
+                "class": "cell center flex-none gap-2",
+                "text": "admin，晚上好A",
+                "rect": {
+                  "x": 162,
+                  "y": 143.703125,
+                  "width": 213.25,
+                  "height": 94.796875,
+                  "top": 143.703125,
+                  "right": 375.25,
+                  "bottom": 238.5,
+                  "left": 162
+                },
+                "children": [
+                  {
+                    "tag": "STRONG",
+                    "class": "",
+                    "text": "admin，晚上好",
+                    "rect": {
+                      "x": 219.875,
+                      "y": 160.828125,
+                      "width": 97.484375,
+                      "height": 21.53125,
+                      "top": 160.828125,
+                      "right": 317.359375,
+                      "bottom": 182.359375,
+                      "left": 219.875
+                    },
+                    "children": []
+                  },
+                  {
+                    "tag": "DIV",
+                    "class": "avatar rounded-full has-text has-text-1 welcome-avatar",
+                    "text": "A",
+                    "rect": {
+                      "x": 252.625,
+                      "y": 189.359375,
+                      "width": 32,
+                      "height": 32,
+                      "top": 189.359375,
+                      "right": 284.625,
+                      "bottom": 221.359375,
+                      "left": 252.625
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tag": "DIV",
+                "class": "divider h-10 self-center",
+                "text": "",
+                "rect": {
+                  "x": 375.25,
+                  "y": 173.59375,
+                  "width": 1,
+                  "height": 35,
+                  "top": 173.59375,
+                  "right": 376.25,
+                  "bottom": 208.59375,
+                  "left": 375.25
+                },
+                "children": []
+              },
+              {
+                "tag": "DIV",
+                "class": "cell col text-center py-4",
+                "text": "待我评审0待我评审数",
+                "rect": {
+                  "x": 376.25,
+                  "y": 143.703125,
+                  "width": 155.078125,
+                  "height": 94.796875,
+                  "top": 143.703125,
+                  "right": 531.328125,
+                  "bottom": 238.5,
+                  "left": 376.25
+                },
+                "children": [
+                  {
+                    "tag": "DIV",
+                    "class": "",
+                    "text": "待我评审",
+                    "rect": {
+                      "x": 376.25,
+                      "y": 157.703125,
+                      "width": 155.078125,
+                      "height": 21.53125,
+                      "top": 157.703125,
+                      "right": 531.328125,
+                      "bottom": 179.234375,
+                      "left": 376.25
+                    },
+                    "children": []
+                  },
+                  {
+                    "tag": "DIV",
+                    "class": "flex-auto center",
+                    "text": "0待我评审数",
+                    "rect": {
+                      "x": 376.25,
+                      "y": 179.234375,
+                      "width": 155.078125,
+                      "height": 56.53125,
+                      "top": 179.234375,
+                      "right": 531.328125,
+                      "bottom": 235.765625,
+                      "left": 376.25
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "tag": "DIV",
+                "class": "divider h-10 self-center",
+                "text": "",
+                "rect": {
+                  "x": 531.328125,
+                  "y": 173.59375,
+                  "width": 1,
+                  "height": 35,
+                  "top": 173.59375,
+                  "right": 532.328125,
+                  "bottom": 208.59375,
+                  "left": 531.328125
+                },
+                "children": []
+              },
+              {
+                "tag": "DIV",
+                "class": "cell col flex-auto py-4",
+                "text": "指派给我0任务数0BUG数0研发需求数0用例数",
+                "rect": {
+                  "x": 532.328125,
+                  "y": 143.703125,
+                  "width": 599,
+                  "height": 94.796875,
+                  "top": 143.703125,
+                  "right": 1131.328125,
+                  "bottom": 238.5,
+                  "left": 532.328125
+                },
+                "children": [
+                  {
+                    "tag": "DIV",
+                    "class": "",
+                    "text": "指派给我",
+                    "rect": {
+                      "x": 532.328125,
+                      "y": 157.703125,
+                      "width": 599,
+                      "height": 21.53125,
+                      "top": 157.703125,
+                      "right": 1131.328125,
+                      "bottom": 179.234375,
+                      "left": 532.328125
+                    },
+                    "children": []
+                  },
+                  {
+                    "tag": "DIV",
+                    "class": "flex-auto flex justify-around text-center items-center",
+                    "text": "0任务数0BUG数0研发需求数0用例数",
+                    "rect": {
+                      "x": 532.328125,
+                      "y": 179.234375,
+                      "width": 599,
+                      "height": 56.53125,
+                      "top": 179.234375,
+                      "right": 1131.328125,
+                      "bottom": 235.765625,
+                      "left": 532.328125
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "STYLE",
+            "class": "",
+            "text": ".block-welcome .tabs-nav > .na",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "nums": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "text-3xl h-10 num",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 419,
+        "y": 179,
+        "w": 70,
+        "h": 35
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "text-3xl h-10 num",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 583,
+        "y": 179,
+        "w": 42,
+        "h": 35
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "text-3xl h-10 num",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 726,
+        "y": 179,
+        "w": 41,
+        "h": 35
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "text-3xl h-10 num",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 868,
+        "y": 179,
+        "w": 70,
+        "h": 35
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "text-3xl h-10 num",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 1039,
+        "y": 179,
+        "w": 42,
+        "h": 35
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "center absolute inset-0 num gap-1",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "absolute",
+      "z": "auto",
+      "top": "0px",
+      "right": "0px",
+      "rect": {
+        "x": 351,
+        "y": 2422,
+        "w": 381,
+        "h": 112
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "center absolute inset-0 num gap-1",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "absolute",
+      "z": "auto",
+      "top": "0px",
+      "right": "0px",
+      "rect": {
+        "x": 497,
+        "y": 2746,
+        "w": 112,
+        "h": 112
+      }
+    }
+  ],
+  "cells": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell text-center font-bold text-md",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(243, 246, 255)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 169,
+        "y": 94,
+        "w": 210,
+        "h": 18
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell text-sm",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 386,
+        "y": 96,
+        "w": 361,
+        "h": 14
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell center flex-none gap-2",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 162,
+        "y": 144,
+        "w": 213,
+        "h": 95
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell col text-center py-4",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 376,
+        "y": 144,
+        "w": 155,
+        "h": 95
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 419,
+        "y": 179,
+        "w": 70,
+        "h": 57
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell col flex-auto py-4",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 532,
+        "y": 144,
+        "w": 599,
+        "h": 95
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 583,
+        "y": 179,
+        "w": 42,
+        "h": 57
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 726,
+        "y": 179,
+        "w": 41,
+        "h": 57
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 868,
+        "y": 179,
+        "w": 70,
+        "h": 57
+      }
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "cell",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(170, 179, 210)",
+      "pos": "static",
+      "z": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 1039,
+        "y": 179,
+        "w": 42,
+        "h": 57
+      }
+    }
+  ],
+  "topRight": [
+    {
+      "tag": "DIV",
+      "id": "toolbar",
+      "class": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgb(235, 237, 243)",
+      "shadow": "none",
+      "radius": "0px",
+      "color": "rgb(243, 246, 255)",
+      "pos": "absolute",
+      "z": "auto",
+      "top": "0px",
+      "right": "34px",
+      "rect": {
+        "x": 1534,
+        "y": 0,
+        "w": 112,
+        "h": 44
+      }
+    }
+  ],
+  "possibleTopRight": []
+}

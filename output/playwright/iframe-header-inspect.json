@@ -1,0 +1,57 @@
+[
+  {
+    "url": "http://127.0.0.1:81/zentao/my.html",
+    "body": "m-block-dashboard",
+    "links": [
+      "http://127.0.0.1:81/zentao/js/zui3/zui.zentao.css?v=22.1",
+      "http://127.0.0.1:81/zentao/js/zui3/themes/default.css?v=22.1"
+    ],
+    "nodes": [
+      {
+        "tag": "HEADER",
+        "id": "header",
+        "cls": "",
+        "text": "地盘\n仪表盘\nA",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1928,
+          "h": 48
+        },
+        "display": "block",
+        "pos": "static",
+        "z": "auto"
+      },
+      {
+        "tag": "DIV",
+        "id": "toolbar",
+        "cls": "",
+        "text": "A",
+        "rect": {
+          "x": 1776,
+          "y": 18,
+          "w": 128,
+          "h": 714
+        },
+        "display": "flex",
+        "pos": "fixed",
+        "z": "1200"
+      },
+      {
+        "tag": "DIV",
+        "id": "main",
+        "cls": "load-indicator",
+        "text": "欢迎总览\n2026年04月27日 星期一\n禅道已陪伴您1天： 昨日您暂未处理任务和Bug，今日期待优秀的您来处理！\nadmin，晚上好\nA\n待我评审\n0\n待我评审数\n指派给我\n0\n任务数\n0\nBUG数\n0\n研发需求数\n0\n用例数\n禅道动态\n",
+        "rect": {
+          "x": 0,
+          "y": 48,
+          "w": 1928,
+          "h": 2934
+        },
+        "display": "block",
+        "pos": "relative",
+        "z": "auto"
+      }
+    ]
+  }
+]

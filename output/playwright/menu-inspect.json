@@ -1,0 +1,420 @@
+{
+  "url": "http://127.0.0.1:81/zentao/my.html",
+  "menuRect": {
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 1152
+  },
+  "menuChildren": [
+    {
+      "i": 0,
+      "tag": "DIV",
+      "id": "spaceHeading",
+      "cls": "",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "display": "none",
+      "margin": "28px 0px 7px",
+      "height": "40px"
+    },
+    {
+      "i": 1,
+      "tag": "DIV",
+      "id": "menuNav",
+      "cls": "",
+      "text": "地盘\n项目集\n产品\n项目\n执行\n测试\nDevOps\nAI\nBI\n看板\n文档\n组织\n后台",
+      "rect": {
+        "x": 28,
+        "y": 120,
+        "w": 231,
+        "h": 1191
+      },
+      "display": "block",
+      "margin": "0px",
+      "height": "1191px"
+    }
+  ],
+  "menuItems": [
+    {
+      "i": 0,
+      "cls": "hint-right is-original",
+      "text": "地盘",
+      "rect": {
+        "x": 28,
+        "y": 152,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 156,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 1,
+      "cls": "hint-right is-original",
+      "text": "项目集",
+      "rect": {
+        "x": 28,
+        "y": 214,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 218,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 2,
+      "cls": "hint-right is-original",
+      "text": "产品",
+      "rect": {
+        "x": 28,
+        "y": 276,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 280,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 3,
+      "cls": "hint-right is-original",
+      "text": "项目",
+      "rect": {
+        "x": 28,
+        "y": 338,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 342,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 4,
+      "cls": "hint-right is-original",
+      "text": "执行",
+      "rect": {
+        "x": 28,
+        "y": 400,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 404,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 5,
+      "cls": "hint-right is-original",
+      "text": "测试",
+      "rect": {
+        "x": 28,
+        "y": 462,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 466,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 6,
+      "cls": "hint-right is-original",
+      "text": "DevOps",
+      "rect": {
+        "x": 28,
+        "y": 524,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 528,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 7,
+      "cls": "divider is-original",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 586,
+        "w": 231,
+        "h": 62
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": null
+    },
+    {
+      "i": 8,
+      "cls": "hint-right is-original",
+      "text": "AI",
+      "rect": {
+        "x": 28,
+        "y": 656,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 660,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 9,
+      "cls": "hint-right is-original",
+      "text": "BI",
+      "rect": {
+        "x": 28,
+        "y": 718,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 722,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 10,
+      "cls": "divider is-original",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 780,
+        "w": 231,
+        "h": 62
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": null
+    },
+    {
+      "i": 11,
+      "cls": "hint-right is-original",
+      "text": "看板",
+      "rect": {
+        "x": 28,
+        "y": 850,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 854,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 12,
+      "cls": "hint-right is-original",
+      "text": "文档",
+      "rect": {
+        "x": 28,
+        "y": 912,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 916,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 13,
+      "cls": "divider is-original",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 974,
+        "w": 231,
+        "h": 62
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": null
+    },
+    {
+      "i": 14,
+      "cls": "hint-right is-original",
+      "text": "组织",
+      "rect": {
+        "x": 28,
+        "y": 1044,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 1048,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 15,
+      "cls": "hint-right is-original",
+      "text": "后台",
+      "rect": {
+        "x": 28,
+        "y": 1106,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 1110,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 16,
+      "cls": "divider",
+      "text": "",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": null
+    },
+    {
+      "i": 17,
+      "cls": "",
+      "text": "更多",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "aDisplay": "flex"
+    },
+    {
+      "i": 18,
+      "cls": "hint-right",
+      "text": "",
+      "rect": {
+        "x": 28,
+        "y": 1181,
+        "w": 231,
+        "h": 54
+      },
+      "display": "block",
+      "margin": "4px 0px",
+      "height": "54px",
+      "aRect": {
+        "x": 28,
+        "y": 1185,
+        "w": 231,
+        "h": 46
+      },
+      "aDisplay": "flex"
+    }
+  ]
+}

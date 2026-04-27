@@ -1,0 +1,40 @@
+{
+  "allFixedTopRight": [],
+  "welcomeNum": [],
+  "welcomeCell": [],
+  "welcomeRow": [],
+  "panelHeading": [
+    {
+      "class": "panel-heading border-b justify-start items-center gap-1",
+      "tag": "DIV",
+      "id": "",
+      "bg": "rgb(37, 42, 74)",
+      "bgImg": "none",
+      "border": "",
+      "borderRadius": "10px 10px 0px 0px",
+      "boxShadow": "none",
+      "color": "rgb(243, 246, 255)",
+      "fontSize": "13px",
+      "fontWeight": "600",
+      "position": "static",
+      "zIndex": "auto",
+      "top": "auto",
+      "right": "auto",
+      "rect": {
+        "x": 1547,
+        "y": 1008,
+        "w": 112,
+        "h": 41
+      },
+      "text": "可升级版本"
+    }
+  ],
+  "flowItem": [],
+  "tutorialBtn": [],
+  "headerAccount": [],
+  "chatBtn": [],
+  "headerActions": [],
+  "topRightZone": [],
+  "pageHeader": [],
+  "welcomeHeader": []
+}

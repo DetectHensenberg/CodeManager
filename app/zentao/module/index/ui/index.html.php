@@ -277,6 +277,15 @@ to::head
     h::importJs($app->getWebRoot() . 'js/zui3/ai.js', setID('aiJS'))
 );
 
+/* Load CodeManager theme and scripts for the ZUI3 shell. */
+$cmCssFile = $app->getBasePath() . 'www/theme/codemanager/codemanager.css';
+$cmJsFile  = $app->getBasePath() . 'www/js/codemanager.js';
+to::head
+(
+    file_exists($cmCssFile) ? h::importCss($app->getWebRoot() . 'theme/codemanager/codemanager.css?t=' . filemtime($cmCssFile), setID('codemanagerCSS')) : null,
+    file_exists($cmJsFile)  ? h::importJs($app->getWebRoot()  . 'js/codemanager.js?t='              . filemtime($cmJsFile),  setID('codemanagerJS'))  : null
+);
+
 /**
  * Check if the tutorial mode is on, show confirm dialog if it is.
  * 检查是否处于教程模式，如果是则显示确认对话框是否继续。

@@ -1,0 +1,103 @@
+{
+  "body": [
+    {
+      "tag": "BODY",
+      "id": "",
+      "class": "show-menu codemanager-shell",
+      "position": "static",
+      "zIndex": "auto",
+      "top": "auto",
+      "right": "auto",
+      "bg": "rgba(0, 0, 0, 0)",
+      "display": "block",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 0
+      },
+      "text": ":root\n{\n    --zt-apps-bar-height: 36px;\n"
+    }
+  ],
+  "appsBar": [
+    {
+      "tag": "DIV",
+      "id": "appsBar",
+      "class": "",
+      "position": "fixed",
+      "zIndex": "auto",
+      "top": "1034px",
+      "right": "0px",
+      "bg": "rgba(13, 20, 34, 0.86)",
+      "display": "flex",
+      "rect": {
+        "x": 120,
+        "y": 1034,
+        "w": 1800,
+        "h": 46
+      },
+      "text": "研发综合界面切换工作界面研发综合界面运营管理界面切换工作空间产品空间项目空间执行"
+    }
+  ],
+  "appsToolbar": [
+    {
+      "tag": "DIV",
+      "id": "appsToolbar",
+      "class": "toolbar space-x-1",
+      "position": "relative",
+      "zIndex": "auto",
+      "top": "0px",
+      "right": "0px",
+      "bg": "rgba(30, 35, 61, 0.82)",
+      "display": "flex",
+      "rect": {
+        "x": 1556,
+        "y": 1035,
+        "w": 360,
+        "h": 45
+      },
+      "text": "开源版22.1升级可升级版本"
+    }
+  ],
+  "mainHeader": [],
+  "chatBtn": [],
+  "globalSearch": [
+    {
+      "tag": "DIV",
+      "id": "globalSearch",
+      "class": "w-44",
+      "position": "static",
+      "zIndex": "auto",
+      "top": "auto",
+      "right": "auto",
+      "bg": "rgba(255, 255, 255, 0.05)",
+      "display": "flex",
+      "rect": {
+        "x": 1572,
+        "y": 1042,
+        "w": 77,
+        "h": 32
+      },
+      "text": ""
+    }
+  ],
+  "userAvatar": [],
+  "fixedTop": [
+    {
+      "tag": "DIV",
+      "id": "chat-container",
+      "class": "",
+      "zIndex": "auto",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    }
+  ]
+}

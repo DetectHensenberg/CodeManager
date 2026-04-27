@@ -30,91 +30,90 @@
   color-scheme: dark;
 
   /*
-   * LucenAI palette — tuned against Dashboard.png reference.
-   * Hierarchy (darkest → lightest):
-   *   bg (#08) → workspace (#0d) → sidebar (#0f) → surface (#15) → surface-2 (#1a) → surface-3 (#1f)
+   * LucenAI palette — exact match to lucenai-dashboard-effect.html design tokens.
    */
-  --cm-bg:           #080c14;
-  --cm-workspace:    #0d1117;
-  --cm-sidebar:      #0f1521;
-  --cm-surface:      #151c2e;
-  --cm-surface-2:    #1a2236;
-  --cm-surface-3:    #1f283f;
-  --cm-card-hd:      #1f283f;
-  --cm-border:       rgba(255, 255, 255, .07);
-  --cm-border-md:    rgba(255, 255, 255, .13);
-  --cm-text:         #f1f5f9;
-  --cm-body:         #cbd5e1;
-  --cm-muted:        #64748b;
-  --cm-primary:      #6366f1;
-  --cm-primary-h:    #818cf8;
-  --cm-primary-soft: rgba(99, 102, 241, .15);
-  --cm-success:      #22c55e;
-  --cm-danger:       #ef4444;
-  --cm-warning:      #f59e0b;
-  --cm-radius-xs:    6px;
-  --cm-radius-sm:    10px;
-  --cm-radius-md:    14px;
-  --cm-shadow:       0 1px 3px rgba(0, 0, 0, .5), 0 8px 24px rgba(0, 0, 0, .4);
-  --cm-shadow-lg:    0 2px 8px rgba(0, 0, 0, .6), 0 16px 48px rgba(0, 0, 0, .5);
-  --cm-focus:        0 0 0 3px rgba(99, 102, 241, .35);
+  --cm-lu-bg:           #070b15;
+  --cm-lu-workspace:    #070b15;
+  --cm-lu-sidebar:      #1e233d;         /* gradient endpoint used as fallback */
+  --cm-lu-surface:      #20243f;
+  --cm-lu-surface-2:    #252a4a;
+  --cm-lu-surface-3:    #30365e;
+  --cm-lu-card-hd:      #30365e;
+  --cm-lu-border:       rgba(154, 170, 226, .16);
+  --cm-lu-border-md:    rgba(154, 170, 226, .30);
+  --cm-lu-text:         #f3f6ff;
+  --cm-lu-body:         #aab3d2;
+  --cm-lu-muted:        #747eaa;
+  --cm-lu-primary:      #6264f4;
+  --cm-lu-primary-h:    #7991ff;
+  --cm-lu-primary-soft: rgba(98, 100, 244, .15);
+  --cm-lu-success:      #18c99b;
+  --cm-lu-danger:       #ff4f7a;
+  --cm-lu-warning:      #f3b73c;
+  --cm-lu-blue:         #5f9bff;
+  --cm-lu-radius-xs:    6px;
+  --cm-lu-radius-sm:    10px;
+  --cm-lu-radius-md:    14px;
+  --cm-lu-shadow:       0 26px 80px rgba(0, 0, 0, .42);
+  --cm-lu-shadow-lg:    0 2px 8px rgba(0, 0, 0, .6), 0 24px 72px rgba(0, 0, 0, .55);
+  --cm-lu-focus:        0 0 0 3px rgba(98, 100, 244, .35);
 
   /* ZUI3 shell overrides — controls #menu, #appsBar, #apps */
-  --zt-menu-bg:          #0f1521;
-  --zt-menu-active-bg:   #6366f1;
-  --zt-menu-hover-bg:    rgba(99, 102, 241, .18);
-  --zt-menu-text-color:  rgba(241, 245, 249, .55);
-  --zt-menu-text-active: #f1f5f9;
-  --zt-apps-bar-bg:      #0f1521;
-  --zt-page-bg:          #0d1117;
-  --zt-header-bg:        #0f1521;
-  --zt-header-color:     #f1f5f9;
+  --zt-menu-bg:          #1e233d;     /* gradient fallback; actual gradient set below */
+  --zt-menu-active-bg:   #6264f4;    /* overridden by direct rule with gradient */
+  --zt-menu-hover-bg:    rgba(98, 100, 244, .16);
+  --zt-menu-text-color:  #b7bfdc;
+  --zt-menu-text-active: #ffffff;
+  --zt-apps-bar-bg:      #101724;
+  --zt-page-bg:          #070b15;
+  --zt-header-bg:        #1e233d;
+  --zt-header-color:     #f3f6ff;
 
   /* ZUI3 global color tokens */
-  --color-canvas:               #0d1117;
-  --color-canvas-rgb:           13, 17, 23;
-  --color-canvas-light:         #0d1117;
-  --color-canvas-dark:          #080c14;
-  --color-canvas-light-rgb:     13, 17, 23;
-  --color-canvas-dark-rgb:      8, 12, 20;
+  --color-canvas:               #070b15;
+  --color-canvas-rgb:           7, 11, 21;
+  --color-canvas-light:         #070b15;
+  --color-canvas-dark:          #050912;
+  --color-canvas-light-rgb:     7, 11, 21;
+  --color-canvas-dark-rgb:      5, 9, 18;
 
-  /* surface — kanban col headers, cards, admin panels */
-  --color-surface:              #151c2e;
-  --color-surface-light:        #0f1521;
-  --color-surface-strong:       #1a2236;
-  --color-surface-rgb:          21, 28, 46;
-  --color-surface-light-rgb:    15, 21, 33;
-  --color-surface-strong-rgb:   26, 34, 54;
+  /* surface */
+  --color-surface:              #20243f;
+  --color-surface-light:        #1e233d;
+  --color-surface-strong:       #252a4a;
+  --color-surface-rgb:          32, 36, 63;
+  --color-surface-light-rgb:    30, 35, 61;
+  --color-surface-strong-rgb:   37, 42, 74;
 
-  --color-fore:                 #f1f5f9;
-  --color-fore-rgb:             241, 245, 249;
-  --color-inverse:              #f1f5f9;
-  --color-inverse-rgb:          241, 245, 249;
+  --color-fore:                 #f3f6ff;
+  --color-fore-rgb:             243, 246, 255;
+  --color-inverse:              #f3f6ff;
+  --color-inverse-rgb:          243, 246, 255;
 
-  --color-primary-500:          #6366f1;
-  --color-primary-600:          #4f46e5;
-  --color-primary-400:          #818cf8;
-  --color-primary-50:           rgba(99, 102, 241, .10);
-  --color-primary-100:          rgba(99, 102, 241, .16);
-  --color-primary-200:          rgba(99, 102, 241, .28);
-  --color-primary-500-rgb:      99, 102, 241;
-  --color-link:                 #818cf8;
-  --color-link-hover:           #a5b4fc;
-  --color-secondary-200:        #64748b;
+  --color-primary-500:          #6264f4;
+  --color-primary-600:          #4f51d4;
+  --color-primary-400:          #7991ff;
+  --color-primary-50:           rgba(98, 100, 244, .10);
+  --color-primary-100:          rgba(98, 100, 244, .16);
+  --color-primary-200:          rgba(98, 100, 244, .28);
+  --color-primary-500-rgb:      98, 100, 244;
+  --color-link:                 #7991ff;
+  --color-link-hover:           #9aaeff;
+  --color-secondary-200:        #747eaa;
 
   /* gray scale */
   --color-gray-100:             #111827;
-  --color-gray-200:             #1e293b;
-  --color-gray-300:             #334155;
-  --color-gray-400:             rgba(255, 255, 255, .15);
-  --color-gray-500:             #64748b;
-  --color-gray-600:             #94a3b8;
-  --color-gray-700:             #cbd5e1;
-  --color-gray-800:             #e2e8f0;
-  --color-gray-900:             #f1f5f9;
+  --color-gray-200:             #1e2740;
+  --color-gray-300:             #2a3354;
+  --color-gray-400:             rgba(154, 170, 226, .25);
+  --color-gray-500:             #747eaa;
+  --color-gray-600:             #aab3d2;
+  --color-gray-700:             #c7ceea;
+  --color-gray-800:             #dde2f4;
+  --color-gray-900:             #f3f6ff;
   --color-gray-100-rgb:         17, 24, 39;
-  --color-gray-500-rgb:         100, 116, 139;
-  --color-gray-900-rgb:         241, 245, 249;
+  --color-gray-500-rgb:         116, 126, 170;
+  --color-gray-900-rgb:         243, 246, 255;
 }
 
 /* ============================================================
@@ -124,16 +123,47 @@ html,
 body {
   min-width: 0;
   background:
-    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(99, 102, 241, .10), transparent),
-    radial-gradient(ellipse 40% 30% at 100% 0%,  rgba(30,  50, 200, .07), transparent),
-    radial-gradient(ellipse 30% 20% at 50% 60%,  rgba(220, 30,  90, .04), transparent),
-    #080c14;
-  color: var(--cm-body);
+    radial-gradient(circle at 8% 0%,   rgba(31, 77, 123, .34),  transparent 30%),
+    radial-gradient(circle at 52% -12%, rgba(99, 102, 241, .28), transparent 34%),
+    radial-gradient(circle at 94% 6%,  rgba(42, 32, 96, .28),   transparent 35%),
+    radial-gradient(circle at 72% 56%, rgba(55, 74, 148, .16),  transparent 44%),
+    linear-gradient(135deg, #08151d 0%, #070a16 38%, #0d1024 68%, #050812 100%);
+  color: var(--cm-lu-body);
   font-family: "CM-Figtree", "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
   font-size: 14px;
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Subtle grid texture overlay — mimics design mockup */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,  rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+  background-size: 96px 96px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, .5), transparent 60%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, .5), transparent 60%);
+  opacity: .35;
+}
+
+/* Light bloom overlay */
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 58% 18%, rgba(255, 255, 255, .07), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, .03), transparent 26%, rgba(0, 0, 0, .18));
+  mix-blend-mode: screen;
+  opacity: .42;
 }
 
 body,
@@ -145,17 +175,239 @@ textarea {
 }
 
 a {
-  color: var(--cm-primary);
+  color: var(--cm-lu-primary);
 }
 
 a:hover,
 a:focus {
-  color: var(--cm-primary-h);
+  color: var(--cm-lu-primary-h);
   text-decoration: none;
 }
 
 .container {
   max-width: 1560px !important;
+}
+
+/* ============================================================
+   2b. ZUI3 SHELL — SIDEBAR / APPS BAR / ACTIVE NAV
+   ============================================================ */
+
+/* ZUI3 left sidebar — gradient glass matching design mockup */
+#menu {
+  background:
+    linear-gradient(180deg, rgba(40, 45, 78, .84), rgba(27, 32, 57, .68)),
+    radial-gradient(circle at 16% 5%, rgba(103, 107, 255, .18), transparent 32%) !important;
+  box-shadow: 22px 0 54px rgba(0, 0, 0, .22) !important;
+  border-right: 1px solid rgba(202, 211, 255, .10) !important;
+  backdrop-filter: blur(22px) saturate(130%);
+}
+
+/* Sidebar brand area — "CodeManager" heading */
+#spaceHeading {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 20px 18px 10px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: #f3f6ff !important;
+  background: transparent !important;
+}
+
+#spaceHeading .text {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: #f3f6ff !important;
+}
+
+/* Sidebar nav items — elevated to match design reference */
+#menuMainNav > li > a,
+#menuMoreNav > li > a,
+#menuNav > li > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  height: 44px !important;
+  padding: 0 14px !important;
+  margin: 2px 6px !important;
+  color: #b7bfdc !important;
+  border-radius: 12px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  transition: background .18s ease, color .18s ease;
+}
+
+#menuMainNav > li > a:hover,
+#menuMoreNav > li > a:hover,
+#menuNav > li > a:hover {
+  background: rgba(98, 100, 244, .16) !important;
+  color: #e0e4ff !important;
+}
+
+/* Active nav item in ZUI3 sidebar — gradient glow matching LucenAI spec */
+#menuMainNav > li.active > a,
+#menuMainNav > li > a.active,
+#menuMoreNav > li.active > a,
+#menuNav > li.active > a,
+#menuNav > li > a.active {
+  background: linear-gradient(90deg, rgba(101, 119, 255, .82), rgba(92, 127, 183, .66)) !important;
+  box-shadow: 0 10px 24px rgba(81, 98, 255, .22) !important;
+  color: #fff !important;
+}
+
+/* Hide ZUI3 default active triangle indicator */
+#menuMainNav > li.active > a::before,
+#menuMainNav > li.active > a::after,
+#menuNav > li.active > a::before,
+#menuNav > li.active > a::after {
+  display: none !important;
+}
+
+/* Sidebar collapse/toggle button */
+#menuToggleNav a.menu-toggle,
+#menuToggleMenu a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 4px auto !important;
+  color: #7782aa !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, .04) !important;
+}
+
+#menuToggleNav a.menu-toggle:hover,
+#menuToggleMenu a:hover {
+  background: rgba(255, 255, 255, .08) !important;
+  color: #aab3d2 !important;
+}
+
+/* Sidebar divider */
+#menuNav .divider,
+#menuMainNav .divider,
+#menuMoreNav .divider {
+  height: 1px !important;
+  margin: 8px 14px !important;
+  background: rgba(178, 190, 255, .10) !important;
+  border: none !important;
+}
+
+/* Sidebar icons */
+#menuMainNav .icon,
+#menuMainNav [class*="icon-"],
+#menuNav .icon,
+#menuNav [class*="icon-"] {
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: currentColor !important;
+  opacity: .85 !important;
+}
+
+/* ── ZUI3 bottom apps bar ── */
+#appsBar {
+  height: 46px;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(13, 20, 34, .86) !important;
+  border-top: 1px solid rgba(255, 255, 255, .08) !important;
+  backdrop-filter: blur(18px) saturate(130%);
+  color: #c7d0ea !important;
+  font-weight: 700 !important;
+}
+
+/* Bottom bar left section — vision switcher */
+#visionSwitcher,
+#appsViewSwitcher,
+#appsSwitcher,
+#appsBar > .apps-bar-left,
+#appsBar .apps-left,
+#appsBar > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  padding: 0 20px !important;
+  background: rgba(17, 28, 49, .78) !important;
+  color: #8190ff !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  border-right: 1px solid rgba(255, 255, 255, .06) !important;
+}
+
+/* Bottom bar center — app tabs */
+#appTabs {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 12px !important;
+  overflow-x: auto;
+}
+
+#appTabs > li > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 32px !important;
+  padding: 0 12px !important;
+  color: #8f99c0 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+#appTabs > li.active > a {
+  color: #e0e4ff !important;
+  background: rgba(255, 255, 255, .08) !important;
+}
+
+#appTabs > li > a:hover {
+  color: #c7d0ea !important;
+  background: rgba(255, 255, 255, .04) !important;
+}
+
+/* Bottom bar right — toolbar area */
+#appsToolbar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 100% !important;
+  padding: 0 16px !important;
+}
+
+#appsToolbar .btn,
+#appsToolbar > .toolbar > .btn,
+#appsToolbar > * {
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 0 10px !important;
+  color: #aab3d2 !important;
+  background: rgba(255, 255, 255, .05) !important;
+  border: 1px solid rgba(178, 190, 255, .10) !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+#appsToolbar .btn:hover,
+#appsToolbar > .toolbar > .btn:hover {
+  background: rgba(255, 255, 255, .10) !important;
+  color: #e0e4ff !important;
+}
+
+/* Version button in bottom bar */
+#version,
+#appsToolbar .btn-zentao {
+  background: rgba(32, 36, 63, .7) !important;
+  border-color: rgba(178, 190, 255, .16) !important;
+  color: #c7d0ea !important;
 }
 
 /* ============================================================
@@ -168,9 +420,10 @@ a:focus {
 
 #mainHeader {
   min-height: 52px;
-  background: var(--cm-sidebar) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  box-shadow: none !important;
+  background: rgba(30, 35, 61, .82) !important;
+  border-bottom: 1px solid rgba(202, 211, 255, .08) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .18) !important;
+  backdrop-filter: blur(22px) saturate(130%);
 }
 
 #mainHeader .container {
@@ -197,7 +450,7 @@ a:focus {
   min-height: 26px;
   padding: 0 10px;
   border: 1px solid rgba(99, 102, 241, .4);
-  border-radius: var(--cm-radius-xs);
+  border-radius: var(--cm-lu-radius-xs);
   background: rgba(99, 102, 241, .14);
   color: #818cf8;
   font-size: 11px;
@@ -233,8 +486,8 @@ a:focus {
   align-items: center;
   gap: 6px;
   padding: 0 10px;
-  border-radius: var(--cm-radius-xs);
-  color: var(--cm-muted);
+  border-radius: var(--cm-lu-radius-xs);
+  color: var(--cm-lu-muted);
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
@@ -245,7 +498,7 @@ a:focus {
 #subNavbar .nav > li > a:hover,
 #subNavbar .nav > li.active > a,
 #pageNav .btn:hover {
-  color: var(--cm-text);
+  color: var(--cm-lu-text);
   background: rgba(248, 248, 255, .08);
 }
 
@@ -254,14 +507,21 @@ a:focus {
 }
 
 #toolbar {
-  position: static;
-  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 20px;
   width: auto !important;
   min-height: 44px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
   overflow: visible !important;
+}
+
+@media (min-width: 1400px) {
+  #toolbar {
+    right: 34px;
+  }
 }
 
 #userMenu,
@@ -295,22 +555,23 @@ a:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--cm-muted);
+  color: var(--cm-lu-muted);
   background: transparent;
   border-radius: 999px;
 }
 
 #userNav > li > a:hover,
 #userNav > li > .dropdown-toggle:hover {
-  color: var(--cm-text);
+  color: var(--cm-lu-text);
   background: rgba(248, 248, 255, .08);
 }
 
 #subHeader {
   min-height: 44px;
-  background: var(--cm-surface) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  box-shadow: none !important;
+  background: rgba(42, 47, 83, .62) !important;
+  border-bottom: 1px solid rgba(178, 190, 255, .10) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, .14) !important;
+  backdrop-filter: blur(16px) saturate(130%);
 }
 
 #subHeader .container {
@@ -358,15 +619,19 @@ body:not([data-app]) #subNavbar .nav {
 .page,
 .page-wrapper {
   background: transparent !important;
-  color: var(--cm-body);
+  color: var(--cm-lu-body);
 }
 
 /* ============================================================
    5. TRADITIONAL SHELL — SIDEBAR
    ============================================================ */
 .side {
-  background: var(--cm-sidebar) !important;
-  border-right: 1px solid var(--cm-border) !important;
+  background:
+    linear-gradient(180deg, rgba(40, 45, 78, .84), rgba(27, 32, 57, .68)),
+    radial-gradient(circle at 16% 5%, rgba(103, 107, 255, .18), transparent 32%) !important;
+  border-right: 1px solid rgba(202, 211, 255, .10) !important;
+  backdrop-filter: blur(22px) saturate(130%);
+  box-shadow: 22px 0 54px rgba(0, 0, 0, .22) !important;
 }
 
 .leftmenu {
@@ -376,8 +641,11 @@ body:not([data-app]) #subNavbar .nav {
 .side .leftmenu .nav-primary > li > a,
 .tree a,
 .doc-menu a {
-  border-radius: var(--cm-radius-xs);
-  color: var(--cm-muted);
+  border-radius: 12px;
+  color: #b7bfdc;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .18s ease, color .18s ease;
 }
 
 .side .leftmenu .nav-primary > li.active > a,
@@ -385,12 +653,25 @@ body:not([data-app]) #subNavbar .nav {
 .tree .active > a,
 .tree a:hover,
 .doc-menu a:hover {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-text) !important;
+  background: rgba(98, 100, 244, .16) !important;
+  color: #e0e4ff !important;
+}
+
+.side .leftmenu .nav-primary > li.active > a {
+  background: linear-gradient(90deg, rgba(101, 119, 255, .82), rgba(92, 127, 183, .66)) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(81, 98, 255, .22) !important;
 }
 
 .side .leftmenu .nav-primary > li.active > a .icon {
-  color: var(--cm-primary-h);
+  color: #fff;
+}
+
+.side .leftmenu .nav-primary > li > a .icon,
+.tree a .icon,
+.doc-menu a .icon {
+  opacity: .85;
+  color: currentColor;
 }
 
 /* ============================================================
@@ -399,55 +680,56 @@ body:not([data-app]) #subNavbar .nav {
 .panel,
 .block,
 .module-block,
-.cell,
 .main-table,
 .list-group,
 .block-panel {
-  background: var(--cm-surface) !important;
-  border: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-sm) !important;
-  box-shadow: var(--cm-shadow) !important;
+  background:
+    linear-gradient(180deg, rgba(42, 47, 83, .62), rgba(24, 29, 53, .46)),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, .08), transparent 28%) !important;
+  border: 1px solid rgba(178, 190, 255, .18) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .06) !important;
 }
 
 .panel-heading,
 .block-header,
 .cell-title {
-  background: var(--cm-surface-2) !important;
-  color: var(--cm-text) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-sm) var(--cm-radius-sm) 0 0 !important;
+  background: var(--cm-lu-surface-2) !important;
+  color: var(--cm-lu-text) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-sm) var(--cm-lu-radius-sm) 0 0 !important;
 }
 
 .panel-title {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .panel-body {
   background: transparent !important;
-  color: var(--cm-body);
+  color: var(--cm-lu-body);
 }
 
 /* ZUI3 sidebar pane */
 .sidebar > .pane,
 .pane {
-  background: var(--cm-surface) !important;
-  border-color: var(--cm-border) !important;
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border) !important;
 }
 
 /* ============================================================
    7. TABLES
    ============================================================ */
 .table {
-  color: var(--cm-body);
+  color: var(--cm-lu-body);
 }
 
 .table > thead > tr > th,
 .dtable .thead,
 .table-head,
 .sort-head {
-  background: var(--cm-surface-2) !important;
-  color: var(--cm-muted) !important;
-  border-color: var(--cm-border) !important;
+  background: #30355b !important;
+  color: var(--cm-lu-muted) !important;
+  border-color: var(--cm-lu-border) !important;
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
@@ -456,8 +738,8 @@ body:not([data-app]) #subNavbar .nav {
 
 .table > tbody > tr > td,
 .dtable .tbody .tr > .td {
-  border-color: var(--cm-border) !important;
-  color: var(--cm-body);
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body);
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
@@ -472,7 +754,7 @@ body:not([data-app]) #subNavbar .nav {
 .table-bordered,
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > td {
-  border-color: var(--cm-border) !important;
+  border-color: var(--cm-lu-border) !important;
 }
 
 /* DTable (ZUI3 virtual table) */
@@ -481,8 +763,8 @@ body:not([data-app]) #subNavbar .nav {
 .dtable-head-cell,
 .dtable .row {
   background: transparent;
-  border-color: var(--cm-border) !important;
-  color: var(--cm-body);
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body);
 }
 
 /* ============================================================
@@ -499,10 +781,10 @@ input[type="tel"],
 input[type="date"],
 select,
 textarea {
-  background: var(--cm-surface-2) !important;
-  color: var(--cm-text) !important;
-  border: 1px solid var(--cm-border-md) !important;
-  border-radius: var(--cm-radius-xs) !important;
+  background: var(--cm-lu-surface-2) !important;
+  color: var(--cm-lu-text) !important;
+  border: 1px solid var(--cm-lu-border-md) !important;
+  border-radius: var(--cm-lu-radius-xs) !important;
   box-shadow: none !important;
 }
 
@@ -510,51 +792,51 @@ textarea {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--cm-primary) !important;
-  box-shadow: var(--cm-focus) !important;
+  border-color: var(--cm-lu-primary) !important;
+  box-shadow: var(--cm-lu-focus) !important;
   outline: none;
 }
 
 .form-control::placeholder,
 input::placeholder,
 textarea::placeholder {
-  color: var(--cm-muted) !important;
+  color: var(--cm-lu-muted) !important;
   opacity: 1;
 }
 
 label,
 .control-label,
 .form-label {
-  color: var(--cm-body);
+  color: var(--cm-lu-body);
 }
 
 /* Chosen (select2-like widget) */
 .chosen-container .chosen-single,
 .chosen-container .chosen-results,
 .chosen-container .chosen-drop {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .chosen-container .chosen-results li.highlighted {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ============================================================
    9. BUTTONS
    ============================================================ */
 .btn {
-  border-radius: var(--cm-radius-xs);
+  border-radius: var(--cm-lu-radius-xs);
   font-weight: 600;
   font-size: 13px;
 }
 
 .btn-primary,
 .btn-success {
-  background: var(--cm-primary) !important;
-  border-color: var(--cm-primary) !important;
+  background: var(--cm-lu-primary) !important;
+  border-color: var(--cm-lu-primary) !important;
   color: #fff !important;
 }
 
@@ -562,110 +844,110 @@ label,
 .btn-primary:focus,
 .btn-success:hover,
 .btn-success:focus {
-  background: var(--cm-primary-h) !important;
-  border-color: var(--cm-primary-h) !important;
+  background: var(--cm-lu-primary-h) !important;
+  border-color: var(--cm-lu-primary-h) !important;
 }
 
 .btn-default,
 .btn-secondary,
 .btn-white {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-body) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-body) !important;
 }
 
 .btn-default:hover,
 .btn-secondary:hover,
 .btn-white:hover {
-  background: var(--cm-surface-3) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-3) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .btn-danger {
-  background: var(--cm-danger) !important;
-  border-color: var(--cm-danger) !important;
+  background: var(--cm-lu-danger) !important;
+  border-color: var(--cm-lu-danger) !important;
   color: #fff !important;
 }
 
 .btn-warning {
-  background: var(--cm-warning) !important;
-  border-color: var(--cm-warning) !important;
+  background: var(--cm-lu-warning) !important;
+  border-color: var(--cm-lu-warning) !important;
   color: #1a1200 !important;
 }
 
 .btn-link {
-  color: var(--cm-primary) !important;
+  color: var(--cm-lu-primary) !important;
 }
 
 .btn-link:hover {
-  color: var(--cm-primary-h) !important;
+  color: var(--cm-lu-primary-h) !important;
 }
 
 /* ============================================================
    10. MODALS
    ============================================================ */
 .modal-content {
-  background: var(--cm-surface) !important;
-  border: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-md) !important;
-  box-shadow: var(--cm-shadow) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-md) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
+  color: var(--cm-lu-body);
 }
 
 .modal-header {
-  background: var(--cm-surface-2) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-md) var(--cm-radius-md) 0 0 !important;
-  color: var(--cm-text);
+  background: var(--cm-lu-surface-2) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-md) var(--cm-lu-radius-md) 0 0 !important;
+  color: var(--cm-lu-text);
 }
 
 .modal-footer {
-  background: var(--cm-surface-2) !important;
-  border-top: 1px solid var(--cm-border) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-top: 1px solid var(--cm-lu-border) !important;
 }
 
 .modal-title {
-  color: var(--cm-text);
+  color: var(--cm-lu-text);
 }
 
 .popover {
-  background: var(--cm-surface-2) !important;
-  border: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-sm) !important;
-  box-shadow: var(--cm-shadow) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface-2) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
+  color: var(--cm-lu-body);
 }
 
 .popover-title {
-  background: var(--cm-card-hd) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  color: var(--cm-text);
+  background: var(--cm-lu-card-hd) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  color: var(--cm-lu-text);
 }
 
 /* ============================================================
    11. DROPDOWNS
    ============================================================ */
 .dropdown-menu {
-  background: var(--cm-surface-2) !important;
-  border: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-sm) !important;
-  box-shadow: var(--cm-shadow) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
 }
 
 .dropdown-menu > li > a {
-  color: var(--cm-body) !important;
-  border-radius: var(--cm-radius-xs);
+  color: var(--cm-lu-body) !important;
+  border-radius: var(--cm-lu-radius-xs);
 }
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > .active > a {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .divider {
-  background: var(--cm-border) !important;
+  background: var(--cm-lu-border) !important;
 }
 
 /* ============================================================
@@ -680,63 +962,63 @@ label,
 
 .label-primary,
 .badge-primary {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-primary-h) !important;
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-primary-h) !important;
 }
 
 .label-success,
 .badge-success {
   background: rgba(0, 201, 154, .15) !important;
-  color: var(--cm-success) !important;
+  color: var(--cm-lu-success) !important;
 }
 
 .label-danger,
 .badge-danger {
   background: rgba(255, 52, 114, .15) !important;
-  color: var(--cm-danger) !important;
+  color: var(--cm-lu-danger) !important;
 }
 
 .label-warning,
 .badge-warning {
   background: rgba(255, 173, 36, .15) !important;
-  color: var(--cm-warning) !important;
+  color: var(--cm-lu-warning) !important;
 }
 
 .label-info {
   background: rgba(98, 87, 255, .15) !important;
-  color: var(--cm-primary-h) !important;
+  color: var(--cm-lu-primary-h) !important;
 }
 
 /* ============================================================
    13. ALERTS
    ============================================================ */
 .alert {
-  border-radius: var(--cm-radius-sm);
-  border-color: var(--cm-border);
+  border-radius: var(--cm-lu-radius-sm);
+  border-color: var(--cm-lu-border);
 }
 
 .alert-info,
 .alert-primary {
-  background: var(--cm-primary-soft);
-  color: var(--cm-primary-h);
+  background: var(--cm-lu-primary-soft);
+  color: var(--cm-lu-primary-h);
   border-color: rgba(98, 87, 255, .3);
 }
 
 .alert-success {
   background: rgba(0, 201, 154, .12);
-  color: var(--cm-success);
+  color: var(--cm-lu-success);
   border-color: rgba(0, 201, 154, .3);
 }
 
 .alert-danger {
   background: rgba(255, 52, 114, .12);
-  color: var(--cm-danger);
+  color: var(--cm-lu-danger);
   border-color: rgba(255, 52, 114, .3);
 }
 
 .alert-warning {
   background: rgba(255, 173, 36, .12);
-  color: var(--cm-warning);
+  color: var(--cm-lu-warning);
   border-color: rgba(255, 173, 36, .3);
 }
 
@@ -745,8 +1027,8 @@ label,
    ============================================================ */
 .doc-app,
 .doc-content {
-  background: var(--cm-surface) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface) !important;
+  color: var(--cm-lu-body);
 }
 
 .doc-content {
@@ -759,18 +1041,18 @@ label,
 .article-content h1,
 .article-content h2,
 .article-content h3 {
-  color: var(--cm-text);
+  color: var(--cm-lu-text);
 }
 
 .doc-menu a {
-  color: var(--cm-muted);
-  border-radius: var(--cm-radius-xs);
+  color: var(--cm-lu-muted);
+  border-radius: var(--cm-lu-radius-xs);
 }
 
 .doc-menu a:hover,
 .doc-menu .active > a {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ============================================================
@@ -778,15 +1060,15 @@ label,
    ============================================================ */
 .kanban-col,
 .kanban-column {
-  background: var(--cm-surface) !important;
-  border-color: var(--cm-border) !important;
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border) !important;
 }
 
 .kanban-card,
 .kanban-item {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body);
 }
 
 /* ============================================================
@@ -817,29 +1099,31 @@ label,
 /* ZIN sidebar component renders as div.sidebar — used in doc, project, etc. */
 div.sidebar,
 .sidebar {
-  background: var(--cm-surface) !important;
-  border-color: var(--cm-border) !important;
+  background:
+    linear-gradient(180deg, rgba(40, 45, 78, .84), rgba(27, 32, 57, .68)),
+    radial-gradient(circle at 16% 5%, rgba(103, 107, 255, .18), transparent 32%) !important;
+  border-color: rgba(202, 211, 255, .10) !important;
 }
 
 .sidebar .nav-item > a,
 .sidebar a {
-  color: var(--cm-muted) !important;
-  border-radius: var(--cm-radius-xs);
+  color: var(--cm-lu-muted) !important;
+  border-radius: var(--cm-lu-radius-xs);
 }
 
 .sidebar .nav-item.active > a,
 .sidebar .nav-item > a:hover,
 .sidebar a:hover {
-  background: var(--cm-primary-soft) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* Sidebar pane header */
 .sidebar > .pane-heading,
 .sidebar .pane-heading {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ============================================================
@@ -849,17 +1133,17 @@ div.sidebar,
 /* Override kanban surface tokens at component level */
 .kanban,
 .kanban-list {
-  --kanban-lane-color: var(--cm-primary);
+  --kanban-lane-color: var(--cm-lu-primary);
 }
 
 /* Column header wrapper — was using --color-surface (#eff1f3) */
 .kanban-header-col-wrapper {
-  background-color: var(--cm-surface-2) !important;
-  color: var(--cm-body);
+  background-color: var(--cm-lu-surface-2) !important;
+  color: var(--cm-lu-body);
 }
 
 .kanban-header-title > .as-title {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* Column body lane — uses rgba(--color-inverse-rgb, .05) which is now dark */
@@ -870,19 +1154,19 @@ div.sidebar,
 /* Card inside kanban */
 .kanban-item .card,
 .kanban .card {
-  background: var(--cm-surface) !important;
-  border-color: var(--cm-border) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-body);
 }
 
 .kanban-item .card-title,
 .kanban .card-title {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .kanban-item .card:hover,
 .kanban .card:hover {
-  background: var(--cm-surface-2) !important;
+  background: var(--cm-lu-surface-2) !important;
 }
 
 /* ============================================================
@@ -898,36 +1182,37 @@ div.sidebar,
 [style*="background: white"],
 [style*="background:#FFF"],
 [style*="background-color:#FFF"] {
-  background: var(--cm-surface) !important;
+  background: var(--cm-lu-surface) !important;
 }
 
 /* upgradeContent panel has hardcoded #fff in index.ui.css */
 #upgradeContent {
-  background: var(--cm-surface) !important;
-  border-color: var(--cm-border-md) !important;
-  box-shadow: var(--cm-shadow-lg) !important;
-  color: var(--cm-body);
+  background: var(--cm-lu-surface) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  box-shadow: var(--cm-lu-shadow-lg) !important;
+  color: var(--cm-lu-body);
 }
 
-/* In-workspace sub-page header — common.css sets it to --zt-menu-bg */
+/* In-workspace sub-page header — glass effect to match ZUI3 shell */
 .in-workspace #header {
-  background-color: var(--cm-sidebar) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  box-shadow: none !important;
+  background-color: rgba(30, 35, 61, .82) !important;
+  border-bottom: 1px solid rgba(202, 211, 255, .08) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .18) !important;
+  backdrop-filter: blur(22px) saturate(130%);
 }
 
 /* Sub-page toolbar buttons inside workspace */
 .in-workspace #pageToolbar > .btn,
 .in-workspace #toolbar > #pageToolbar + .toolbar > .btn {
   background: rgba(255, 255, 255, .06) !important;
-  color: var(--cm-body) !important;
-  border-color: var(--cm-border) !important;
+  color: var(--cm-lu-body) !important;
+  border-color: var(--cm-lu-border) !important;
 }
 
 .in-workspace #pageToolbar > .btn:hover,
 .in-workspace #toolbar > #pageToolbar + .toolbar > .btn:hover {
   background: rgba(255, 255, 255, .10) !important;
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ZUI3 toolbar inside sub-pages */
@@ -936,62 +1221,63 @@ div.sidebar,
 .dock,
 .tabs-navbar,
 .app-tabbar {
-  background: var(--cm-sidebar) !important;
-  border-color: var(--cm-border) !important;
-  box-shadow: none !important;
+  background: rgba(30, 35, 61, .82) !important;
+  border-color: rgba(178, 190, 255, .10) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, .14) !important;
+  backdrop-filter: blur(16px) saturate(130%);
 }
 
 /* Pagination */
 .pagination > li > a,
 .pagination > li > span {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border) !important;
-  color: var(--cm-muted) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border) !important;
+  color: var(--cm-lu-muted) !important;
 }
 
 .pagination > .active > a,
 .pagination > .active > span {
-  background: var(--cm-primary) !important;
-  border-color: var(--cm-primary) !important;
+  background: var(--cm-lu-primary) !important;
+  border-color: var(--cm-lu-primary) !important;
   color: #fff !important;
 }
 
 .pagination > li > a:hover {
-  background: var(--cm-surface-3) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-3) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* Breadcrumb */
 .breadcrumb {
   background: transparent !important;
-  color: var(--cm-muted);
+  color: var(--cm-lu-muted);
 }
 
 .breadcrumb > .active {
-  color: var(--cm-body);
+  color: var(--cm-lu-body);
 }
 
 /* Step / flow chart */
 .step-item,
 .step-title {
-  color: var(--cm-muted);
+  color: var(--cm-lu-muted);
 }
 
 .step-item.active .step-title,
 .step-item.current .step-title {
-  color: var(--cm-text);
+  color: var(--cm-lu-text);
 }
 
 .step-item .step-icon {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-muted);
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-muted);
 }
 
 .step-item.active .step-icon,
 .step-item.current .step-icon {
-  background: var(--cm-primary) !important;
-  border-color: var(--cm-primary) !important;
+  background: var(--cm-lu-primary) !important;
+  border-color: var(--cm-lu-primary) !important;
   color: #fff;
 }
 
@@ -1001,32 +1287,34 @@ div.sidebar,
 
 /* ZUI3 card — used in dashboard blocks, kanban cards, admin lists */
 .card {
-  background: var(--cm-surface) !important;
-  border: 1px solid var(--cm-border) !important;
-  border-radius: var(--cm-radius-sm) !important;
-  box-shadow: var(--cm-shadow) !important;
-  color: var(--cm-body);
+  background:
+    linear-gradient(180deg, rgba(42, 47, 83, .62), rgba(24, 29, 53, .46)),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, .08), transparent 28%) !important;
+  border: 1px solid rgba(178, 190, 255, .18) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .06) !important;
+  color: var(--cm-lu-body);
 }
 
 .card-header,
 .card-heading {
-  background: var(--cm-surface-2) !important;
-  border-bottom: 1px solid var(--cm-border) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-bottom: 1px solid var(--cm-lu-border) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 .card-footer {
-  background: var(--cm-surface-2) !important;
-  border-top: 1px solid var(--cm-border) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-top: 1px solid var(--cm-lu-border) !important;
 }
 
 .card-title {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
   font-weight: 600;
 }
 
 .card-subtitle {
-  color: var(--cm-muted) !important;
+  color: var(--cm-lu-muted) !important;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -1043,23 +1331,23 @@ div.sidebar,
 }
 
 .progress-bar {
-  background: var(--cm-primary) !important;
+  background: var(--cm-lu-primary) !important;
   border-radius: 99px !important;
 }
 
 .progress-bar.bg-success,
 .progress-bar-success {
-  background: var(--cm-success) !important;
+  background: var(--cm-lu-success) !important;
 }
 
 .progress-bar.bg-danger,
 .progress-bar-danger {
-  background: var(--cm-danger) !important;
+  background: var(--cm-lu-danger) !important;
 }
 
 .progress-bar.bg-warning,
 .progress-bar-warning {
-  background: var(--cm-warning) !important;
+  background: var(--cm-lu-warning) !important;
 }
 
 /* ============================================================
@@ -1070,35 +1358,35 @@ div.sidebar,
 .bg-secondary-pale,
 [class*="statistic-block"] .bg-secondary-pale,
 .guide-block .bg-secondary-pale {
-  background: var(--cm-surface-2) !important;
-  color: var(--cm-body) !important;
+  background: var(--cm-lu-surface-2) !important;
+  color: var(--cm-lu-body) !important;
 }
 
 /* singlestatistic / singleproductstatistic block */
 .singleproductstatistic-block,
 .singlestatistic-block,
 [class*="statistic-block"] {
-  background: var(--cm-surface) !important;
+  background: var(--cm-lu-surface) !important;
 }
 
 /* Guide block role-guide items */
 .guide-block .block {
   background: rgba(99, 102, 241, .08) !important;
-  border: 1px solid var(--cm-border) !important;
+  border: 1px solid var(--cm-lu-border) !important;
 }
 
 .guide-block .block:hover {
   background: rgba(99, 102, 241, .14) !important;
-  box-shadow: 0 0 0 1px var(--cm-primary) !important;
+  box-shadow: 0 0 0 1px var(--cm-lu-primary) !important;
 }
 
 /* Flowchart inside guide block */
 .guide-block .flowchart .flow-item {
-  color: var(--cm-body) !important;
+  color: var(--cm-lu-body) !important;
 }
 
 .guide-block .flowchart .flow-item-0 > div {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ============================================================
@@ -1108,7 +1396,7 @@ div.sidebar,
 .avatar,
 .user-avatar,
 img.avatar {
-  border: 2px solid var(--cm-border-md) !important;
+  border: 2px solid var(--cm-lu-border-md) !important;
   border-radius: 999px !important;
 }
 
@@ -1121,7 +1409,7 @@ img.avatar {
 .status-doing,
 .status-opened {
   background: rgba(34, 197, 94, .15) !important;
-  color: var(--cm-success) !important;
+  color: var(--cm-lu-success) !important;
   border-color: rgba(34, 197, 94, .3) !important;
 }
 
@@ -1131,7 +1419,7 @@ img.avatar {
 .status-finish,
 .status-finished {
   background: rgba(99, 102, 241, .15) !important;
-  color: var(--cm-primary-h) !important;
+  color: var(--cm-lu-primary-h) !important;
   border-color: rgba(99, 102, 241, .3) !important;
 }
 
@@ -1139,7 +1427,7 @@ img.avatar {
 .status-pause,
 .status-suspended {
   background: rgba(245, 158, 11, .15) !important;
-  color: var(--cm-warning) !important;
+  color: var(--cm-lu-warning) !important;
   border-color: rgba(245, 158, 11, .3) !important;
 }
 
@@ -1147,16 +1435,16 @@ img.avatar {
 .status-rejected,
 .status-deleted {
   background: rgba(239, 68, 68, .12) !important;
-  color: var(--cm-danger) !important;
+  color: var(--cm-lu-danger) !important;
   border-color: rgba(239, 68, 68, .3) !important;
 }
 
 /* ZUI3 tag/pill badges */
 .tag,
 .tag-primary  { background: rgba(99,102,241,.15) !important; color: #818cf8 !important; border-color: rgba(99,102,241,.3) !important; }
-.tag-success  { background: rgba(34,197,94,.15)  !important; color: var(--cm-success) !important; }
-.tag-danger   { background: rgba(239,68,68,.12)   !important; color: var(--cm-danger)  !important; }
-.tag-warning  { background: rgba(245,158,11,.15)  !important; color: var(--cm-warning) !important; }
+.tag-success  { background: rgba(34,197,94,.15)  !important; color: var(--cm-lu-success) !important; }
+.tag-danger   { background: rgba(239,68,68,.12)   !important; color: var(--cm-lu-danger)  !important; }
+.tag-warning  { background: rgba(245,158,11,.15)  !important; color: var(--cm-lu-warning) !important; }
 
 /* ============================================================
    25. MAIN NAVBAR ACTIVE STATE (sub-pages)
@@ -1164,7 +1452,7 @@ img.avatar {
 
 /* Active tab in sub-page header */
 #navbar .nav > li.active > a {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
   background: rgba(255, 255, 255, .08) !important;
   position: relative;
 }
@@ -1176,7 +1464,7 @@ img.avatar {
   left: 8px;
   right: 8px;
   height: 2px;
-  background: var(--cm-primary);
+  background: var(--cm-lu-primary);
   border-radius: 2px 2px 0 0;
 }
 
@@ -1200,7 +1488,7 @@ img.avatar {
 /* Sub-page inner table wrapper */
 .table-responsive {
   background: transparent !important;
-  border-color: var(--cm-border) !important;
+  border-color: var(--cm-lu-border) !important;
 }
 
 /* ============================================================
@@ -1208,44 +1496,44 @@ img.avatar {
    ============================================================ */
 
 .tooltip-inner {
-  background: var(--cm-surface-3) !important;
-  color: var(--cm-text) !important;
-  border: 1px solid var(--cm-border-md) !important;
-  border-radius: var(--cm-radius-xs) !important;
-  box-shadow: var(--cm-shadow) !important;
+  background: var(--cm-lu-surface-3) !important;
+  color: var(--cm-lu-text) !important;
+  border: 1px solid var(--cm-lu-border-md) !important;
+  border-radius: var(--cm-lu-radius-xs) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
   font-size: 12px;
 }
 
-.tooltip.bottom .tooltip-arrow { border-bottom-color: var(--cm-surface-3) !important; }
-.tooltip.top    .tooltip-arrow { border-top-color:    var(--cm-surface-3) !important; }
-.tooltip.left   .tooltip-arrow { border-left-color:   var(--cm-surface-3) !important; }
-.tooltip.right  .tooltip-arrow { border-right-color:  var(--cm-surface-3) !important; }
+.tooltip.bottom .tooltip-arrow { border-bottom-color: var(--cm-lu-surface-3) !important; }
+.tooltip.top    .tooltip-arrow { border-top-color:    var(--cm-lu-surface-3) !important; }
+.tooltip.left   .tooltip-arrow { border-left-color:   var(--cm-lu-surface-3) !important; }
+.tooltip.right  .tooltip-arrow { border-right-color:  var(--cm-lu-surface-3) !important; }
 
 /* ============================================================
    28. NAV TABS (inside panels / module sub-pages)
    ============================================================ */
 
 .nav-tabs {
-  border-bottom-color: var(--cm-border) !important;
+  border-bottom-color: var(--cm-lu-border) !important;
 }
 
 .nav-tabs > li > a {
-  color: var(--cm-muted) !important;
+  color: var(--cm-lu-muted) !important;
   border-color: transparent !important;
-  border-radius: var(--cm-radius-xs) var(--cm-radius-xs) 0 0 !important;
+  border-radius: var(--cm-lu-radius-xs) var(--cm-lu-radius-xs) 0 0 !important;
 }
 
 .nav-tabs > li > a:hover {
-  color: var(--cm-text) !important;
+  color: var(--cm-lu-text) !important;
   background: rgba(255, 255, 255, .05) !important;
-  border-color: var(--cm-border) var(--cm-border) transparent !important;
+  border-color: var(--cm-lu-border) var(--cm-lu-border) transparent !important;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover {
-  background: var(--cm-surface) !important;
-  color: var(--cm-text) !important;
-  border-color: var(--cm-border) var(--cm-border) transparent !important;
+  background: var(--cm-lu-surface) !important;
+  color: var(--cm-lu-text) !important;
+  border-color: var(--cm-lu-border) var(--cm-lu-border) transparent !important;
 }
 
 /* ============================================================
@@ -1254,16 +1542,16 @@ img.avatar {
 
 .input-group-addon,
 .input-group-btn > .btn {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-muted) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-muted) !important;
 }
 
 .search-box input,
 .global-search input {
-  background: var(--cm-surface-2) !important;
-  border-color: var(--cm-border-md) !important;
-  color: var(--cm-text) !important;
+  background: var(--cm-lu-surface-2) !important;
+  border-color: var(--cm-lu-border-md) !important;
+  color: var(--cm-lu-text) !important;
 }
 
 /* ============================================================
@@ -1276,7 +1564,107 @@ img.avatar {
 }
 
 /* ============================================================
-   18. RESPONSIVE
+   31. SIDEBAR SECTION LABELS (injected via codemanager.js)
+   ============================================================ */
+
+/* Section group labels: PAGES / APPS / SETTINGS */
+#menuMainNav .cm-nav-label {
+  padding: 16px 18px 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #7f88aa;
+  list-style: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* First label needs less top padding (flush under brand) */
+#menuMainNav .cm-nav-label:first-child {
+  padding-top: 8px;
+}
+
+/* Remove the gap from dividers when we have labels — the label itself provides separation */
+#menuMainNav .divider + .cm-nav-label {
+  margin-top: 0;
+}
+
+/* ============================================================
+   32. ZUI3 IFRAME CONTAINER + ADDITIONAL SHELL CLEANUP
+   ============================================================ */
+
+/* Main iframe container */
+#apps {
+  background: var(--cm-lu-workspace) !important;
+}
+
+/* Catch any inline white/light backgrounds deep inside appsBar */
+#appsBar *[style*="background:#fff"],
+#appsBar *[style*="background: #fff"],
+#appsBar *[style*="background-color:#fff"],
+#appsBar *[style*="background-color: #fff"],
+#appsBar *[style*="background:white"],
+#appsBar *[style*="background: white"],
+#appsBar *[style*="background:#f"],
+#appsBar *[style*="background-color:#f"] {
+  background: transparent !important;
+}
+
+/* Vision switcher dropdown / menu items */
+#visionSwitcher .dropdown-menu,
+#visionSwitcher .menu,
+#appsBar .dropdown-menu {
+  background: var(--cm-lu-surface-2) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
+}
+
+#visionSwitcher .dropdown-menu > li > a,
+#appsBar .dropdown-menu > li > a {
+  color: var(--cm-lu-body) !important;
+}
+
+#visionSwitcher .dropdown-menu > li > a:hover,
+#appsBar .dropdown-menu > li > a:hover {
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
+}
+
+/* ZUI3 sidebar more menu dropdown */
+#menuMoreList {
+  background: var(--cm-lu-surface-2) !important;
+  border: 1px solid var(--cm-lu-border) !important;
+  border-radius: var(--cm-lu-radius-sm) !important;
+  box-shadow: var(--cm-lu-shadow) !important;
+}
+
+#menuMoreList > li > a {
+  color: var(--cm-lu-body) !important;
+}
+
+#menuMoreList > li > a:hover {
+  background: var(--cm-lu-primary-soft) !important;
+  color: var(--cm-lu-text) !important;
+}
+
+/* Inline style cleanup for common light backgrounds in sub-pages */
+#main [style*="background:#fff"],
+#main [style*="background: #fff"],
+#main [style*="background-color:#fff"],
+#main [style*="background-color: #fff"],
+#main [style*="background:white"],
+#main [style*="background: white"],
+#main [style*="background:rgb(255"],
+#main [style*="background: rgb(255"] {
+  background: transparent !important;
+}
+
+/* ============================================================
+   33. RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
   #mainHeader .container,
@@ -1340,9 +1728,8 @@ img.avatar {
   .main-table,
   .panel,
   .block,
-  .module-block,
-  .cell {
-    border-radius: var(--cm-radius-sm);
+  .module-block {
+    border-radius: var(--cm-lu-radius-sm);
   }
 
   .table-responsive,
@@ -1360,4 +1747,129 @@ img.avatar {
     animation: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   33. TARGETED VISUAL FIXES — round 2 (2026-04-27)
+   - Flowchart node contrast (replace washed-out white SVG arrow)
+   - Tutorial "进入应用栏" button (replace orange #FF9F46)
+   - Welcome banner heading text contrast
+   - Welcome avatar default green tint
+   ============================================================ */
+
+/* 33.1 Flowchart — drop the white SVG, draw arrows with CSS clip-path on
+   LucenAI surface gradient. SVG was opacity-0.6 light-blue which renders
+   as a washed-out pale block on dark theme. */
+.guide-block .flowchart .flow-item,
+.guide-block .flowchart .flow-item-arrow {
+  background: linear-gradient(135deg, #2a2f55 0%, #383d6e 100%) !important;
+  background-image: none !important;
+  color: var(--cm-lu-text) !important;
+  border: 0 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .04),
+    0 4px 14px rgba(0, 0, 0, .25) !important;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+
+.guide-block .flowchart .flow-item-arrow {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+  padding-left: 22px !important;
+}
+
+/* First item ("管理员" trigger) — primary accent block */
+.guide-block .flowchart .flow-item-0 {
+  background: linear-gradient(135deg, var(--cm-lu-primary) 0%, #8389ff 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .15),
+    0 6px 22px rgba(98, 100, 244, .35) !important;
+}
+
+.guide-block .flowchart .flow-item .flow-item-display,
+.guide-block .flowchart .flow-item > div,
+.guide-block .flowchart .flow-item > div > div {
+  color: var(--cm-lu-text) !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+}
+
+.guide-block .flowchart .flow-item-0 .flow-item-display,
+.guide-block .flowchart .flow-item-0 > div,
+.guide-block .flowchart .flow-item-0 > div > div {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Kill the leftover ::before chevron (was drawn to mate with SVG seam) */
+.guide-block .flowchart .flow-item > div::before,
+.guide-block .flowchart .flow-item > div:before {
+  display: none !important;
+  content: none !important;
+}
+
+/* 33.2 Tutorial button — replace orange #FF9F46 with LucenAI primary */
+.tutorialBtn,
+a.tutorialBtn,
+.block-guide .tutorialBtn,
+.block-guide a.tutorialBtn,
+.guide-block .tutorialBtn,
+.guide-block a.tutorialBtn {
+  background: linear-gradient(135deg, var(--cm-lu-primary) 0%, var(--cm-lu-primary-h) 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(127, 132, 255, .55) !important;
+  box-shadow: 0 4px 16px rgba(98, 100, 244, .32) !important;
+  text-shadow: none !important;
+}
+
+.tutorialBtn:hover,
+a.tutorialBtn:hover,
+.block-guide .tutorialBtn:hover,
+.block-guide a.tutorialBtn:hover,
+.guide-block .tutorialBtn:hover,
+.guide-block a.tutorialBtn:hover {
+  background: linear-gradient(135deg, var(--cm-lu-primary-h) 0%, #8e9cff 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 22px rgba(98, 100, 244, .42) !important;
+}
+
+/* 33.3 Welcome banner heading — boost contrast on summary text */
+.block-welcome .panel-heading,
+.block-welcome .panel-heading .text-sm,
+.block-welcome .panel-heading > * {
+  color: var(--cm-lu-body) !important;
+}
+
+.block-welcome .panel-heading strong,
+.block-welcome .panel-heading .font-bold,
+.block-welcome .panel-heading .text-md {
+  color: var(--cm-lu-text) !important;
+}
+
+.block-welcome .panel-heading a,
+.block-welcome .panel-heading .text-primary {
+  color: var(--cm-lu-primary-h) !important;
+}
+
+/* Soften the secondary-50 → canvas gradient ZUI3 paints under welcomeblock — it
+   leaks a pale stripe on the left under our dark theme. */
+.block-welcome .panel-body[style*="linear-gradient"],
+.block-welcome > .panel-body {
+  background-image: linear-gradient(90deg, rgba(98, 100, 244, .12) 0%, var(--cm-lu-bg) 22%) !important;
+}
+
+/* 33.4 Welcome avatar — neutralize the auto-generated green initial color */
+.welcome-avatar,
+.welcome-avatar.avatar,
+.avatar.welcome-avatar {
+  background: linear-gradient(135deg, var(--cm-lu-primary) 0%, #8b8bff 100%) !important;
+  background-color: var(--cm-lu-primary) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(127, 132, 255, .55) !important;
+  box-shadow: 0 4px 16px rgba(98, 100, 244, .28) !important;
+}
+
+.welcome-avatar .avatar-text,
+.welcome-avatar .text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
 }
