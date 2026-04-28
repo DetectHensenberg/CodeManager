@@ -1,0 +1,190 @@
+<?php
+namespace zin;
+
+$metrics     = $this->metrics ?? array();
+$todoItems   = $this->todoItems ?? array();
+$timeline    = $this->timelineItems ?? array();
+$quickActions= $this->quickActions ?? array();
+$flowRows    = $this->flowRows ?? array();
+$prodOverview= $this->prodOverviewItems ?? array();
+$docItems    = $this->docItems ?? array();
+$contrib     = $this->contribItems ?? array();
+$risks       = $this->riskItems ?? array();
+$sysStatus   = $this->sysStatusItems ?? array();
+$dateFull    = $this->dateFull ?? date('Y年m月d日');
+$userName    = $this->userName ?? 'admin';
+
+$cmCssFile = $this->app->getBasePath() . 'www/theme/codemanager/codemanager.css';
+if(file_exists($cmCssFile)) {
+    to::head(h::importCss($this->app->getWebRoot() . 'theme/codemanager/codemanager.css?t=' . filemtime($cmCssFile), setID('codemanagerCSS')));
+}
+?>
+
+<div class="dashboard-design">
+  <section class="hero-row">
+    <div>
+      <div class="crumbs"><span>地盘</span><span>›</span><span>仪表盘</span></div>
+      <h1>仪表盘</h1>
+      <p class="subtitle">集中查看待办、项目状态、流程帮助、文档更新和近期活动。</p>
+      <div class="date-pill"><?php echo $dateFull; ?></div>
+    </div>
+    <button class="btn btn-primary">进入使用教程</button>
+  </section>
+
+  <section class="metric-grid" aria-label="关键指标">
+    <?php foreach ($metrics as $m): ?>
+    <article class="panel metric">
+      <div class="metric-top"><span><?php echo $m['label']; ?></span><span class="metric-badge <?php echo $m['badgeColor']; ?>"><?php echo $m['badge']; ?></span></div>
+      <div class="metric-value"><?php echo $m['value']; ?></div>
+      <div class="metric-link"><?php echo $m['link']; ?></div>
+      <div class="metric-icon" style="color:<?php echo $m['iconColor']; ?>;background:<?php echo $m['iconBg']; ?>"><?php echo $m['icon']; ?></div>
+    </article>
+    <?php endforeach; ?>
+  </section>
+
+  <section class="grid-2" aria-label="趋势和项目地图">
+    <article class="panel large">
+      <div class="panel-head">
+        <div><h2 class="panel-title">工作趋势</h2><p class="panel-caption">任务、需求和 Bug 的本周处理走势</p></div>
+        <div class="select">本周 <span>⌄</span></div>
+      </div>
+      <div class="chart-stats">
+        <div><b>36</b><span>任务</span></div>
+        <div><b style="color:#fff">12</b><span>需求</span></div>
+        <div><b style="color:#fff">3.5%</b><span>完成率</span></div>
+      </div>
+      <div class="chart">
+        <div class="axis"></div><div class="axis-x"></div>
+        <div class="bars">
+          <div class="bar" style="height:92px"></div><div class="bar" style="height:124px"></div><div class="bar" style="height:112px"></div><div class="bar" style="height:58px"></div><div class="bar" style="height:126px"></div><div class="bar" style="height:64px"></div><div class="bar" style="height:150px"></div>
+        </div>
+        <div class="curve"><svg viewBox="0 0 600 170" preserveAspectRatio="none"><path d="M0,145 C50,20 75,130 120,72 C170,0 205,156 258,92 C322,2 355,150 420,75 C480,20 520,142 600,36" stroke="#f3b73c" fill="none" stroke-width="2"/></svg></div>
+        <div class="curve2"><svg viewBox="0 0 600 170" preserveAspectRatio="none"><path d="M0,98 C80,78 78,66 120,98 C180,132 212,24 270,50 C336,78 358,20 410,54 C480,78 540,74 600,42" stroke="#667088" fill="none" stroke-width="2" opacity=".68"/></svg></div>
+      </div>
+      <div class="legend center"><span><i class="dot"></i>任务</span><span><i class="dot" style="background:#f3b73c"></i>需求</span><span><i class="dot" style="background:#667088"></i>Bug</span></div>
+    </article>
+    <article class="panel large">
+      <div class="panel-head">
+        <div><h2 class="panel-title">项目实施地图</h2><p class="panel-caption">按产品线和项目群观察工作分布</p></div>
+        <button class="icon-btn">↓</button>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 580 300" preserveAspectRatio="xMidYMid meet">
+          <path d="M96 116 L132 64 L197 84 L245 45 L321 73 L390 54 L481 94 L526 155 L489 225 L390 242 L325 212 L252 256 L178 221 L101 228 L61 168 Z" stroke="#35527d" stroke-width="3" fill="none"/>
+          <path d="M197 84 L182 142 L224 176 L252 256 M321 73 L300 139 L340 184 L325 212 M390 54 L404 132 L481 94 M101 228 L224 176 L340 184 L489 225" stroke="#314b73" stroke-width="2" fill="none"/>
+        </svg>
+        <span class="pin" style="left:39%;top:36%"></span><span class="pin red" style="left:55%;top:42%"></span><span class="pin" style="left:58%;top:72%"></span><span class="pin" style="left:28%;top:50%"></span>
+        <span class="map-label" style="left:41%;top:35%">产品线</span><span class="map-label" style="left:57%;top:41%">项目群</span><span class="map-label" style="left:60%;top:71%">测试</span><span class="map-label" style="left:30%;top:49%">研发</span>
+      </div>
+      <div class="legend" style="margin-top:20px"><span><i class="dot"></i>89%</span><span><i class="dot" style="background:#18c99b"></i>60%</span><span><i class="dot" style="background:#6f7899"></i>48%</span><span><i class="dot" style="background:#ff4f7a"></i>30%</span></div>
+    </article>
+  </section>
+
+  <section class="workflow" aria-label="使用帮助">
+    <article class="panel">
+      <h2 class="panel-title">使用帮助</h2><p class="panel-caption">按角色快速理解工作流</p>
+      <div class="help-tabs"><span>流程图</span><span>运行模式</span><span>界面切换</span><span>主题切换</span></div>
+    </article>
+    <article class="panel">
+      <div class="panel-head" style="margin-bottom:22px"><div><h2 class="panel-title">研发综合流程</h2><p class="panel-caption">从管理员配置到测试关闭 Bug 的完整链路</p></div></div>
+      <div class="flow-grid">
+        <?php foreach ($flowRows as $row): ?>
+        <div class="flow-row"><span class="step role"><?php echo $row['role']; ?></span><?php foreach ($row['steps'] as $s): ?><span class="step"><?php echo $s; ?></span><?php endforeach; ?></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+  </section>
+
+  <section class="panel table-panel" aria-label="我的待处理">
+    <div class="table-head">
+      <div><h2 class="panel-title">我的待处理</h2><p class="panel-caption">聚合任务、需求、Bug、项目和文档待办</p></div>
+      <div class="select">待办 <span>⌄</span></div>
+    </div>
+    <table>
+      <thead><tr><th><div class="checkbox"></div></th><th>事项</th><th>负责人</th><th>进度</th><th>截止时间</th><th>类型</th><th>状态</th></tr></thead>
+      <tbody>
+        <?php foreach ($todoItems as $item): ?>
+        <tr><td><div class="checkbox"></div></td><td class="link"><?php echo $item['title']; ?></td><td><?php echo $item['owner']; ?></td><td><span class="progress"><?php echo $item['progress']; ?>% <span class="track"><span class="fill" style="width:<?php echo $item['progress']; ?>%"></span></span></span></td><td><?php echo $item['deadline']; ?></td><td><?php echo $item['type']; ?></td><td><span class="status <?php echo $item['statusClass']; ?>"><?php echo $item['status']; ?></span></td></tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section-grid" aria-label="动态概览">
+    <article class="panel">
+      <div class="panel-head"><div><h2 class="panel-title">项目动态</h2><p class="panel-caption">最近项目推进和风险状态</p></div></div>
+      <div class="timeline">
+        <?php foreach ($timeline as $t): ?>
+        <div class="time-item"><span class="time"><?php echo $t['time']; ?></span><div class="time-body"><strong><?php echo $t['title']; ?></strong><span><?php echo $t['desc']; ?></span></div></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h2 class="panel-title">产品雷达</h2><p class="panel-caption">需求、计划、发布、缺陷健康度</p></div></div>
+      <div class="radar">
+        <svg viewBox="0 0 300 250">
+          <polygon points="150,24 256,86 232,196 150,230 68,196 44,86" stroke="#334d78" fill="none"/>
+          <polygon points="150,58 222,100 204,176 150,204 96,176 78,100" stroke="#334d78" fill="none" opacity=".65"/>
+          <polygon points="150,88 196,114 184,160 150,178 116,160 104,114" stroke="#334d78" fill="none" opacity=".45"/>
+          <polygon points="150,54 220,106 190,180 150,202 90,168 86,102" fill="rgba(99,102,244,.24)" stroke="#6f72ff"/>
+          <circle cx="150" cy="54" r="4" fill="#18c99b"/><circle cx="220" cy="106" r="4" fill="#5f9bff"/><circle cx="190" cy="180" r="4" fill="#f3b73c"/><circle cx="90" cy="168" r="4" fill="#ff4f7a"/>
+          <text x="137" y="18" fill="#cbd3ee" font-size="12">需求</text><text x="236" y="92" fill="#cbd3ee" font-size="12">计划</text><text x="208" y="206" fill="#cbd3ee" font-size="12">发布</text><text x="48" y="206" fill="#cbd3ee" font-size="12">缺陷</text>
+        </svg>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h2 class="panel-title">快捷入口</h2><p class="panel-caption">高频创建和查询操作</p></div></div>
+      <div class="quick-grid">
+        <?php foreach ($quickActions as $q): ?>
+        <div class="quick"><?php echo $q['label']; ?><span><?php echo $q['desc']; ?></span></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+  </section>
+
+  <section class="grid-2" aria-label="产品和文档">
+    <article class="panel">
+      <div class="panel-head"><div><h2 class="panel-title">产品与执行概览</h2><p class="panel-caption">按产品线追踪当前阶段和下一步动作</p></div><div class="select">全部产品 <span>⌄</span></div></div>
+      <div class="stack">
+        <?php foreach ($prodOverview as $p): ?>
+        <div class="mini-card"><div class="mini-title"><?php echo $p['title']; ?></div><div class="mini-meta"><?php echo $p['meta']; ?></div></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h2 class="panel-title">最近文档</h2><p class="panel-caption">团队近期更新和待阅读内容</p></div><button class="ghost-btn">全部文档</button></div>
+      <div class="doc-list">
+        <?php foreach ($docItems as $d): ?>
+        <div class="doc-row"><div><div class="doc-title"><?php echo $d['title']; ?></div><div class="doc-meta"><?php echo $d['meta']; ?></div></div><span class="status <?php echo $d['statusClass']; ?>"><?php echo $d['status']; ?></span></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+  </section>
+
+  <section class="section-grid" aria-label="底部补充信息">
+    <article class="panel">
+      <h2 class="panel-title">我的贡献</h2><p class="panel-caption">本周创建、处理和关闭事项</p>
+      <div class="stack" style="margin-top:20px">
+        <?php foreach ($contrib as $c): ?>
+        <div class="mini-card"><div class="mini-title"><?php echo $c['title']; ?></div><div class="mini-meta"><?php echo $c['meta']; ?></div></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+    <article class="panel">
+      <h2 class="panel-title">风险提醒</h2><p class="panel-caption">需要今天确认的阻塞点</p>
+      <div class="stack" style="margin-top:20px">
+        <?php foreach ($risks as $r): ?>
+        <div class="mini-card"><div class="mini-title"><?php echo $r['title']; ?></div><div class="mini-meta"><?php echo $r['meta']; ?></div></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+    <article class="panel">
+      <h2 class="panel-title">系统状态</h2><p class="panel-caption">服务、构建和通知健康度</p>
+      <div class="stack" style="margin-top:20px">
+        <?php foreach ($sysStatus as $s): ?>
+        <div class="mini-card"><div class="mini-title"><?php echo $s['title']; ?></div><div class="mini-meta"><?php echo $s['meta']; ?></div></div>
+        <?php endforeach; ?>
+      </div>
+    </article>
+  </section>
+</div>

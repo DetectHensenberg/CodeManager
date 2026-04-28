@@ -11,196 +11,28 @@
   },
   "innerWidth": 1800,
   "innerHeight": 1044,
-  "bodyClass": "m-block-dashboard",
+  "bodyClass": "",
   "elements": [
     {
-      "tag": "HEADER",
-      "id": "header",
-      "class": "",
-      "parent": "BODY.m-block-dashboard",
-      "pos": "static",
-      "z": "auto",
-      "top": "auto",
-      "right": "auto",
-      "bg": "rgba(0, 0, 0, 0)",
-      "border": "",
-      "radius": "0px",
-      "shadow": "none",
-      "rect": {
-        "x": 0,
-        "y": 0,
-        "w": 1800,
-        "h": 42
-      },
-      "text": "地盘仪表盘日程待处理审批项目执行贡献动态联系人仪表盘A"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "class": "container",
-      "parent": "HEADER.",
-      "pos": "relative",
-      "z": "auto",
-      "top": "0px",
-      "right": "0px",
-      "bg": "rgba(0, 0, 0, 0)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "0px",
-      "shadow": "none",
-      "rect": {
-        "x": 120,
-        "y": 0,
-        "w": 1560,
-        "h": 41
-      },
-      "text": "地盘仪表盘日程待处理审批项目执行贡献动态联系人仪表盘A"
-    },
-    {
-      "tag": "DIV",
-      "id": "heading",
-      "class": "",
-      "parent": "DIV.container",
-      "pos": "static",
-      "z": "5",
-      "top": "0px",
-      "right": "auto",
-      "bg": "rgba(0, 0, 0, 0)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "0px",
-      "shadow": "none",
-      "rect": {
-        "x": 155,
-        "y": 0,
-        "w": 1490,
-        "h": 28
-      },
-      "text": "地盘"
-    },
-    {
-      "tag": "NAV",
-      "id": "navbar",
-      "class": "",
-      "parent": "DIV.container",
-      "pos": "static",
-      "z": "auto",
-      "top": "auto",
-      "right": "auto",
-      "bg": "rgba(0, 0, 0, 0)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "0px",
-      "shadow": "none",
-      "rect": {
-        "x": 155,
-        "y": 28,
-        "w": 1490,
-        "h": 41
-      },
-      "text": "仪表盘日程待处理审批项目执行贡献动态联系人仪表盘"
-    },
-    {
-      "tag": "DIV",
-      "id": "toolbar",
-      "class": "",
-      "parent": "DIV.container",
-      "pos": "absolute",
-      "z": "auto",
-      "top": "0px",
-      "right": "34px",
-      "bg": "rgba(0, 0, 0, 0)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "0px",
-      "shadow": "none",
-      "rect": {
-        "x": 1534,
-        "y": 0,
-        "w": 112,
-        "h": 44
-      },
-      "text": "A"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "class": "toolbar gap-2",
-      "parent": "DIV.",
-      "pos": "relative",
-      "z": "auto",
-      "top": "0px",
-      "right": "0px",
-      "bg": "rgba(30, 35, 61, 0.82)",
-      "border": "0px solid rgba(178, 190, 255, 0.1)",
-      "radius": "0px",
-      "shadow": "rgba(0, 0, 0, 0.14) 0px 2px 16px 0px",
-      "rect": {
-        "x": 1545,
-        "y": 10,
-        "w": 102,
-        "h": 25
-      },
-      "text": "A"
-    },
-    {
       "tag": "BUTTON",
-      "id": "quickAddMenu-toggle",
-      "class": "rounded-full bg-gray bg-opacity-10 text-primary-900 text-opacity-70 ring-0 w-9 btn square size-sm",
-      "parent": "DIV.toolbar gap-2",
-      "pos": "relative",
-      "z": "auto",
-      "top": "0px",
-      "right": "0px",
-      "bg": "rgba(7, 11, 21, 0.1)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "6px",
-      "shadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(42, 51, 84) 0px 0px ",
-      "rect": {
-        "x": 1545,
-        "y": 12,
-        "w": 32,
-        "h": 21
-      },
-      "text": ""
-    },
-    {
-      "tag": "BUTTON",
-      "id": "messageBar",
-      "class": "rounded-full bg-gray bg-opacity-10 text-primary-900 text-opacity-70 ring-0 w-9 btn square size-sm",
-      "parent": "DIV.toolbar gap-2",
-      "pos": "relative",
-      "z": "auto",
-      "top": "0px",
-      "right": "0px",
-      "bg": "rgba(7, 11, 21, 0.1)",
-      "border": "0px solid rgb(235, 237, 243)",
-      "radius": "6px",
-      "shadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(42, 51, 84) 0px 0px ",
-      "rect": {
-        "x": 1583,
-        "y": 12,
-        "w": 32,
-        "h": 21
-      },
-      "text": ""
-    },
-    {
-      "tag": "DIV",
       "id": "",
-      "class": "avatar rounded-full has-text has-text-1",
-      "parent": "A.w-7 h-7 cursor-pointer",
-      "pos": "static",
+      "class": "btn btn-primary",
+      "parent": "SECTION.hero-row",
+      "pos": "relative",
       "z": "auto",
-      "top": "auto",
-      "right": "auto",
-      "bg": "rgb(163, 194, 112)",
-      "border": "2px solid rgba(154, 170, 226, 0.3)",
-      "radius": "999px",
-      "shadow": "none",
+      "top": "0px",
+      "right": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px solid rgba(0, 0, 0, 0)",
+      "radius": "10px",
+      "shadow": "rgba(99, 102, 241, 0.38) 0px 6px 24px 0px",
       "rect": {
-        "x": 1622,
-        "y": 10,
-        "w": 28,
-        "h": 28
+        "x": 1650,
+        "y": 148,
+        "w": 118,
+        "h": 48
       },
-      "text": "A"
+      "text": "进入使用教程"
     }
   ]
 }

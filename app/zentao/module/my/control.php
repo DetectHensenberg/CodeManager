@@ -32,8 +32,75 @@ class my extends control
      */
     public function index()
     {
-        $this->view->title = $this->lang->my->common;
-        echo $this->fetch('block', 'dashboard', 'dashboard=my');
+        $this->view->title    = $this->lang->my->common;
+        $this->view->userName = isset($this->app->user->realname) ? $this->app->user->realname : (isset($this->app->user->account) ? $this->app->user->account : 'admin');
+        $this->view->dateFull = date('Y年m月d日') . ' 星期' . array('日','一','二','三','四','五','六')[date('w')];
+
+        $this->view->metrics = array(
+          array('label'=>'待我评审', 'value'=>12, 'badge'=>'+3',   'badgeColor'=>'green',  'link'=>'查看评审数',   'icon'=>'✓',  'iconColor'=>'#18c99b', 'iconBg'=>'rgba(24,201,155,.22)'),
+          array('label'=>'任务数',   'value'=>38, 'badge'=>'-2%',  'badgeColor'=>'red',    'link'=>'查看全部任务', 'icon'=>'▢',  'iconColor'=>'#5bc4ff', 'iconBg'=>'rgba(91,196,255,.16)'),
+          array('label'=>'Bug数',    'value'=>7,  'badge'=>'+1',   'badgeColor'=>'green',  'link'=>'查看详情',     'icon'=>'!',  'iconColor'=>'#f3b73c', 'iconBg'=>'rgba(243,183,60,.16)'),
+          array('label'=>'研发需求', 'value'=>24, 'badge'=>'+5.2%','badgeColor'=>'green',  'link'=>'查看需求池',   'icon'=>'◇',  'iconColor'=>'#8da0ff', 'iconBg'=>'rgba(141,160,255,.16)'),
+        );
+
+        $this->view->todoItems = array(
+          array('title'=>'产品需求池梳理',    'owner'=>'admin', 'progress'=>84, 'deadline'=>'2026/04/30', 'type'=>'需求', 'status'=>'进行中', 'statusClass'=>'active'),
+          array('title'=>'仪表盘暗色适配',    'owner'=>'admin', 'progress'=>76, 'deadline'=>'2026/05/02', 'type'=>'任务', 'status'=>'进行中', 'statusClass'=>'active'),
+          array('title'=>'Bug 列表按钮统一',   'owner'=>'admin', 'progress'=>62, 'deadline'=>'2026/05/04', 'type'=>'Bug',  'status'=>'待处理', 'statusClass'=>'warn'),
+          array('title'=>'项目执行看板检查',   'owner'=>'admin', 'progress'=>58, 'deadline'=>'2026/05/06', 'type'=>'项目', 'status'=>'进行中', 'statusClass'=>'active'),
+          array('title'=>'文档中心样式回归',   'owner'=>'admin', 'progress'=>42, 'deadline'=>'2026/05/08', 'type'=>'文档', 'status'=>'待处理', 'statusClass'=>'warn'),
+          array('title'=>'后台配置页暗色审查', 'owner'=>'admin', 'progress'=>31, 'deadline'=>'2026/05/10', 'type'=>'后台', 'status'=>'阻塞',   'statusClass'=>'danger'),
+        );
+
+        $this->view->timelineItems = array(
+          array('time'=>'09:30', 'title'=>'项目 A 完成阶段评审', 'desc'=>'需求拆分已同步到执行空间，等待研发确认排期。'),
+          array('time'=>'11:10', 'title'=>'项目 B 新增 2 个风险', 'desc'=>'接口依赖和测试环境准备延期，需要项目经理跟进。'),
+          array('time'=>'15:40', 'title'=>'项目 C 发布计划更新', 'desc'=>'版本窗口调整到本周五，关联 Bug 需要提前关闭。'),
+        );
+
+        $this->view->quickActions = array(
+          array('label'=>'提需求', 'desc'=>'PRD / Story'), array('label'=>'建任务', 'desc'=>'Task'),
+          array('label'=>'报 Bug',  'desc'=>'Issue'),      array('label'=>'新项目', 'desc'=>'Project'),
+          array('label'=>'写文档', 'desc'=>'Doc'),        array('label'=>'看报表', 'desc'=>'BI'),
+        );
+
+        $this->view->flowRows = array(
+          array('role'=>'管理员',   'steps'=>array('维护部门', '添加用户', '维护权限')),
+          array('role'=>'产品经理', 'steps'=>array('创建产品', '维护模块', '维护计划', '维护需求', '创建发布')),
+          array('role'=>'项目经理', 'steps'=>array('创建项目', '维护团队', '关联需求', '分解任务', '跟踪进度')),
+          array('role'=>'研发人员', 'steps'=>array('领取任务', '设计方案', '提交代码', '更新状态', '完成任务')),
+          array('role'=>'测试人员', 'steps'=>array('撰写用例', '执行用例', '提交Bug', '验证Bug', '关闭Bug')),
+        );
+
+        $this->view->prodOverviewItems = array(
+          array('title'=>'CodeManager 前端重构', 'meta'=>'阶段：视觉验收 | 当前动作：地盘主页结构确认 | 负责人：admin'),
+          array('title'=>'LucenAI 工作台',       'meta'=>'阶段：设计系统落地 | 当前动作：统一按钮、表格和弹窗暗色规范'),
+          array('title'=>'RAG 知识系统',         'meta'=>'阶段：知识库流程验证 | 当前动作：同步透明玻璃层设计语言'),
+        );
+
+        $this->view->docItems = array(
+          array('title'=>'地盘主页改造说明',  'meta'=>'admin 更新于 10 分钟前',          'status'=>'已更新', 'statusClass'=>'active'),
+          array('title'=>'暗色组件设计规范',  'meta'=>'设计系统 / 前端基础组件',          'status'=>'需评审', 'statusClass'=>'warn'),
+          array('title'=>'项目执行流程图',    'meta'=>'项目管理 / 研发流程',              'status'=>'已同步', 'statusClass'=>'active'),
+          array('title'=>'后台配置页改造清单','meta'=>'后台 / 表单 / 权限配置',            'status'=>'待补充', 'statusClass'=>'danger'),
+        );
+
+        $this->view->contribItems = array(
+          array('title'=>'已处理任务 18', 'meta'=>'较上周 +12%，集中在前端适配和验收反馈。'),
+          array('title'=>'关闭 Bug 6',    'meta'=>'主要为按钮对比度、布局遮挡和白底残留。'),
+        );
+
+        $this->view->riskItems = array(
+          array('title'=>'运行目录同步', 'meta'=>'代码仓库改动需要同步到 C:\ZenTao 才能在实例生效。'),
+          array('title'=>'旧 CSS 残留',  'meta'=>'部分 iframe 页面仍需检查白底、浅色按钮和内联样式。'),
+        );
+
+        $this->view->sysStatusItems = array(
+          array('title'=>'Web 服务正常', 'meta'=>'127.0.0.1:81 可访问，最近检查无错误。'),
+          array('title'=>'通知队列正常', 'meta'=>'消息入口、提醒和用户菜单保持右上角固定。'),
+        );
+
+        include $this->app->getModuleRoot() . 'my/view/index.html.php';
     }
 
     /**

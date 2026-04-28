@@ -498,9 +498,52 @@ observer.observe(nav, { childList: true });
 
 ---
 
-## 建议下一轮开场指令
+## 2026-04-28 — 三阶段 CSS 设计对齐
 
-可以直接说：
+### 执行内容
 
-“请读取 `CHAT.MD`，根据最新截图反馈继续定向修复。”
+完成 18 项 CSS 修改，按视觉影响力分三阶段：
+
+**阶段一：核心布局**
+- `#mainHeader` min-height 52→60px，gap 12→16px
+- `#toolbar` top 0→6px（补偿 60px header），`#userNav` 按钮 36→40px，圆角 999px→10px
+- `.panel-heading` 13px/600→20px/850，padding 10px 14px→30px 30px 20px
+- `.panel-body` padding 14px→30px
+- `.block-welcome .text-md` 药丸样式（inline-flex, 42px height, 999px radius, 蓝紫背景）
+- `.block-welcome .text-sm` font-size 16px, weight 600
+- `.block-welcome .text-3xl/.h-10/.num` font-weight 850
+- `.avatar` 40x40px, border 3px solid rgba(255,255,255,.72), glow shadow
+- `.welcome-avatar` bg #b5d777, border 3px solid white glow
+
+**阶段二：组件细化**
+- `.btn` height/min-height 48px, border-radius 10px, weight 800
+- `.btn-primary` linear-gradient(135deg, #6366f1, #6d6cff) + glow box-shadow
+- `.btn-default` 玻璃态 rgba(44,51,92,.65) + backdrop-filter
+- `.num` font-size 30px, weight 850
+- `.cell label/.tag/.caption` weight 700, color muted
+- ZUI3 Shell 搜索框 380x48px
+- ZUI3 Shell 工具栏按钮 48px/10px radius/weight 700
+
+**阶段三：排版与间距**
+- `label` weight 700
+- `th` weight 600→700
+- nav items (`#navbar .nav > li > a`) weight 600→700
+- `.modal-title` weight 800
+- `#main` padding-top clamp(12px, 1.4vw, 20px)→clamp(16px, 1.8vw, 28px), padding-bottom 32→48px
+- `.breadcrumb` margin 44px 0 14px, 13px/700, active 800
+
+### Playwright 验证结果
+- `#toolbar` position: absolute, top: 6px ✓
+- 按钮 border-radius: 10px, height: 48px ✓
+- 头像 border: 3px solid rgba(255,255,255,.72), glow shadow ✓
+- 日期 pill height: 42px ✓
+- 面板 heading 20px/850 ✓
+
+### 运行目录同步
+- C:\ZenTao CSS：已同步 ✅
+
+## 待处理
+- 根据更新后的 `lucenai-dashboard-effect.html` 全页面对齐地盘主页
+- 添加模拟数据到地盘面板
+- 可能需要修改 PHP 模板 (`my/index.html.php`)
 

@@ -63,7 +63,38 @@
   }
 
   ready(function() {
+    /* ── Sidebar brand: replace logo text with LucenAI ── */
+    var heading = document.getElementById('spaceHeading');
+    if (heading) {
+      var textEl = heading.querySelector('.text');
+      if (textEl) textEl.textContent = 'LucenAI';
+
+      /* Add brand mark if not already present */
+      if (!heading.querySelector('.cm-brand-mark')) {
+        var mark = document.createElement('span');
+        mark.className = 'cm-brand-mark';
+        mark.textContent = '◉'; /* ◎ */
+        heading.insertBefore(mark, heading.firstChild);
+      }
+    }
+
+    /* ── Add fold arrows to 项目 and 执行 nav items ── */
     var nav = document.getElementById('menuMainNav');
+    if (nav) {
+      var allItems = nav.querySelectorAll('li');
+      allItems.forEach(function(li) {
+        var a = li.querySelector('a');
+        if (!a) return;
+        var text = a.textContent.trim();
+        if ((text === '项目' || text === '执行') && !a.querySelector('.cm-nav-arrow')) {
+          var arrow = document.createElement('span');
+          arrow.className = 'cm-nav-arrow';
+          arrow.textContent = '⌄';
+          a.appendChild(arrow);
+        }
+      });
+    }
+
     if(!nav) return; /* Not the ZUI3 shell page. */
 
     var observer = new MutationObserver(function(mutations) {
