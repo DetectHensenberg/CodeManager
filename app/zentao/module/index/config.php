@@ -34,3 +34,29 @@ $config->index->oldPages[] = 'message-ajaxgetdropmenuforold';
 $config->index->oldPages[] = 'product-ajaxgetolddropmenu';
 $config->index->oldPages[] = 'project-ajaxgetolddropmenu';
 $config->index->oldPages[] = 'product-kanban';
+$config->index->oldPages[] = 'admin-dashboard';
+$config->index->oldPages[] = 'admin-moduleConfig';
+// admin-security: uses ZIN ui/ wrapper → include view/ (render path)
+// product-browseList: uses ZIN ui/ wrapper → include view/ (render path)
+$config->index->oldPages[] = 'project-browseList';
+$config->index->oldPages[] = 'project-boardView';
+$config->index->oldPages[] = 'project-detail';
+$config->index->oldPages[] = 'execution-browseList';
+$config->index->oldPages[] = 'execution-boardView';
+// execution-detail: uses ZIN ui/ wrapper → include view/ (render path)
+$config->index->oldPages[] = 'story-browseList';
+$config->index->oldPages[] = 'story-detail';
+$config->index->oldPages[] = 'task-browseList';
+$config->index->oldPages[] = 'task-detail';
+$config->index->oldPages[] = 'bug-browseList';
+$config->index->oldPages[] = 'bug-detail';
+$config->index->oldPages[] = 'testcase-browseList';
+$config->index->oldPages[] = 'testreport-browseList';
+$config->index->oldPages[] = 'testreport-detail';
+$config->index->oldPages[] = 'doc-spaceIndex';
+$config->index->oldPages[] = 'doc-browseList';
+$config->index->oldPages[] = 'doc-detail';
+$config->index->oldPages[] = 'kanban-spaceIndex';
+$config->index->oldPages[] = 'kanban-boardDetail';
+$config->index->oldPages[] = 'admin-formTemplate';
+$config->index->oldPages[] = 'company-index';
