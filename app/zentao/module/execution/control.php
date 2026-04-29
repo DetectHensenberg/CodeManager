@@ -45,8 +45,8 @@ class execution extends control
         if((defined('RUN_MODE') and RUN_MODE == 'api') or $this->viewType == 'json') $mode = '';
 
         $this->executions = $this->execution->getPairs(0, 'all', "nocode,noprefix,{$mode}");
-        $skipCreateStep   = array('computeburn', 'ajaxgetdropmenu', 'executionkanban', 'ajaxgetteammembers', 'all', 'ajaxgetcopyprojectexecutions', 'browseList', 'boardView', 'detail', 'browselist', 'boardview', 'detail');
-        if(in_array($this->methodName, $skipCreateStep)) return false;
+        $skipCreateStep   = array('computeburn', 'ajaxgetdropmenu', 'executionkanban', 'ajaxgetteammembers', 'all', 'ajaxgetcopyprojectexecutions', 'browselist', 'boardview', 'detail');
+        if(in_array(strtolower($this->methodName), $skipCreateStep)) return false;
         if($this->executions || $this->methodName == 'index' || $this->methodName == 'create' || $this->app->getViewType() == 'mhtml') return false;
         if($this->app->tab == 'project' && in_array($this->app->rawMethod, array('linkstory', 'importplanstories', 'unlinkstory', 'export'))) return false;
         if(($this->methodName == 'story' || $this->methodName == 'task') && $this->app->tab == 'doc') return false;
