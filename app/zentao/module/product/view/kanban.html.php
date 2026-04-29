@@ -8,14 +8,17 @@
  * @package     product
  */
 ?>
+<?php if (!isset($zinContext)): ?>
 <?php include '../../common/view/header.html.php';?>
+<?php endif; ?>
 
+<?php if (!isset($zinContext)): ?>
 <?php $cmCssFile = $this->app->getBasePath() . 'www/theme/codemanager/codemanager.css'; if(file_exists($cmCssFile)): ?>
 <link rel="stylesheet" href="<?php echo $this->app->getWebRoot() . 'theme/codemanager/codemanager.css?t=' . filemtime($cmCssFile); ?>" id="codemanagerCSS">
 <?php endif; ?>
+<?php endif; ?>
 
 <?php
-echo '<!-- DIAG: kanban template executing -->';
 /* ── Data extraction ── */
 $userName  = isset($app->user->realname) ? $app->user->realname : (isset($app->user->account) ? $app->user->account : 'admin');
 $userInitial = mb_substr($userName, 0, 1, 'UTF-8');
@@ -107,12 +110,12 @@ $riskItems = [
 
 /* Tabs */
 $tabs = [
-  ['value'=>'my',    'label'=>$lang->product->myProduct,    'url'=>createLink('product','kanban','browseType=my')],
-  ['value'=>'other', 'label'=>$lang->product->otherProduct, 'url'=>createLink('product','kanban','browseType=other')],
+  ['value'=>'my',    'label'=>$lang->product->myProduct,    'url'=>helper::createLink('product','kanban','browseType=my')],
+  ['value'=>'other', 'label'=>$lang->product->otherProduct, 'url'=>helper::createLink('product','kanban','browseType=other')],
 ];
 ?>
 
-<div class="kanban-design">
+<div class="kanban-design cm-page">
 
 <!-- ===== Topbar ===== -->
 <header class="topbar">
@@ -126,7 +129,7 @@ $tabs = [
 </header>
 
 <!-- ===== Hero + Tabs ===== -->
-<section class="hero-row">
+<section class="hero">
   <div>
     <div class="crumbs"><span>产品</span><span>›</span><span>产品看板</span></div>
     <h1><?php echo $this->view->title; ?></h1>
@@ -229,7 +232,7 @@ $tabs = [
     <div class="panel-head">
       <div>
         <h2 class="panel-title">产品动态</h2>
-        <p class="panel-caption">跨产品最近活动</p>
+        <p class="caption">跨产品最近活动</p>
       </div>
     </div>
     <div class="timeline">
@@ -242,7 +245,7 @@ $tabs = [
     <div class="panel-head">
       <div>
         <h2 class="panel-title">风险与动作</h2>
-        <p class="panel-caption">产品负责人今天需要处理</p>
+        <p class="caption">产品负责人今天需要处理</p>
       </div>
     </div>
     <div class="risk-list">
@@ -255,4 +258,6 @@ $tabs = [
 
 </div><!-- .kanban-design -->
 
+<?php if (!isset($zinContext)): ?>
 <?php include '../../common/view/footer.html.php';?>
+<?php endif; ?>
