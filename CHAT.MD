@@ -444,3 +444,49 @@ URL → controller → display() → oldPages check → render()
 5. ⏳ 待验证：iframe 内容提取到新 page 独立渲染
 
 **下一步**：解决 02-28 截图内容不显示问题，需要绕过 ZUI3 Shell 的 fixed/absolute 定位约束，或找到方法让 iframe 内容在 `fullPage` 模式下可见。
+
+## 28 页设计稿 → 实现文件映射
+
+| # | 设计稿 | URL | Controller 方法 | View 文件 | ZIN ui/ wrapper |
+|---|--------|-----|-----------------|-----------|-----------------|
+| 01 | 地盘-首页 | `my.html` | `my::index()` | `my/view/index.html.php` | — |
+| 02 | 后台-首页 | `admin-dashboard.html` | `admin::dashboard()` | `admin/view/dashboard.html.php` | `admin/ui/dashboard.html.php` |
+| 03 | 后台-安全设置 | `admin-security.html` | `admin::security()` | `admin/view/security.html.php` | `admin/ui/security.html.php` |
+| 04 | 后台-模块配置 | `admin-moduleConfig.html` | `admin::moduleConfig()` | `admin/view/moduleconfig.html.php` | `admin/ui/moduleconfig.html.php` |
+| 05 | 产品-列表 | `product-browseList.html` | `product::browseList()` | `product/view/browselist.html.php` | `product/ui/browselist.html.php` |
+| 06 | 产品-看板 | `product-kanban.html` | `product::kanban()` | `product/view/kanban.html.php` | `product/ui/kanban.html.php` |
+| 07 | 项目-列表 | `project-browseList.html` | `project::browseList()` | `project/view/browselist.html.php` | `project/ui/browselist.html.php` |
+| 08 | 项目-看板 | `project-boardView.html` | `project::boardView()` | `project/view/boardview.html.php` | `project/ui/boardview.html.php` |
+| 09 | 项目-详情 | `project-detail.html` | `project::detail()` | `project/view/detail.html.php` | `project/ui/detail.html.php` |
+| 10 | 执行-列表 | `execution-browseList.html` | `execution::browseList()` | `execution/view/browselist.html.php` | `execution/ui/browselist.html.php` |
+| 11 | 执行-看板 | `execution-boardView.html` | `execution::boardView()` | `execution/view/boardview.html.php` | `execution/ui/boardview.html.php` |
+| 12 | 执行-详情 | `execution-detail.html` | `execution::detail()` | `execution/view/detail.html.php` | `execution/ui/detail.html.php` |
+| 13 | 需求-列表 | `story-browseList.html` | `story::browseList()` | `story/view/browselist.html.php` | `story/ui/browselist.html.php` |
+| 14 | 需求-详情 | `story-detail.html` | `story::detail()` | `story/view/detail.html.php` | `story/ui/detail.html.php` |
+| 15 | 任务-列表 | `task-browseList.html` | `task::browseList()` | `task/view/browselist.html.php` | `task/ui/browselist.html.php` |
+| 16 | 任务-详情 | `task-detail.html` | `task::detail()` | `task/view/detail.html.php` | `task/ui/detail.html.php` |
+| 17 | Bug-列表 | `bug-browseList.html` | `bug::browseList()` | `bug/view/browselist.html.php` | `bug/ui/browselist.html.php` |
+| 18 | Bug-详情 | `bug-detail.html` | `bug::detail()` | `bug/view/detail.html.php` | `bug/ui/detail.html.php` |
+| 19 | 测试-用例列表 | `testcase-browseList.html` | `testcase::browseList()` | `testcase/view/browselist.html.php` | `testcase/ui/browselist.html.php` |
+| 20 | 测试-测试单列表 | `testreport-browseList.html` | `testreport::browseList()` | `testreport/view/browselist.html.php` | `testreport/ui/browselist.html.php` |
+| 21 | 测试-测试单详情 | `testreport-detail.html` | `testreport::detail()` | `testreport/view/detail.html.php` | `testreport/ui/detail.html.php` |
+| 22 | 文档-空间首页 | `doc-spaceIndex.html` | `doc::spaceIndex()` | `doc/view/spaceindex.html.php` | `doc/ui/spaceindex.html.php` |
+| 23 | 文档-文档列表 | `doc-browseList.html` | `doc::browseList()` | `doc/view/browselist.html.php` | `doc/ui/browselist.html.php` |
+| 24 | 文档-文档详情 | `doc-detail.html` | `doc::detail()` | `doc/view/detail.html.php` | `doc/ui/detail.html.php` |
+| 25 | 看板-空间 | `kanban-spaceIndex.html` | `kanban::spaceIndex()` | `kanban/view/spaceindex.html.php` | `kanban/ui/spaceindex.html.php` |
+| 26 | 看板-看板详情 | `kanban-boardDetail.html` | `kanban::boardDetail()` | `kanban/view/boarddetail.html.php` | `kanban/ui/boarddetail.html.php` |
+| 27 | 表单-创建编辑通用 | `admin-formTemplate.html` | `admin::formTemplate()` | `admin/view/formtemplate.html.php` | `admin/ui/formtemplate.html.php` |
+| 28 | 组织-首页 | `company-index.html` | `company::index()` | `company/view/index.html.php` | `company/ui/index.html.php` |
+
+### 文件统计
+
+| 类型 | 数量 | 位置 |
+|------|------|------|
+| Controller 方法 | 28 | `app/zentao/module/{module}/control.php` |
+| View 文件 | 28 | `app/zentao/module/{module}/view/{method}.html.php` |
+| ZIN ui/ wrapper | 26 | `app/zentao/module/{module}/ui/{method}.html.php` |
+| oldPages 配置 | 1 | `app/zentao/module/index/config.php` |
+| 入口路由 (侧边栏) | 5 | `admin/dashboard`, `product/browseList`, `doc/spaceIndex`, `project/browseList`, `company/index` |
+| CSS | 1 | `app/zentao/www/theme/codemanager/codemanager.css` |
+
+> 注：01-地盘-首页 无 ZIN wrapper（直接通过 `my::index()` 渲染）。06-产品-看板 和 05-产品-列表 的 ui/ wrapper 覆盖了原始 ZenTao ZIN 文件（`kanban.html.php`、`all.html.php`）。
