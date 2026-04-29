@@ -2232,4 +2232,32 @@ class story extends control
     {
         return print($this->fetch('repo', 'unlinkBranch'));
     }
+
+    /**
+     * Browse story list page.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->story->browse) ? $this->lang->story->browse : '需求列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * Story detail page.
+     *
+     * @param  int    $storyID
+     * @access public
+     * @return void
+     */
+    public function detail($storyID = 0)
+    {
+        $this->view->title   = isset($this->lang->story->view) ? $this->lang->story->view : '需求详情';
+        $this->view->storyID = $storyID;
+        $this->display();
+    }
 }

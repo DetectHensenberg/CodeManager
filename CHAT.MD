@@ -378,3 +378,69 @@ design_vs_implementation.md 中记录的 P0/P1 问题已全部修复并验证通
 - 所有 P0/P1/P2 问题已解决，27→28 页面全部验证通过
 - 组织页面 `selector wait timeout` 警告待排查（页面内容已正常渲染）
 - 中英文混排空格已在 Stream 1E 中修复，但新增视图中可能仍有遗漏
+
+## 2026-04-29 会话：ZIN ui/ wrapper 全面替换 + 截图
+
+### 背景
+之前只替换了 3 个页面的 ZIN `ui/` 文件，其余 25 个页面路由仍走旧 ZenTao UI。
+
+### ZIN ui/ wrapper 架构
+```
+URL → controller → display() → oldPages check → render()
+  → ui/<method>.html.php (ZIN wrapper)
+  → 设置 $zinContext=true → include view/<method>.html.php
+  → view 文件跳过 header/footer → 只输出 .cm-page 暗色主题内容
+```
+
+### 新建/修改文件
+
+**新建 24 个 ZIN ui/ wrapper**（每个模块的 `ui/` 目录）：
+- `admin/ui/{dashboard,moduleconfig,formtemplate}.html.php`
+- `product/ui/{browselist,kanban}.html.php`
+- `project/ui/{browselist,boardview,detail}.html.php`
+- `execution/ui/{browselist,boardview}.html.php`
+- `story/ui/{browselist,detail}.html.php`
+- `task/ui/{browselist,detail}.html.php`
+- `bug/ui/{browselist,detail}.html.php`
+- `testcase/ui/browselist.html.php`
+- `testreport/ui/{browselist,detail}.html.php`
+- `doc/ui/{spaceindex,browselist,detail}.html.php`
+- `kanban/ui/{spaceindex,boarddetail}.html.php`
+- `company/ui/index.html.php`
+
+**修改 23 个 view/ 文件**：header/footer include 包裹 `if (!isset($zinContext))`
+
+**oldPages 精简**：`index/config.php` 移除 24 条自定义页面，仅保留系统级条目。
+
+**CSS 修复**：
+- `product/view/browselist.html.php`: table class `product-table` → `product-table data-table`
+- `product/view/kanban.html.php`: 添加 `$zinContext` 条件
+
+### 工具文件
+- `tools/create-ui-wrappers.js` — 批量生成 ZIN wrapper 脚本
+- `tools/sync-now.js` — Node.js 同步脚本（dev → C:\ZenTao）
+- `tools/screenshot-newui.js` — 28 页全页截图脚本
+
+### Git 提交
+1. `265791b3` — fix: 修复 3 页面 .cm-page 缺失
+2. `7c0177c1` — chore: 清理旧设计稿，只保留编号新界面
+3. `8c6fbd74` — feat: ZIN ui/ wrapper 全面替换 28 个旧页面
+
+### 截图现状（未完成）
+- **01-地盘-首页** ✅ 完整截图（3891px，直接渲染无 iframe）
+- **02-28** ⚠️ 全页截图高度正确但内容区只有背景，无实际内容
+
+**根因分析**：
+- ZUI3 Shell 布局：`#menu`(fixed left) + `#apps`(fixed, `bottom:58px`) + `#app-{name}`(absolute, `overflow:hidden`) + `iframe`
+- `body { height: 0px }` 导致 Playwright `fullPage: true` 失效
+- `#app-*` 的 `overflow: hidden` 裁剪 iframe 内容
+- `#apps` 的 `position: fixed` 阻止页面滚动
+
+**已尝试方案**：
+1. ❌ CSS `addStyleTag` 注入 — 被 ZUI3 JS 动态覆盖
+2. ❌ `page.evaluate` 直接设高度 — `position:fixed/absolute` 约束无法突破
+3. ❌ 静态 HTML 提取 + `<base>` 标签 — `file://` 协议下 CSS 不加载
+4. ❌ `position: static !important` — 破坏布局，内容被挤出屏幕
+5. ⏳ 待验证：iframe 内容提取到新 page 独立渲染
+
+**下一步**：解决 02-28 截图内容不显示问题，需要绕过 ZUI3 Shell 的 fixed/absolute 定位约束，或找到方法让 iframe 内容在 `fullPage` 模式下可见。

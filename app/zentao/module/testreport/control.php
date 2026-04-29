@@ -322,4 +322,34 @@ class testreport extends control
 
         return $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess, 'load' => $locateLink));
     }
+
+    /**
+     * CodeManager: 测试单列表页面。
+     * Browse list.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->testreport->common) ? $this->lang->testreport->common . '列表' : '测试单列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 测试单详情页面。
+     * Detail.
+     *
+     * @param  int    $reportID
+     * @access public
+     * @return void
+     */
+    public function detail($reportID = 0)
+    {
+        $this->view->title     = isset($this->lang->testreport->common) ? $this->lang->testreport->common . '详情' : '测试单详情';
+        $this->view->reportID  = $reportID;
+        $this->display();
+    }
 }

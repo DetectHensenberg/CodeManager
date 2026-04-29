@@ -143,8 +143,7 @@ class doc extends control
      */
     public function index()
     {
-        $this->session->set('docList', $this->app->getURI(true), 'doc');
-        echo $this->fetch('block', 'dashboard', 'dashboard=doc');
+        $this->display('doc', 'spaceIndex');
     }
 
     /**
@@ -2754,5 +2753,48 @@ class doc extends control
         if(!empty($modules)) return $this->sendError($this->lang->docTemplate->scopeHasModuleTips);
 
         return $this->sendSuccess(array('message' => 'success'));
+    }
+
+    /**
+     * 文档空间首页。
+     * Doc space index page.
+     *
+     * @access public
+     * @return void
+     */
+    public function spaceIndex()
+    {
+        $this->view->title = $this->lang->doc->common . ' - ' . $this->lang->doc->spaceIndex;
+        $this->display();
+    }
+
+    /**
+     * 文档列表页。
+     * Doc browse list page.
+     *
+     * @param  int    $libID
+     * @access public
+     * @return void
+     */
+    public function browseList($libID = 0)
+    {
+        $this->view->title = $this->lang->doc->common . ' - ' . $this->lang->doc->browseList;
+        $this->view->libID = $libID;
+        $this->display();
+    }
+
+    /**
+     * 文档详情页。
+     * Doc detail page.
+     *
+     * @param  int    $docID
+     * @access public
+     * @return void
+     */
+    public function detail($docID = 0)
+    {
+        $this->view->title = $this->lang->doc->common . ' - ' . $this->lang->doc->detail;
+        $this->view->docID = $docID;
+        $this->display();
     }
 }

@@ -30,12 +30,12 @@ $metrics = array(
 );
 
 $todoItems = array(
-  array('title'=>'产品需求池梳理',    'owner'=>'admin', 'progress'=>84, 'deadline'=>'2026/04/30', 'type'=>'需求', 'status'=>'进行中', 'statusClass'=>'active'),
-  array('title'=>'仪表盘暗色适配',    'owner'=>'admin', 'progress'=>76, 'deadline'=>'2026/05/02', 'type'=>'任务', 'status'=>'进行中', 'statusClass'=>'active'),
-  array('title'=>'Bug 列表按钮统一',   'owner'=>'admin', 'progress'=>62, 'deadline'=>'2026/05/04', 'type'=>'Bug',  'status'=>'待处理', 'statusClass'=>'warn'),
-  array('title'=>'项目执行看板检查',   'owner'=>'admin', 'progress'=>58, 'deadline'=>'2026/05/06', 'type'=>'项目', 'status'=>'进行中', 'statusClass'=>'active'),
-  array('title'=>'文档中心样式回归',   'owner'=>'admin', 'progress'=>42, 'deadline'=>'2026/05/08', 'type'=>'文档', 'status'=>'待处理', 'statusClass'=>'warn'),
-  array('title'=>'后台配置页暗色审查', 'owner'=>'admin', 'progress'=>31, 'deadline'=>'2026/05/10', 'type'=>'后台', 'status'=>'阻塞',   'statusClass'=>'danger'),
+  array('title'=>'产品需求池梳理',    'owner'=>'admin', 'progress'=>84, 'deadline'=>'2026-04-30', 'type'=>'需求', 'status'=>'进行中', 'statusClass'=>'active'),
+  array('title'=>'仪表盘暗色适配',    'owner'=>'admin', 'progress'=>76, 'deadline'=>'2026-05-02', 'type'=>'任务', 'status'=>'进行中', 'statusClass'=>'active'),
+  array('title'=>'Bug 列表按钮统一',   'owner'=>'admin', 'progress'=>62, 'deadline'=>'2026-05-04', 'type'=>'Bug',  'status'=>'待处理', 'statusClass'=>'warn'),
+  array('title'=>'项目执行看板检查',   'owner'=>'admin', 'progress'=>58, 'deadline'=>'2026-05-06', 'type'=>'项目', 'status'=>'进行中', 'statusClass'=>'active'),
+  array('title'=>'文档中心样式回归',   'owner'=>'admin', 'progress'=>42, 'deadline'=>'2026-05-08', 'type'=>'文档', 'status'=>'待处理', 'statusClass'=>'warn'),
+  array('title'=>'后台配置页暗色审查', 'owner'=>'admin', 'progress'=>31, 'deadline'=>'2026-05-10', 'type'=>'后台', 'status'=>'阻塞',   'statusClass'=>'danger'),
 );
 
 $timelineItems = array(
@@ -90,7 +90,7 @@ $sysStatusItems = array(
 );
 ?>
 
-<div class="dashboard-design">
+<div class="dashboard-design cm-page">
 
 <!-- ===== 顶部导航栏 ===== -->
 <header class="topbar">

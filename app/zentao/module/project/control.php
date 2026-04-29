@@ -315,16 +315,16 @@ class project extends control
         $projectID = $this->project->checkAccess($projectID, $this->project->getPairsByProgram());
         if(!$projectID)
         {
-            if(is_bool($projectID)) return $this->sendError($this->lang->project->accessDenied, inLink('browse'));
+            if(is_bool($projectID)) return $this->sendError($this->lang->project->accessDenied, inLink('browseList'));
 
             if(common::hasPriv('project', 'create')) $this->locate(inLink('create'));
-            $this->locate(inLink('browse'));
+            $this->locate(inLink('browseList'));
         }
 
         $this->session->set('executionList', $this->app->getURI(true), 'execution');
 
         $project = $this->project->getByID($projectID);
-        if(empty($project) || $project->type != 'project') return $this->sendError($this->lang->notFound, inLink('browse'));
+        if(empty($project) || $project->type != 'project') return $this->sendError($this->lang->notFound, inLink('browseList'));
 
         $this->project->setMenu($projectID);
 
@@ -1653,10 +1653,10 @@ class project extends control
     public function whitelist($projectID = 0, $from = 'project', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         $projectID = $this->project->setMenu($projectID);
-        if(!$projectID) return $this->locate(inLink('browse'));
+        if(!$projectID) return $this->locate(inLink('browseList'));
 
         $project = $this->project->getByID($projectID);
-        if(isset($project->acl) and $project->acl == 'open') return $this->sendError($this->lang->whitelistNotNeed, inLink('browse'));
+        if(isset($project->acl) and $project->acl == 'open') return $this->sendError($this->lang->whitelistNotNeed, inLink('browseList'));
 
         echo $this->fetch('personnel', 'whitelist', "objectID=$projectID&module=project&browseType=project&orderBy=id_desc&recTotal=$recTotal&recPerPage=$recPerPage&pageID=$pageID&projectID=$projectID&from=$from");
     }
@@ -1866,5 +1866,50 @@ class project extends control
     public function ajaxCheckHasStageData($executionID)
     {
         return print($this->project->hasStageData($executionID));
+    }
+
+    /**
+     * CodeManager: 项目列表页面。
+     * Browse list of projects.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->project->common) ? $this->lang->project->common . '列表' : '项目列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 项目看板页面。
+     * Kanban board of projects.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function boardView($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->project->common) ? $this->lang->project->common . '看板' : '项目看板';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 项目详情页面。
+     * Detail view of a project.
+     *
+     * @param  int    $projectID
+     * @access public
+     * @return void
+     */
+    public function detail($projectID = 0)
+    {
+        $this->view->title     = isset($this->lang->project->common) ? $this->lang->project->common . '详情' : '项目详情';
+        $this->view->projectID = $projectID;
+        $this->display();
     }
 }

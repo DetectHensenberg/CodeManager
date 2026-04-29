@@ -33,7 +33,8 @@ class company extends control
      */
     public function index()
     {
-        $this->locate(inlink('browse'));
+        $this->view->title = $this->lang->company->common . $this->lang->hyphen . $this->lang->company->index;
+        $this->display('company', 'index');
     }
 
     /**

@@ -18,31 +18,7 @@ class admin extends control
      */
     public function index()
     {
-        set_time_limit(0);
-
-        /* 设置导航信息。*/
-        /* Set the nav. */
-        $this->admin->setMenu();
-
-        /* 处理社区登记。*/
-        /* Process community registration. */
-        $community = zget($this->config->global, 'community', '');
-        if(!$community || $community == 'na')
-        {
-            $this->view->bind    = false;
-            $this->view->ignore  = $community == 'na';
-        }
-        else
-        {
-            $this->view->bind    = true;
-            $this->view->ignore  = false;
-        }
-
-        $this->view->title       = $this->lang->admin->common;
-        $this->view->zentaoData  = $this->adminZen->getZentaoData();
-        $this->view->dateUsed    = $this->admin->genDateUsed();
-        $this->view->hasInternet = $this->admin->checkInternet();
-        $this->display();
+        $this->display('admin', 'dashboard');
     }
 
     /**
@@ -728,6 +704,55 @@ class admin extends control
         $company = $this->company->getByID($companyID);
 
         $this->view->company = $company->name;
+        $this->display();
+    }
+
+    /**
+     * Design: 后台首页 (02-后台-首页).
+     *
+     * @access public
+     * @return void
+     */
+    public function dashboard()
+    {
+        $this->view->title = $this->lang->admin->common;
+        $this->display();
+    }
+
+    /**
+     * Design: 后台安全设置 (03-后台-安全设置).
+     *
+     * @access public
+     * @return void
+     */
+    public function security()
+    {
+        $this->view->title = isset($this->lang->admin->safeIndex) ? $this->lang->admin->safeIndex : '后台安全设置';
+        $this->display();
+    }
+
+    /**
+     * Design: 后台模块配置 (04-后台-模块配置).
+     *
+     * @access public
+     * @return void
+     */
+    public function moduleConfig()
+    {
+        $this->view->title = isset($this->lang->admin->setModuleIndex) ? $this->lang->admin->setModuleIndex : '后台模块配置';
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 通用表单模板。
+     * Generic form template for create/edit pages.
+     *
+     * @access public
+     * @return void
+     */
+    public function formTemplate()
+    {
+        $this->view->title = '表单创建编辑通用';
         $this->display();
     }
 }

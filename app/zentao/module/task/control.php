@@ -1390,4 +1390,34 @@ class task extends control
     {
         return print($this->fetch('repo', 'unlinkBranch'));
     }
+
+    /**
+     * CodeManager 任务列表页面。
+     * CodeManager task browse list page.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->task->common) ? $this->lang->task->common . '列表' : '任务列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager 任务详情页面。
+     * CodeManager task detail page.
+     *
+     * @param  int    $taskID
+     * @access public
+     * @return void
+     */
+    public function detail($taskID = 0)
+    {
+        $this->view->title  = isset($this->lang->task->common) ? $this->lang->task->common . '详情' : '任务详情';
+        $this->view->taskID = $taskID;
+        $this->display();
+    }
 }

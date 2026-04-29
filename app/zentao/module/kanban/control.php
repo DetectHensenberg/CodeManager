@@ -1820,4 +1820,32 @@ class kanban extends control
         $space = $this->loadModel('kanban')->getSpaceById($spaceID);
         return print(json_encode($space->team));
     }
+
+    /**
+     * 看板空间首页。
+     * Kanban space index.
+     *
+     * @access public
+     * @return void
+     */
+    public function spaceIndex()
+    {
+        $this->view->title = $this->lang->kanbanspace->common;
+        $this->display();
+    }
+
+    /**
+     * 看板详情页面。
+     * Kanban board detail.
+     *
+     * @param  int $boardID
+     * @access public
+     * @return void
+     */
+    public function boardDetail($boardID = 0)
+    {
+        $this->view->title   = $this->lang->kanban->common;
+        $this->view->boardID = $boardID;
+        $this->display();
+    }
 }

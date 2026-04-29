@@ -31,7 +31,8 @@ class product extends control
 
         /* Get all products, if no, goto the create page. */
         $this->products = $this->product->getPairs('all', 0, '', 'all');
-        if($this->product->checkLocateCreate($this->products) && $this->app->tab != 'doc') $this->locate($this->createLink('product', 'create'));
+        $skipLocateCreate = array('browselist', 'kanban');
+        if($this->product->checkLocateCreate($this->products) && $this->app->tab != 'doc' && !in_array(strtolower($this->methodName), $skipLocateCreate)) $this->locate($this->createLink('product', 'create'));
 
         $this->view->products = $this->products;
     }
@@ -46,16 +47,19 @@ class product extends control
      */
     public function index($productID = 0)
     {
-        /* Check product id and get product branch. */
-        $productID = $this->product->checkAccess($productID, $this->products);
-        $branch    = (int)$this->cookie->preBranch;
+        $this->display('product', 'browseList');
+    }
 
-        /* Set Menu. */
-        if($this->app->getViewType() != 'mhtml') unset($this->lang->product->menu->index);
-        if($this->app->viewType == 'mhtml') $this->product->setMenu($productID, $branch);
-
-        $this->view->title = $this->lang->product->index;
-        $this->display();
+    /**
+     * Browse product list page.
+     *
+     * @access public
+     * @return void
+     */
+    public function browseList()
+    {
+        $this->view->title = isset($this->lang->product->browseList) ? $this->lang->product->browseList : '产品列表';
+        $this->display('product', 'browseList');
     }
 
     /**

@@ -1770,4 +1770,34 @@ class bug extends control
         foreach($productBugs as $bugID => $bugName) $bugItems[] = array('value' => $bugID, 'text' => $bugName);
         return print(json_encode($bugItems));
     }
+
+    /**
+     * CodeManager: Bug 列表页面。
+     * CodeManager: Bug list page.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = 'Bug列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: Bug 详情页面。
+     * CodeManager: Bug detail page.
+     *
+     * @param  int    $bugID
+     * @access public
+     * @return void
+     */
+    public function detail($bugID = 0)
+    {
+        $this->view->title = 'Bug详情';
+        $this->view->bugID = $bugID;
+        $this->display();
+    }
 }

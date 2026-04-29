@@ -2103,4 +2103,19 @@ class testcase extends control
         foreach($scenes as $sceneID => $sceneName) $items[] = array('text' => $sceneName, 'value' => $sceneID);
         return print(json_encode($items));
     }
+
+    /**
+     * CodeManager: 测试用例列表页面。
+     * Browse list.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->testcase->common) ? $this->lang->testcase->common . '列表' : '测试用例列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
 }

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "weibo": {
+      "command": "mcp-server-weibo"
+    },
+    "exa": {
+      "baseUrl": "https://mcp.exa.ai/mcp"
+    },
+    "douyin": {
+      "command": "C:\\Users\\admin\\AppData\\Roaming\\Python\\Python314\\Scripts\\douyin-mcp-server.exe"
+    }
+  }
+}

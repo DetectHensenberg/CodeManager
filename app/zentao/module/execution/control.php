@@ -45,7 +45,7 @@ class execution extends control
         if((defined('RUN_MODE') and RUN_MODE == 'api') or $this->viewType == 'json') $mode = '';
 
         $this->executions = $this->execution->getPairs(0, 'all', "nocode,noprefix,{$mode}");
-        $skipCreateStep   = array('computeburn', 'ajaxgetdropmenu', 'executionkanban', 'ajaxgetteammembers', 'all', 'ajaxgetcopyprojectexecutions');
+        $skipCreateStep   = array('computeburn', 'ajaxgetdropmenu', 'executionkanban', 'ajaxgetteammembers', 'all', 'ajaxgetcopyprojectexecutions', 'browseList', 'boardView', 'detail', 'browselist', 'boardview', 'detail');
         if(in_array($this->methodName, $skipCreateStep)) return false;
         if($this->executions || $this->methodName == 'index' || $this->methodName == 'create' || $this->app->getViewType() == 'mhtml') return false;
         if($this->app->tab == 'project' && in_array($this->app->rawMethod, array('linkstory', 'importplanstories', 'unlinkstory', 'export'))) return false;
@@ -3584,5 +3584,50 @@ class execution extends control
         $executions      = !empty($tasks) ? $this->execution->getPairsByList(array_keys($tasks)) : array();
 
         return print(json_encode(array_values($executions)));
+    }
+
+    /**
+     * CodeManager: 执行列表页面。
+     * Browse list of executions.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function browseList($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->execution->common) ? $this->lang->execution->common . '列表' : '执行列表';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 执行看板页面。
+     * Board view of executions.
+     *
+     * @param  string $browseType
+     * @access public
+     * @return void
+     */
+    public function boardView($browseType = 'all')
+    {
+        $this->view->title      = isset($this->lang->execution->common) ? $this->lang->execution->common . '看板' : '执行看板';
+        $this->view->browseType = $browseType;
+        $this->display();
+    }
+
+    /**
+     * CodeManager: 执行详情页面。
+     * Detail view of an execution.
+     *
+     * @param  int    $executionID
+     * @access public
+     * @return void
+     */
+    public function detail($executionID = 0)
+    {
+        $this->view->title       = isset($this->lang->execution->common) ? $this->lang->execution->common . '详情' : '执行详情';
+        $this->view->executionID = $executionID;
+        $this->display();
     }
 }
