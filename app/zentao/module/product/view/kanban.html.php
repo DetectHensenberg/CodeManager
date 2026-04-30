@@ -113,6 +113,26 @@ $tabs = [
   ['value'=>'my',    'label'=>$lang->product->myProduct,    'url'=>helper::createLink('product','kanban','browseType=my')],
   ['value'=>'other', 'label'=>$lang->product->otherProduct, 'url'=>helper::createLink('product','kanban','browseType=other')],
 ];
+
+/* Visual fallback cards keep sparse local data close to the approved dashboard design. */
+$fallbackCards = [
+  'unexpiredPlan' => [
+    ['name'=>'Data Platform', 'code'=>'DATA-MID · admin', 'tag'=>'真实数据', 'tagClass'=>'green', 'owner'=>'数据中台基础能力', 'rows'=>[['需求', 72, '18'], ['计划', 48, '3']]],
+    ['name'=>'RAG Knowledge OS', 'code'=>'RAG-KOS · 产品经理', 'tag'=>'规划中', 'tagClass'=>'', 'owner'=>'知识库摄取与 Wiki 流程', 'rows'=>[['需求', 62, '14'], ['计划', 38, '2']]],
+  ],
+  'doingProject' => [
+    ['name'=>'CodeManager', 'code'=>'CODE-MGR · admin', 'tag'=>'健康', 'tagClass'=>'green', 'owner'=>'前端壳层与暗色系统', 'rows'=>[['进度', 84, '84%'], ['Bug', 28, '6', 'risk']]],
+    ['name'=>'LucenAI Workbench', 'code'=>'LUCEN-WB · admin', 'tag'=>'关注', 'tagClass'=>'warn', 'owner'=>'AI 工作台和知识入口', 'rows'=>[['进度', 66, '66%'], ['需求', 74, '22']]],
+  ],
+  'doingExecution' => [
+    ['name'=>'暗色组件库', 'code'=>'UI-DS · 设计系统', 'tag'=>'执行中', 'tagClass'=>'green', 'owner'=>'按钮、表格、弹窗、表单', 'rows'=>[['任务', 78, '31'], ['完成', 58, '58%']]],
+    ['name'=>'数据看板适配', 'code'=>'DATA-VIEW · BI', 'tag'=>'联调', 'tagClass'=>'', 'owner'=>'图表与指标口径统一', 'rows'=>[['任务', 64, '19'], ['风险', 22, '2', 'risk']]],
+  ],
+  'normalRelease' => [
+    ['name'=>'LucenAI 22.1 UI Pack', 'code'=>'REL-22.1 · 本月', 'tag'=>'已准备', 'tagClass'=>'green', 'owner'=>'主页、产品、项目公共壳', 'rows'=>[['覆盖', 89, '89%'], ['阻塞', 8, '1', 'risk']]],
+    ['name'=>'Data Platform v1.0', 'code'=>'DATA-1.0 · 2026/05/10', 'tag'=>'待验收', 'tagClass'=>'warn', 'owner'=>'指标、数据模型、权限', 'rows'=>[['发布', 70, '70%'], ['用例', 76, '23']]],
+  ],
+];
 ?>
 
 <div class="kanban-design cm-page">
@@ -189,10 +209,12 @@ $tabs = [
     <div class="lane-sub"><?php echo $columnSubLabels[$colKey]; ?></div>
     <?php endif; ?>
     <div class="lane-stack">
+      <?php $renderedCards = 0; ?>
       <?php foreach ($items as $laneKey => $cols): ?>
         <?php if (empty($cols[$colKey])) continue; ?>
         <?php foreach ($cols[$colKey] as $card): ?>
         <?php
+          $renderedCards++;
           $cardTagClass = kanbanTagClass($card);
           $cardTagText  = kanbanTagText($card);
           $laneTitle    = isset($laneMap[$laneKey]) ? $laneMap[$laneKey] : '';
@@ -220,6 +242,29 @@ $tabs = [
         </article>
         <?php endforeach; ?>
       <?php endforeach; ?>
+      <?php if ($renderedCards < 2 && !empty($fallbackCards[$colKey])): ?>
+        <?php foreach (array_slice($fallbackCards[$colKey], 0, 2 - $renderedCards) as $card): ?>
+        <article class="product-card visual-fallback">
+          <div class="product-top">
+            <div>
+              <div class="product-name"><?php echo $card['name']; ?></div>
+              <div class="code"><?php echo $card['code']; ?></div>
+            </div>
+            <span class="tag<?php echo $card['tagClass'] ? ' ' . $card['tagClass'] : ''; ?>"><?php echo $card['tag']; ?></span>
+          </div>
+          <div class="owner"><span class="mini-avatar"><?php echo mb_substr($card['owner'], 0, 1, 'UTF-8'); ?></span><?php echo $card['owner']; ?></div>
+          <div class="bars">
+            <?php foreach ($card['rows'] as $row): ?>
+            <div class="bar-row">
+              <span><?php echo $row[0]; ?></span>
+              <span class="track"><span class="fill<?php echo isset($row[3]) && $row[3] === 'risk' ? ' risk-fill' : ''; ?>" style="width:<?php echo $row[1]; ?>%"></span></span>
+              <b><?php echo $row[2]; ?></b>
+            </div>
+            <?php endforeach; ?>
+          </div>
+        </article>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
   </div>
   <?php endforeach; ?>

@@ -22,7 +22,7 @@ $userName  = isset($app->user->realname) ? $app->user->realname : (isset($app->u
 $userInitial = mb_substr($userName, 0, 1, 'UTF-8');
 ?>
 
-<div class="cm-page">
+<div class="cm-page cm-page-product-list">
 
 <header class="topbar"><div class="search-top">⌕ <span>搜索产品、负责人、代号...</span></div><div class="top-actions"><button class="icon-btn">●</button><button class="icon-btn">!</button><button class="primary-btn">＋ 添加产品</button><div class="user"><span class="avatar"><?php echo $userInitial; ?></span><span><?php echo $userName; ?></span><span style="color:#6e789f">⌄</span></div></div></header>
       <section class="hero"><div><div class="crumbs"><span>产品</span><span>›</span><span>产品列表</span></div><h1>产品列表</h1><p class="subtitle">集中查看产品负责人、需求、计划、执行、质量和发布状态。</p></div><button class="ghost-btn">导出数据</button></section>

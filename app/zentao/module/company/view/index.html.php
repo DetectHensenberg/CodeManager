@@ -22,7 +22,7 @@ $userName  = isset($app->user->realname) ? $app->user->realname : (isset($app->u
 $userInitial = mb_substr($userName, 0, 1, 'UTF-8');
 ?>
 
-<div class="cm-page">
+<div class="cm-page cm-page-company-index">
 
 <header class="topbar"><div class="search-top">⌕ <span>搜索用户、部门、权限组...</span></div><div class="top-actions"><button class="icon-btn">●</button><button class="icon-btn">!</button><button class="primary-btn">＋ 新建用户</button><div class="user"><span class="avatar"><?php echo $userInitial; ?></span><span><?php echo $userName; ?></span><span style="color:#6e789f">⌄</span></div></div></header>
     <section class="hero"><div><div class="crumbs"><span>组织</span><span>›</span><span>首页</span></div><h1>组织首页</h1><p class="subtitle">用户管理、部门结构、权限分配与动态概览。</p></div><button class="ghost-btn">视图设置 ⌄</button></section>

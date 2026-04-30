@@ -22,7 +22,7 @@ $userName  = isset($app->user->realname) ? $app->user->realname : (isset($app->u
 $userInitial = mb_substr($userName, 0, 1, 'UTF-8');
 ?>
 
-<div class="cm-page">
+<div class="cm-page cm-page-execution-board">
 
 <header class="topbar"><div class="search-top">⌕ <span>搜索执行、负责人、状态、编号...</span></div><div class="top-actions"><button class="icon-btn">●</button><button class="icon-btn">!</button><button class="primary-btn">＋ 新建执行</button><div class="user"><span class="avatar"><?php echo $userInitial; ?></span><span><?php echo $userName; ?></span><span style="color:#6e789f">⌄</span></div></div></header>
     <section class="hero"><div><div class="crumbs"><span>执行</span><span>›</span><span>看板</span></div><h1>执行看板</h1><p class="subtitle">按待处理、进行中、待验证、已完成组织执行任务流。</p></div><button class="ghost-btn">视图设置 ⌄</button></section>

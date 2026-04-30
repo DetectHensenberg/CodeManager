@@ -51,6 +51,10 @@
   --cm-lu-danger:       #ff4f7a;
   --cm-lu-warning:      #f3b73c;
   --cm-lu-blue:         #5f9bff;
+  --green:              var(--cm-lu-success);
+  --red:                var(--cm-lu-danger);
+  --yellow:             var(--cm-lu-warning);
+  --blue:               var(--cm-lu-blue);
   --cm-lu-radius-xs:    6px;
   --cm-lu-radius-sm:    10px;
   --cm-lu-radius-md:    14px;
@@ -3166,9 +3170,17 @@ body:has(.cm-page) > .dashboard-design {
 
 .kanban-design .code {
   margin-top: 4px;
+  display: block;
+  width: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
   color: var(--cm-lu-muted);
   font-size: 13px;
   font-weight: 750;
+  line-height: 1.35;
 }
 
 /* --- Tag --- */
@@ -3265,6 +3277,10 @@ body:has(.cm-page) > .dashboard-design {
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+.kanban-design .risk-fill {
+  background: linear-gradient(90deg, var(--cm-lu-warning), var(--cm-lu-danger));
 }
 
 /* --- Risk List --- */
@@ -3536,6 +3552,23 @@ body:has(.cm-page) > .dashboard-design {
 .field {
   display: grid;
   gap: 8px;
+}
+.cm-page .form-grid .field > .label {
+  display: block;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+  color: #cdd6f3 !important;
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: left;
+  letter-spacing: 0;
 }
 .field.full {
   grid-column: 1 / -1;
@@ -3889,6 +3922,18 @@ body:has(.cm-page) > .dashboard-design {
   font-size: 28px;
   font-weight: 900;
   line-height: 1;
+}
+
+.metrics .hint,
+.stats .card .delta {
+  color: var(--cm-lu-success);
+}
+
+.metrics .hint[style*="--yellow"],
+.metrics .hint[style*="warning"],
+.metrics .hint[style*="yellow"],
+.metrics .hint:where(:not(:empty)) {
+  font-weight: 900;
 }
 
 /* Saved NEWUI snapshots sometimes keep ZenTao/Xuan chat image hooks without their runtime assets.
@@ -4364,9 +4409,17 @@ input[type="radio"]:disabled {
 }
 .code {
   margin-top: 4px;
+  display: block;
+  width: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
   color: #7680aa;
   font-size: 13px;
   font-weight: 750;
+  line-height: 1.35;
 }
 
 /* ---------- Tags ---------- */
@@ -4554,4 +4607,1491 @@ input[type="radio"]:disabled {
   margin-top: 3px;
   color: #7680aa;
   font-size: 12px;
+}
+
+/* ============================================================
+   Section 27: 27-page runtime polish against output/design
+   Keep this final layer narrow: it aligns real ZenTao runtime
+   screenshots with the approved 1440x900 design references.
+   ============================================================ */
+
+body:has(.cm-page) {
+  background: #070b15 !important;
+}
+
+body:has(.cm-page) > .cm-page,
+.cm-page {
+  padding-bottom: 104px !important;
+}
+
+.cm-page .hero,
+.cm-page .hero-row {
+  margin-bottom: 24px;
+}
+
+.cm-page .metrics {
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.cm-page .metrics > .metric {
+  min-height: 106px;
+  padding: 18px 20px;
+}
+
+.cm-page .metrics .value {
+  margin-top: 16px;
+  font-size: 28px;
+}
+
+.cm-page .panel,
+.cm-page .detail-block,
+.cm-page .module-card,
+.cm-page .lane,
+.cm-page .product-card {
+  border-color: rgba(178, 190, 255, .18);
+}
+
+.cm-page .toolbar {
+  min-height: 44px;
+  margin-bottom: 18px !important;
+}
+
+.cm-page .filter,
+.cm-page .primary-btn,
+.cm-page .ghost-btn,
+.cm-page .small-btn {
+  min-height: 36px;
+}
+
+.cm-page .table-wrap {
+  border-radius: 0;
+}
+
+.cm-page .data-table {
+  min-width: 1040px;
+  font-size: 14px;
+}
+
+.cm-page .data-table th {
+  height: 50px;
+  font-size: 12px;
+}
+
+.cm-page .data-table td {
+  height: 60px;
+}
+
+.cm-page .data-table th,
+.cm-page .data-table td {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.cm-page .footer-row {
+  position: relative;
+  z-index: 2;
+  height: 52px;
+  margin-bottom: 26px;
+  border-radius: 0 0 12px 12px;
+}
+
+.cm-page .detail-layout {
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .6fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.cm-page .detail-block {
+  margin-bottom: 22px;
+  padding: 26px 28px;
+}
+
+.cm-page .detail-block.rich {
+  min-height: 300px;
+}
+
+.cm-page .detail-block.rich h3,
+.cm-page .doc-body h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #f4f7ff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.cm-page .detail-block.rich p,
+.cm-page .detail-block.rich li,
+.cm-page .doc-body p,
+.cm-page .doc-body li {
+  color: #cbd4ef;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.cm-page .kv {
+  gap: 16px;
+}
+
+.cm-page .kv-item {
+  min-height: 70px;
+}
+
+.cm-page .board {
+  grid-template-columns: repeat(4, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 72px;
+}
+
+.cm-page .lane {
+  min-height: 560px;
+  padding: 14px;
+}
+
+.cm-page .lane-head {
+  height: 58px;
+  margin: -14px -14px 14px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.cm-page .lane-stack {
+  gap: 12px;
+}
+
+.cm-page .board .card,
+.cm-page .lane .card,
+.cm-page .product-card {
+  min-height: 150px;
+  padding: 18px 16px;
+}
+
+.cm-page .board .card-title,
+.cm-page .lane .card-title {
+  font-size: 15px;
+}
+
+.cm-page .board .card p,
+.cm-page .lane .card p {
+  min-height: 38px;
+  margin: 12px 0 14px;
+  font-size: 13px;
+}
+
+.cm-page .board-shell {
+  grid-template-columns: 64px repeat(4, minmax(210px, 1fr));
+  gap: 12px;
+  margin-bottom: 72px;
+}
+
+.cm-page .swimlane-label {
+  min-height: 560px;
+}
+
+.cm-page .form-grid {
+  gap: 16px 18px;
+}
+
+.cm-page .input,
+.cm-page .selectbox {
+  min-height: 44px;
+}
+
+.cm-page .textarea {
+  min-height: 120px;
+}
+
+.cm-page .form-grid .field > .label {
+  font-size: 14px;
+}
+
+/* Page 03: admin security settings. Keep the dense configuration cards clear of
+   the real ZenTao bottom shell while preserving the design's 4-column rhythm. */
+.cm-page-security {
+  padding-bottom: 118px;
+}
+
+.cm-page-security > .panel.pad {
+  padding-bottom: 30px;
+}
+
+.cm-page-security .module-grid {
+  gap: 14px;
+}
+
+.cm-page-security .module-card {
+  min-height: 112px;
+  padding: 18px 20px 16px;
+}
+
+.cm-page-security .module-card h3 {
+  line-height: 1.25;
+}
+
+.cm-page-security .module-card p {
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
+.cm-page-security .switch {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 0 18px rgba(99, 102, 241, .22);
+}
+
+/* Page 05: product list. The real shell leaves less vertical space than the
+   isolated design, so keep the table dense and reserve room above #appsBar. */
+.cm-page-product-list {
+  padding-bottom: 122px;
+}
+
+.cm-page-product-list .toolbar {
+  margin-bottom: 14px !important;
+}
+
+.cm-page-product-list .panel {
+  overflow: visible;
+}
+
+.cm-page-product-list .table-wrap {
+  max-height: 330px;
+  overflow: auto;
+}
+
+.cm-page-product-list .product-table {
+  font-size: 13px;
+}
+
+.cm-page-product-list .product-table th {
+  height: 44px;
+  font-size: 11px;
+}
+
+.cm-page-product-list .product-table td {
+  height: 52px;
+}
+
+.cm-page-product-list .product-table th,
+.cm-page-product-list .product-table td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cm-page-product-list .product-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+}
+
+.cm-page-product-list .product-name {
+  font-size: 13px;
+}
+
+.cm-page-product-list .product-code {
+  font-size: 10px;
+}
+
+/* Page 06: product kanban. Real business data can be sparse; keep visual
+   density and bottom clearance without changing database-backed numbers. */
+.kanban-design.cm-page {
+  padding-bottom: 124px;
+}
+
+.kanban-design.cm-page .board-shell {
+  margin-bottom: 92px;
+}
+
+.kanban-design.cm-page .lane,
+.kanban-design.cm-page .swimlane-label {
+  min-height: 540px;
+}
+
+.kanban-design.cm-page .product-card {
+  min-height: 142px;
+}
+
+/* Page 08: project board. Match the 1440x900 design density while keeping
+   project cards clear of the fixed ZenTao bottom shell. */
+.cm-page-project-board {
+  padding-bottom: 122px;
+}
+
+.cm-page-project-board .board {
+  margin-bottom: 96px;
+}
+
+.cm-page-project-board .lane {
+  min-height: 520px;
+}
+
+.cm-page-project-board .board .card,
+.cm-page-project-board .lane .card {
+  min-height: 136px;
+}
+
+.cm-page-project-board .board .card p,
+.cm-page-project-board .lane .card p {
+  min-height: 34px;
+}
+
+/* Page 09: project detail. Preserve the single-column runtime detail layout
+   while keeping the rich body and related table clear of the bottom shell. */
+.cm-page-project-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-project-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-project-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-project-detail .detail-block.rich {
+  min-height: 260px;
+  padding-bottom: 24px;
+}
+
+.cm-page-project-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-project-detail .detail-block.rich p,
+.cm-page-project-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+/* Page 10: execution list. Restore table progress/status density after global
+   dashboard numeric styles have run, and keep the pager above #appsBar. */
+.cm-page-execution-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-execution-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-execution-list .panel {
+  overflow: visible;
+}
+
+.cm-page-execution-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-execution-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-execution-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-execution-list .data-table .num {
+  font-size: 15px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.cm-page-execution-list .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9def2;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.cm-page-execution-list .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-execution-list .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+.cm-page-execution-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-execution-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+/* Page 13: story list. Match the execution/product list density while restoring
+   status pills that are otherwise flattened by later ZenTao table styles. */
+.cm-page-story-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-story-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-story-list .panel {
+  overflow: visible;
+}
+
+.cm-page-story-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-story-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-story-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-story-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-story-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+/* Page 15: task list. Keep task progress/status cells at table density after
+   global metric styles have run. */
+.cm-page-task-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-task-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-task-list .panel {
+  overflow: visible;
+}
+
+.cm-page-task-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-task-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-task-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-task-list .data-table .num {
+  font-size: 15px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.cm-page-task-list .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9def2;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.cm-page-task-list .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-task-list .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+.cm-page-task-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-task-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+/* Page 17: bug list. Preserve table density and restore status pills for
+   normal, warning, and danger bug states. */
+.cm-page-bug-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-bug-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-bug-list .panel {
+  overflow: visible;
+}
+
+.cm-page-bug-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-bug-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-bug-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-bug-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-bug-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-bug-list .status.danger {
+  color: var(--cm-lu-danger);
+  background: rgba(255, 79, 122, .16);
+}
+
+/* Page 19: testcase list. Restore coverage progress density and testcase
+   result pills after global metric/table styles have run. */
+.cm-page-testcase-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-testcase-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-testcase-list .panel {
+  overflow: visible;
+}
+
+.cm-page-testcase-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-testcase-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-testcase-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-testcase-list .data-table .num {
+  font-size: 15px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.cm-page-testcase-list .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9def2;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.cm-page-testcase-list .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-testcase-list .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+.cm-page-testcase-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-testcase-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-testcase-list .status.danger {
+  color: var(--cm-lu-danger);
+  background: rgba(255, 79, 122, .16);
+}
+
+/* Page 20: test report list. Keep report counts, pass-rate progress, and
+   status pills at table density in the real ZenTao shell. */
+.cm-page-testreport-list {
+  padding-bottom: 118px;
+}
+
+.cm-page-testreport-list .toolbar {
+  margin-bottom: 16px !important;
+}
+
+.cm-page-testreport-list .panel {
+  overflow: visible;
+}
+
+.cm-page-testreport-list .table-wrap {
+  max-height: 344px;
+  overflow: auto;
+}
+
+.cm-page-testreport-list .data-table {
+  min-width: 1056px;
+}
+
+.cm-page-testreport-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-testreport-list .data-table .num {
+  font-size: 15px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.cm-page-testreport-list .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9def2;
+  font-size: 15px;
+  font-weight: 850;
+}
+
+.cm-page-testreport-list .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-testreport-list .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+.cm-page-testreport-list .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-testreport-list .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+/* Page 21: test report detail. Match the constrained detail treatment used by
+   task/bug details so the related table stays clear of the shell bottom bar. */
+.cm-page-testreport-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-testreport-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-testreport-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-testreport-detail .panel-head .status,
+.cm-page-testreport-detail .data-table .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-testreport-detail .data-table .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-testreport-detail .detail-block.rich {
+  max-height: 334px;
+  min-height: 334px;
+  padding-bottom: 26px;
+  overflow: hidden;
+}
+
+.cm-page-testreport-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-testreport-detail .detail-block.rich p,
+.cm-page-testreport-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+.cm-page-testreport-detail .detail-block.rich h3:nth-of-type(n+3),
+.cm-page-testreport-detail .detail-block.rich h3:nth-of-type(n+3) + p {
+  display: none;
+}
+
+.cm-page-testreport-detail .detail-block.rich + .panel {
+  margin-top: 28px;
+}
+
+.cm-page-testreport-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-testreport-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-testreport-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Pages 22-25: document and kanban index/list surfaces. These pages use panel
+   headers as cards, so restore status pills without affecting detail pages. */
+.cm-page-doc-space,
+.cm-page-doc-list,
+.cm-page-doc-detail,
+.cm-page-kanban-space {
+  padding-bottom: 118px;
+}
+
+.cm-page-doc-space .status,
+.cm-page-doc-list .status,
+.cm-page-kanban-space .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-doc-space .status.warn,
+.cm-page-doc-list .status.warn,
+.cm-page-kanban-space .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-doc-detail .status.info {
+  height: 28px;
+  padding: 0 12px;
+  color: #aebcff;
+  background: rgba(99, 102, 241, .20);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-doc-list .tree-layout,
+.cm-page-doc-detail .tree-layout {
+  margin-bottom: 96px;
+}
+
+.cm-page-doc-list .data-table td {
+  height: 60px;
+}
+
+.cm-page-doc-detail .doc-body {
+  min-height: 560px;
+}
+
+.cm-page-kanban-space .grid-3 {
+  margin-bottom: 96px;
+}
+
+.cm-page-kanban-space .panel.pad {
+  min-height: 228px;
+}
+
+/* Page 26: kanban detail. Keep the runtime board density close to the design
+   while isolating lane/card overrides from other kanban surfaces. */
+.cm-page-kanban-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-kanban-detail .board {
+  gap: 14px;
+  margin-bottom: 96px;
+}
+
+.cm-page-kanban-detail .lane {
+  min-height: 520px;
+}
+
+.cm-page-kanban-detail .lane-head .status.info {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  justify-content: center;
+  padding: 0;
+  color: #9aaeff;
+  background: rgba(99, 102, 241, .32);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-kanban-detail .board .card,
+.cm-page-kanban-detail .lane .card {
+  min-height: 136px;
+  background:
+    linear-gradient(180deg, rgba(48, 54, 94, .74), rgba(29, 35, 66, .68)),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, .08), transparent 34%) !important;
+}
+
+.cm-page-kanban-detail .board .card::before,
+.cm-page-kanban-detail .lane .card::before {
+  opacity: .18;
+}
+
+.cm-page-kanban-detail .card-top {
+  gap: 12px;
+}
+
+.cm-page-kanban-detail .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-kanban-detail .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-kanban-detail .board .card p,
+.cm-page-kanban-detail .lane .card p {
+  min-height: 34px;
+}
+
+.cm-page-kanban-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-kanban-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-kanban-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 11: execution board. Same board density target as page 08, scoped so
+   execution cards stay readable without affecting other kanban variants. */
+.cm-page-execution-board {
+  padding-bottom: 122px;
+}
+
+.cm-page-execution-board .board {
+  margin-bottom: 96px;
+}
+
+.cm-page-execution-board .lane {
+  min-height: 520px;
+}
+
+.cm-page-execution-board .lane-head .status.info {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  justify-content: center;
+  padding: 0;
+  color: #9aaeff;
+  background: rgba(99, 102, 241, .32);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-execution-board .board .card,
+.cm-page-execution-board .lane .card {
+  min-height: 136px;
+  background:
+    linear-gradient(180deg, rgba(48, 54, 94, .74), rgba(29, 35, 66, .68)),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, .08), transparent 34%) !important;
+}
+
+.cm-page-execution-board .board .card::before,
+.cm-page-execution-board .lane .card::before {
+  opacity: .18;
+}
+
+.cm-page-execution-board .card-top {
+  gap: 12px;
+}
+
+.cm-page-execution-board .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-execution-board .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-execution-board .board .card p,
+.cm-page-execution-board .lane .card p {
+  min-height: 34px;
+}
+
+.cm-page-execution-board .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-execution-board .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-execution-board .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 12: execution detail. Mirrors page 09's compact detail treatment for
+   the real ZenTao iframe height. */
+.cm-page-execution-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-execution-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-execution-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-execution-detail .panel-head .status,
+.cm-page-execution-detail .data-table .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-execution-detail .data-table .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-execution-detail .detail-block.rich {
+  max-height: 334px;
+  min-height: 334px;
+  padding-bottom: 26px;
+  overflow: hidden;
+}
+
+.cm-page-execution-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-execution-detail .detail-block.rich p,
+.cm-page-execution-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+.cm-page-execution-detail .detail-block.rich h3:nth-of-type(n+3),
+.cm-page-execution-detail .detail-block.rich h3:nth-of-type(n+3) + p {
+  display: none;
+}
+
+.cm-page-execution-detail .detail-block.rich + .panel {
+  margin-top: 28px;
+}
+
+.cm-page-execution-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-execution-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-execution-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 14: story detail. Keep requirement content cards visible in the
+   constrained ZenTao iframe viewport. */
+.cm-page-story-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-story-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-story-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-story-detail .panel-head .status,
+.cm-page-story-detail .data-table .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-story-detail .data-table .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-story-detail .detail-block.rich {
+  max-height: 334px;
+  min-height: 334px;
+  padding-bottom: 26px;
+  overflow: hidden;
+}
+
+.cm-page-story-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-story-detail .detail-block.rich p,
+.cm-page-story-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+.cm-page-story-detail .detail-block.rich h3:nth-of-type(n+3),
+.cm-page-story-detail .detail-block.rich h3:nth-of-type(n+3) + p {
+  display: none;
+}
+
+.cm-page-story-detail .detail-block.rich + .panel {
+  margin-top: 28px;
+}
+
+.cm-page-story-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-story-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-story-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 18: bug detail. Keep the bug detail body and related table aligned with
+   the other constrained detail views in the real ZenTao iframe. */
+.cm-page-bug-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-bug-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-bug-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-bug-detail .panel-head .status,
+.cm-page-bug-detail .data-table .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-bug-detail .data-table .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-bug-detail .detail-block.rich {
+  max-height: 334px;
+  min-height: 334px;
+  padding-bottom: 26px;
+  overflow: hidden;
+}
+
+.cm-page-bug-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-bug-detail .detail-block.rich p,
+.cm-page-bug-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+.cm-page-bug-detail .detail-block.rich h3:nth-of-type(n+3),
+.cm-page-bug-detail .detail-block.rich h3:nth-of-type(n+3) + p {
+  display: none;
+}
+
+.cm-page-bug-detail .detail-block.rich + .panel {
+  margin-top: 28px;
+}
+
+.cm-page-bug-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-bug-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-bug-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 16: task detail. Same constrained-detail treatment as story/execution
+   detail pages, scoped to the task view. */
+.cm-page-task-detail {
+  padding-bottom: 126px;
+}
+
+.cm-page-task-detail .detail-layout {
+  gap: 18px;
+}
+
+.cm-page-task-detail .detail-block {
+  margin-bottom: 18px;
+}
+
+.cm-page-task-detail .panel-head .status,
+.cm-page-task-detail .data-table .status {
+  height: 28px;
+  padding: 0 12px;
+  color: var(--cm-lu-success);
+  background: rgba(24, 201, 155, .14);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-task-detail .data-table .status.warn {
+  color: var(--cm-lu-warning);
+  background: rgba(243, 183, 60, .16);
+}
+
+.cm-page-task-detail .detail-block.rich {
+  max-height: 334px;
+  min-height: 334px;
+  padding-bottom: 26px;
+  overflow: hidden;
+}
+
+.cm-page-task-detail .detail-block.rich h3 {
+  margin-top: 16px;
+}
+
+.cm-page-task-detail .detail-block.rich p,
+.cm-page-task-detail .detail-block.rich li {
+  line-height: 1.62;
+}
+
+.cm-page-task-detail .detail-block.rich h3:nth-of-type(n+3),
+.cm-page-task-detail .detail-block.rich h3:nth-of-type(n+3) + p {
+  display: none;
+}
+
+.cm-page-task-detail .detail-block.rich + .panel {
+  margin-top: 28px;
+}
+
+.cm-page-task-detail .progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #eaf0ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-task-detail .track {
+  width: 54px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(237, 242, 251, .22);
+  overflow: hidden;
+}
+
+.cm-page-task-detail .fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cm-lu-primary), var(--cm-lu-blue));
+}
+
+/* Page 27: generic create/edit form. The ZenTao iframe is narrower than the
+   full design canvas, so keep this form on two columns inside its own scope. */
+.cm-page-form-template {
+  padding-bottom: 126px;
+}
+
+.cm-page-form-template .detail-layout {
+  grid-template-columns: minmax(0, 2.05fr) minmax(300px, .95fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.cm-page-form-template .panel.pad {
+  min-height: 560px;
+  padding: 28px;
+}
+
+.cm-page-form-template aside .detail-block {
+  min-height: 360px;
+  padding: 28px;
+}
+
+.cm-page-form-template .panel-head {
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.cm-page-form-template .status.info {
+  height: 28px;
+  padding: 0 12px;
+  color: #aebcff;
+  background: rgba(99, 102, 241, .20);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cm-page-form-template .form-grid {
+  gap: 16px 18px;
+}
+
+.cm-page-form-template .form-grid .field > .label {
+  color: #dce4ff !important;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cm-page-form-template .input,
+.cm-page-form-template .selectbox {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.cm-page-form-template .textarea {
+  min-height: 140px;
+}
+
+.cm-page-form-template .actions {
+  margin-bottom: 0;
+}
+
+/* Page 28: company/organization home. Preserve the module dashboard density in
+   the constrained ZenTao shell and keep the lower panels clear of the bottom bar. */
+.cm-page-company-index {
+  padding-bottom: 126px;
+}
+
+.cm-page-company-index > .panel.pad {
+  padding: 28px 30px;
+  margin-bottom: 28px;
+}
+
+.cm-page-company-index > .panel.pad .panel-head {
+  margin-bottom: 22px;
+}
+
+.cm-page-company-index > .panel.pad .module-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px 18px;
+}
+
+.cm-page-company-index > .panel.pad .module-card {
+  min-height: 132px;
+  padding: 18px 20px 16px;
+}
+
+.cm-page-company-index .module-card h3 {
+  line-height: 1.25;
+}
+
+.cm-page-company-index .module-card p {
+  margin-top: 10px;
+  line-height: 1.48;
+}
+
+.cm-page-company-index .switch {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 0 18px rgba(99, 102, 241, .22);
+}
+
+.cm-page-company-index .grid-2 {
+  margin-bottom: 96px;
+}
+
+@media (max-width: 1400px) {
+  .cm-page .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-page-form-template .detail-layout {
+    grid-template-columns: minmax(0, 2.05fr) minmax(300px, .95fr);
+  }
+}
+
+@media (max-width: 1220px) {
+  .cm-page .data-table {
+    min-width: 980px;
+  }
+
+  .cm-page .board,
+  .cm-page .board-shell {
+    overflow-x: auto;
+  }
 }

@@ -22,7 +22,7 @@ $userName  = isset($app->user->realname) ? $app->user->realname : (isset($app->u
 $userInitial = mb_substr($userName, 0, 1, 'UTF-8');
 ?>
 
-<div class="cm-page">
+<div class="cm-page cm-page-bug-list">
 
 <header class="topbar"><div class="search-top">⌕ <span>搜索Bug、负责人、状态、编号...</span></div><div class="top-actions"><button class="icon-btn">●</button><button class="icon-btn">!</button><button class="primary-btn">＋ 新建Bug</button><div class="user"><span class="avatar"><?php echo $userInitial; ?></span><span><?php echo $userName; ?></span><span style="color:#6e789f">⌄</span></div></div></header>
     <section class="hero"><div><div class="crumbs"><span>Bug</span><span>›</span><span>列表</span></div><h1>Bug 列表</h1><p class="subtitle">Bug 表格、严重程度、优先级、解决方案和激活状态。</p></div><button class="ghost-btn">视图设置 ⌄</button></section>
